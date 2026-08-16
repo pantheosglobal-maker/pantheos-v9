@@ -9,18 +9,25 @@
 <link rel="stylesheet" href="css/style.css">
 
 <style>
+
+/* =========================================================
+   PANTHEOS MLBB — MOBILE FIRST
+========================================================= */
+
 :root{
     --bg:#070b16;
-    --surface:#10182b;
-    --surface2:#151f36;
-    --surface3:#1d2a47;
+    --bg2:#0b1120;
+    --card:#10182b;
+    --card2:#151f35;
+    --card3:#1b2742;
     --gold:#ffd54a;
     --gold2:#ffb300;
-    --white:#fff;
-    --muted:#9ca8bf;
+    --white:#ffffff;
+    --muted:#9ca8c0;
     --green:#25d366;
     --blue:#4da3ff;
     --border:rgba(255,255,255,.08);
+    --shadow:0 15px 45px rgba(0,0,0,.28);
 }
 
 *{
@@ -36,8 +43,16 @@ html{
 body{
     min-height:100vh;
     background:
-        radial-gradient(circle at 80% 0%,rgba(61,104,220,.16),transparent 30%),
-        radial-gradient(circle at 10% 80%,rgba(255,213,74,.055),transparent 28%),
+        radial-gradient(
+            circle at 90% 0%,
+            rgba(76,125,255,.13),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 0% 55%,
+            rgba(255,213,74,.055),
+            transparent 30%
+        ),
         var(--bg);
     color:var(--white);
     font-family:Arial,Helvetica,sans-serif;
@@ -53,50 +68,45 @@ button{
 }
 
 .page{
-    width:min(1180px,calc(100% - 24px));
+    width:calc(100% - 14px);
+    max-width:1180px;
     margin:auto;
-    padding:15px 0 60px;
+    padding:10px 0 50px;
 }
 
 
-/* =========================
+/* =========================================================
    BACK
-========================= */
+========================================================= */
 
 .back-home{
     display:inline-flex;
     align-items:center;
     gap:7px;
-    margin-bottom:15px;
-    padding:10px 14px;
+    padding:9px 12px;
+    margin-bottom:10px;
     border:1px solid var(--border);
-    border-radius:11px;
-    color:#fff;
+    border-radius:10px;
     background:rgba(255,255,255,.035);
+    color:#fff;
     text-decoration:none;
-    font-size:.84rem;
+    font-size:13px;
     font-weight:800;
-    transition:.2s;
-}
-
-.back-home:hover{
-    transform:translateX(-2px);
-    background:rgba(255,255,255,.07);
 }
 
 
-/* =========================
+/* =========================================================
    HERO
-========================= */
+========================================================= */
 
 .hero{
     position:relative;
-    min-height:350px;
+    height:245px;
     overflow:hidden;
+    border-radius:20px;
     border:1px solid var(--border);
-    border-radius:24px;
-    margin-bottom:24px;
-    box-shadow:0 22px 65px rgba(0,0,0,.38);
+    box-shadow:var(--shadow);
+    margin-bottom:14px;
 }
 
 .hero-banner{
@@ -107,355 +117,387 @@ button{
     object-fit:cover;
 }
 
-.hero-shade{
+.hero-overlay{
     position:absolute;
     inset:0;
     background:
         linear-gradient(
             90deg,
-            rgba(2,5,14,.96),
-            rgba(2,5,14,.73) 48%,
-            rgba(2,5,14,.18)
+            rgba(3,7,17,.96),
+            rgba(3,7,17,.62),
+            rgba(3,7,17,.15)
         );
 }
 
 .hero-content{
     position:relative;
     z-index:2;
-    min-height:350px;
+    height:100%;
     display:flex;
     align-items:center;
-    padding:38px;
+    padding:20px;
 }
 
 .hero-inner{
-    max-width:680px;
+    max-width:650px;
 }
 
 .ml-logo{
-    width:72px;
-    height:72px;
+    width:55px;
+    height:55px;
     object-fit:cover;
-    border-radius:16px;
-    margin-bottom:14px;
-    border:2px solid rgba(255,255,255,.14);
-    box-shadow:0 10px 28px rgba(0,0,0,.4);
+    border-radius:13px;
+    border:2px solid rgba(255,255,255,.16);
+    margin-bottom:10px;
+    box-shadow:0 8px 25px rgba(0,0,0,.4);
 }
 
-.hero-tag{
+.hero-badge{
     display:inline-block;
-    padding:6px 10px;
-    border:1px solid rgba(255,213,74,.2);
-    border-radius:999px;
-    background:rgba(255,213,74,.08);
+    padding:5px 8px;
+    border-radius:20px;
     color:var(--gold);
-    font-size:.65rem;
+    background:rgba(255,213,74,.1);
+    border:1px solid rgba(255,213,74,.18);
+    font-size:9px;
     font-weight:900;
-    letter-spacing:.7px;
-    margin-bottom:10px;
+    letter-spacing:.5px;
+    margin-bottom:7px;
 }
 
 .hero h1{
-    font-size:clamp(2rem,5vw,3.25rem);
+    font-size:clamp(25px,8vw,48px);
     line-height:1.05;
-    margin-bottom:12px;
+    margin-bottom:7px;
 }
 
 .hero p{
-    max-width:620px;
-    color:#d3d9e7;
-    font-size:.91rem;
-    line-height:1.65;
+    max-width:550px;
+    color:#d4d9e5;
+    font-size:11px;
+    line-height:1.5;
 }
 
 
-/* =========================
-   COMMON
-========================= */
+/* =========================================================
+   PLAYER BOX
+========================================================= */
 
-.section{
-    margin-top:24px;
-}
-
-.section-heading{
-    margin-bottom:13px;
+.player-box{
+    background:
+        linear-gradient(
+            145deg,
+            var(--card),
+            var(--card2)
+        );
+    border:1px solid var(--border);
+    border-radius:17px;
+    padding:15px;
+    box-shadow:var(--shadow);
 }
 
 .section-title{
-    font-size:1.32rem;
+    font-size:17px;
     font-weight:900;
 }
 
 .section-subtitle{
-    margin-top:5px;
     color:var(--muted);
-    font-size:.75rem;
+    font-size:10px;
+    margin-top:4px;
+    line-height:1.4;
 }
 
-
-/* =========================
-   PLAYER BOX
-========================= */
-
-.account-box{
-    padding:20px;
-    border:1px solid var(--border);
-    border-radius:19px;
-    background:linear-gradient(145deg,var(--surface),var(--surface2));
-    box-shadow:0 12px 35px rgba(0,0,0,.18);
-}
-
-.account-grid{
+.player-grid{
     display:grid;
-    grid-template-columns:1fr 1fr auto;
-    gap:11px;
-    align-items:end;
+    grid-template-columns:1fr 1fr;
+    gap:9px;
+    margin-top:13px;
 }
 
 .input-label{
     display:block;
-    margin-bottom:7px;
-    font-size:.8rem;
+    margin-bottom:5px;
+    font-size:10px;
     font-weight:800;
 }
 
-.input-field{
+.input{
     width:100%;
-    height:48px;
-    padding:0 14px;
+    height:43px;
+    padding:0 11px;
     border:1px solid var(--border);
+    border-radius:10px;
     outline:none;
-    border-radius:11px;
     background:var(--bg);
     color:#fff;
+    font-size:12px;
 }
 
-.input-field::placeholder{
-    color:#65728b;
+.input::placeholder{
+    color:#5d6980;
 }
 
-.input-field:focus{
-    border-color:rgba(255,213,74,.55);
-    box-shadow:0 0 0 3px rgba(255,213,74,.08);
+.input:focus{
+    border-color:rgba(255,213,74,.5);
+    box-shadow:0 0 0 3px rgba(255,213,74,.07);
 }
 
-.order-now{
-    height:48px;
-    padding:0 24px;
+
+/* ORDER BESIDE ID/SERVER */
+
+.order-area{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:9px;
+    margin-top:10px;
+}
+
+.order-main{
+    height:44px;
     border:0;
     border-radius:11px;
-    background:linear-gradient(135deg,#ffe477,#ffc62c);
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold),
+            var(--gold2)
+        );
     color:#111;
     font-weight:900;
+    font-size:12px;
     cursor:pointer;
-    box-shadow:0 7px 22px rgba(255,193,35,.18);
-    transition:.2s;
-    white-space:nowrap;
+    box-shadow:0 7px 20px rgba(255,193,7,.16);
 }
 
-.order-now:hover{
-    transform:translateY(-2px);
-    filter:brightness(1.06);
-}
-
-.order-now:active{
+.order-main:active{
     transform:scale(.98);
 }
 
-.account-note{
-    margin-top:9px;
+.clear-btn{
+    height:44px;
+    border:1px solid var(--border);
+    border-radius:11px;
+    background:rgba(255,255,255,.04);
     color:var(--muted);
-    font-size:.7rem;
+    font-size:11px;
+    font-weight:800;
 }
 
-.message{
+.account-message{
     display:none;
-    margin-top:12px;
-    padding:10px 12px;
-    border-radius:10px;
-    font-size:.76rem;
+    margin-top:9px;
+    padding:9px 10px;
+    border-radius:9px;
+    font-size:10px;
+    line-height:1.4;
 }
 
-.message.show{
+.account-message.show{
     display:block;
 }
 
-.message.error{
-    color:#ff9696;
+.account-message.error{
+    color:#ff8585;
     background:rgba(255,80,80,.07);
-    border:1px solid rgba(255,80,80,.14);
+    border:1px solid rgba(255,80,80,.12);
+}
+
+.account-message.success{
+    color:#63e998;
+    background:rgba(37,211,102,.07);
+    border:1px solid rgba(37,211,102,.12);
 }
 
 
-/* =========================
+/* =========================================================
+   SECTION
+========================================================= */
+
+.section{
+    margin-top:18px;
+}
+
+.section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    gap:10px;
+    margin-bottom:9px;
+}
+
+
+/* =========================================================
    SPECIAL PASSES
-========================= */
+========================================================= */
 
 .special-grid{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:11px;
+    grid-template-columns:1fr 1fr;
+    gap:9px;
 }
 
 .special-card{
     position:relative;
+    overflow:hidden;
+    min-width:0;
+    padding:8px;
     display:flex;
     align-items:center;
-    gap:10px;
-    min-width:0;
-    padding:9px;
-    border:1px solid var(--border);
-    border-radius:15px;
-    background:
-        linear-gradient(145deg,var(--surface),var(--surface2));
-    color:#fff;
+    gap:9px;
     text-align:left;
+    color:#fff;
+    background:
+        linear-gradient(
+            145deg,
+            #141d32,
+            #0e1628
+        );
+    border:1px solid var(--border);
+    border-radius:14px;
     cursor:pointer;
-    transition:.22s;
-    overflow:hidden;
+    transition:.2s;
 }
 
 .special-card::after{
     content:"";
     position:absolute;
-    inset:0;
-    background:linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,213,74,.05),
-        transparent
-    );
-    transform:translateX(-100%);
-    transition:.5s;
-}
-
-.special-card:hover::after{
-    transform:translateX(100%);
-}
-
-.special-card:hover{
-    transform:translateY(-3px);
-    border-color:rgba(255,213,74,.42);
+    width:70px;
+    height:70px;
+    right:-30px;
+    top:-35px;
+    background:rgba(255,213,74,.08);
+    border-radius:50%;
 }
 
 .special-card.active{
     border-color:var(--gold);
     box-shadow:
-        0 0 0 1px rgba(255,213,74,.15),
-        0 8px 25px rgba(255,193,35,.08);
+        0 0 0 1px rgba(255,213,74,.12),
+        0 8px 25px rgba(255,193,7,.08);
 }
 
-.special-card img{
-    width:66px;
-    height:66px;
-    flex:0 0 66px;
+.special-card:active{
+    transform:scale(.98);
+}
+
+.special-image{
+    width:58px;
+    height:58px;
+    flex:0 0 58px;
+    border-radius:9px;
     object-fit:cover;
-    border-radius:10px;
 }
 
 .special-info{
     min-width:0;
+    position:relative;
+    z-index:1;
 }
 
 .special-name{
     display:block;
-    font-size:.82rem;
+    font-size:10px;
     font-weight:900;
-    line-height:1.25;
+    line-height:1.2;
 }
 
 .special-price{
     display:block;
-    margin-top:5px;
     color:var(--gold);
-    font-size:.86rem;
+    margin-top:5px;
+    font-size:12px;
     font-weight:900;
 }
 
 
-/* =========================
-   DIAMONDS
-========================= */
+/* =========================================================
+   DIAMOND AREA
+========================================================= */
+
+.diamond-wrapper{
+    position:relative;
+}
 
 .diamond-grid{
     display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:9px;
+    grid-template-columns:1fr 1fr;
+    gap:8px;
 }
 
 .diamond-card{
     position:relative;
-    display:flex;
+    overflow:hidden;
+    min-height:75px;
+    padding:10px;
+    display:grid;
+    grid-template-columns:32px 1fr auto;
     align-items:center;
-    gap:9px;
-    min-width:0;
-    min-height:67px;
-    padding:9px 11px;
-    border:1px solid var(--border);
-    border-radius:13px;
+    gap:7px;
+    text-align:left;
+    color:#fff;
     background:
         linear-gradient(
-            135deg,
-            rgba(255,255,255,.045),
-            rgba(255,255,255,.015)
-        ),
-        var(--surface);
-    color:#fff;
+            145deg,
+            rgba(24,35,59,.98),
+            rgba(13,21,37,.98)
+        );
+    border:1px solid var(--border);
+    border-radius:13px;
     cursor:pointer;
-    text-align:left;
-    overflow:hidden;
-    transition:.22s;
+    transition:
+        transform .2s,
+        border-color .2s,
+        box-shadow .2s;
 }
 
 .diamond-card::before{
     content:"";
     position:absolute;
-    width:80px;
-    height:80px;
-    right:-35px;
-    top:-35px;
-    border-radius:50%;
-    background:rgba(77,163,255,.08);
-    transition:.25s;
+    top:0;
+    left:-80%;
+    width:55%;
+    height:100%;
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.07),
+        transparent
+    );
+    transform:skewX(-20deg);
+    transition:.6s;
 }
 
-.diamond-card:hover{
-    transform:translateY(-2px);
-    border-color:rgba(77,163,255,.42);
-    background:
-        linear-gradient(
-            135deg,
-            rgba(77,163,255,.08),
-            rgba(255,255,255,.02)
-        ),
-        var(--surface);
+.diamond-card:hover::before,
+.diamond-card.active::before{
+    left:130%;
 }
 
-.diamond-card:hover::before{
-    transform:scale(1.4);
+.diamond-card:active{
+    transform:scale(.97);
 }
 
 .diamond-card.active{
     border-color:var(--gold);
     box-shadow:
-        0 0 0 1px rgba(255,213,74,.14),
-        0 8px 24px rgba(255,193,35,.08);
+        0 0 0 1px rgba(255,213,74,.13),
+        0 8px 25px rgba(255,193,7,.09);
 }
 
-.diamond-icon{
-    width:33px;
-    height:33px;
-    flex:0 0 33px;
+.diamond-symbol{
+    width:30px;
+    height:30px;
     display:flex;
     align-items:center;
     justify-content:center;
     border-radius:9px;
-    background:linear-gradient(
-        145deg,
-        rgba(77,163,255,.18),
-        rgba(77,163,255,.04)
-    );
-    font-size:1rem;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(77,163,255,.2),
+            rgba(77,163,255,.05)
+        );
+    font-size:15px;
 }
 
 .diamond-details{
@@ -464,1432 +506,1314 @@ button{
 
 .diamond-count{
     display:block;
-    font-size:.82rem;
+    font-size:12px;
     font-weight:900;
-    white-space:nowrap;
+}
+
+.diamond-label{
+    display:block;
+    margin-top:2px;
+    color:var(--muted);
+    font-size:8px;
 }
 
 .diamond-price{
-    display:block;
-    margin-top:3px;
     color:var(--gold);
-    font-size:.78rem;
+    font-size:11px;
     font-weight:900;
-}
-
-
-/* =========================
-   SUMMARY
-========================= */
-
-.summary{
-    margin-top:24px;
-    padding:19px;
-    border:1px solid var(--border);
-    border-radius:18px;
-    background:linear-gradient(145deg,var(--surface),var(--surface2));
-}
-
-.summary-head{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:12px;
-    margin-bottom:13px;
-}
-
-.summary-title{
-    font-size:1.18rem;
-    font-weight:900;
-}
-
-.status{
-    padding:6px 10px;
-    border-radius:999px;
-    background:rgba(255,255,255,.05);
-    color:var(--muted);
-    font-size:.64rem;
-    font-weight:900;
-}
-
-.status.selected{
-    color:#67ed9a;
-    background:rgba(37,211,102,.09);
-}
-
-.summary-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    border-top:1px solid rgba(255,255,255,.055);
-}
-
-.summary-item{
-    padding:13px 12px;
-    border-right:1px solid rgba(255,255,255,.055);
-}
-
-.summary-item:last-child{
-    border-right:0;
-}
-
-.summary-label{
-    display:block;
-    color:var(--muted);
-    font-size:.67rem;
-    margin-bottom:5px;
-}
-
-.summary-value{
-    display:block;
-    font-size:.83rem;
-    font-weight:900;
-    overflow:hidden;
-    text-overflow:ellipsis;
     white-space:nowrap;
 }
 
-.summary-price{
-    color:var(--gold);
-    font-size:1rem;
+.popular{
+    position:absolute;
+    top:4px;
+    right:4px;
+    padding:3px 5px;
+    border-radius:5px;
+    background:var(--gold);
+    color:#111;
+    font-size:6px;
+    font-weight:900;
 }
 
-.summary-note{
-    margin-top:11px;
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.summary{
+    margin-top:18px;
+    padding:15px;
+    border-radius:17px;
+    border:1px solid var(--border);
+    background:
+        linear-gradient(
+            145deg,
+            var(--card),
+            var(--card2)
+        );
+    box-shadow:var(--shadow);
+}
+
+.summary-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:10px;
+}
+
+.summary-title{
+    font-size:16px;
+    font-weight:900;
+}
+
+.selected-badge{
+    padding:5px 8px;
+    border-radius:20px;
     color:var(--muted);
-    font-size:.71rem;
+    background:rgba(255,255,255,.05);
+    font-size:8px;
+    font-weight:900;
+}
+
+.selected-badge.ready{
+    color:#65e997;
+    background:rgba(37,211,102,.09);
+}
+
+.summary-row{
+    display:flex;
+    justify-content:space-between;
+    padding:8px 0;
+    border-top:1px solid rgba(255,255,255,.055);
+    font-size:10px;
+}
+
+.summary-row span:first-child{
+    color:var(--muted);
+}
+
+.summary-row span:last-child{
+    font-weight:800;
+    text-align:right;
+}
+
+.gold{
+    color:var(--gold)!important;
+}
+
+.summary-total{
+    font-size:15px!important;
+}
+
+.summary-total span:last-child{
+    color:var(--gold);
+    font-size:16px;
 }
 
 
-/* =========================
-   PAYMENT MODAL
-========================= */
+/* =========================================================
+   PAYMENT CHOICE MODAL
+========================================================= */
 
 .modal{
     position:fixed;
     inset:0;
     z-index:9999;
     display:none;
-    align-items:center;
+    align-items:flex-end;
     justify-content:center;
-    padding:15px;
     background:rgba(0,0,0,.72);
-    backdrop-filter:blur(8px);
+    backdrop-filter:blur(7px);
 }
 
 .modal.show{
     display:flex;
-    animation:fadeIn .2s ease;
-}
-
-@keyframes fadeIn{
-    from{opacity:0}
-    to{opacity:1}
 }
 
 .modal-box{
-    width:min(500px,100%);
-    max-height:90vh;
-    overflow:auto;
-    border:1px solid rgba(255,255,255,.1);
-    border-radius:20px;
-    background:
-        linear-gradient(145deg,#121b30,#0c1324);
-    box-shadow:0 25px 90px rgba(0,0,0,.55);
+    width:100%;
+    max-width:520px;
     padding:20px;
-    animation:popIn .25s ease;
+    background:
+        linear-gradient(
+            145deg,
+            #111b31,
+            #0a1222
+        );
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:22px 22px 0 0;
+    box-shadow:0 -20px 70px rgba(0,0,0,.5);
+    animation:modalUp .25s ease;
 }
 
-@keyframes popIn{
+@keyframes modalUp{
     from{
-        opacity:0;
-        transform:scale(.94) translateY(10px);
+        transform:translateY(100%);
     }
     to{
-        opacity:1;
-        transform:scale(1) translateY(0);
+        transform:translateY(0);
     }
 }
 
 .modal-top{
     display:flex;
     justify-content:space-between;
-    gap:15px;
-    align-items:flex-start;
-    margin-bottom:18px;
+    align-items:center;
+    margin-bottom:5px;
 }
 
-.modal-top h2{
-    font-size:1.3rem;
+.modal-title{
+    font-size:19px;
+    font-weight:900;
 }
 
-.modal-top p{
-    margin-top:5px;
-    color:var(--muted);
-    font-size:.74rem;
-    line-height:1.45;
-}
-
-.close-modal{
-    width:34px;
-    height:34px;
+.modal-close{
+    width:32px;
+    height:32px;
     border:1px solid var(--border);
-    border-radius:9px;
-    background:rgba(255,255,255,.04);
+    border-radius:50%;
+    background:rgba(255,255,255,.05);
     color:#fff;
     cursor:pointer;
-    font-size:1.1rem;
 }
 
-.order-preview{
-    padding:13px;
-    border-radius:13px;
-    background:rgba(255,255,255,.035);
-    border:1px solid rgba(255,255,255,.055);
+.modal-subtitle{
+    color:var(--muted);
+    font-size:10px;
+    line-height:1.5;
     margin-bottom:15px;
 }
 
-.preview-row{
+.choice{
+    width:100%;
     display:flex;
-    justify-content:space-between;
-    gap:15px;
-    padding:7px 0;
-    font-size:.77rem;
-}
-
-.preview-row span:first-child{
-    color:var(--muted);
-}
-
-.preview-row span:last-child{
-    font-weight:800;
-    text-align:right;
-}
-
-.preview-total{
-    border-top:1px solid rgba(255,255,255,.07);
-    margin-top:5px;
-    padding-top:11px;
-}
-
-.preview-total span:last-child{
-    color:var(--gold);
-    font-size:1.05rem;
-}
-
-.payment-choice{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-}
-
-.choice-btn{
-    min-height:105px;
-    padding:15px;
+    align-items:center;
+    gap:12px;
+    padding:13px;
+    margin-top:9px;
     border:1px solid var(--border);
-    border-radius:14px;
+    border-radius:13px;
+    background:rgba(255,255,255,.035);
     color:#fff;
-    cursor:pointer;
     text-align:left;
-    transition:.2s;
+    cursor:pointer;
 }
 
-.choice-btn:hover{
-    transform:translateY(-2px);
-}
-
-.choice-qr{
-    background:linear-gradient(
-        145deg,
-        rgba(255,213,74,.11),
-        rgba(255,213,74,.035)
-    );
-    border-color:rgba(255,213,74,.2);
-}
-
-.choice-wa{
-    background:linear-gradient(
-        145deg,
-        rgba(37,211,102,.1),
-        rgba(37,211,102,.025)
-    );
-    border-color:rgba(37,211,102,.18);
+.choice:hover{
+    border-color:rgba(255,213,74,.4);
 }
 
 .choice-icon{
-    display:block;
-    font-size:1.45rem;
-    margin-bottom:9px;
+    width:40px;
+    height:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:11px;
+    font-size:19px;
+    background:rgba(255,213,74,.09);
 }
 
-.choice-title{
+.choice-info{
+    flex:1;
+}
+
+.choice-info strong{
     display:block;
-    font-size:.86rem;
+    font-size:12px;
+}
+
+.choice-info span{
+    display:block;
+    color:var(--muted);
+    font-size:9px;
+    margin-top:3px;
+}
+
+.choice-arrow{
+    color:var(--gold);
     font-weight:900;
 }
 
-.choice-desc{
-    display:block;
-    margin-top:4px;
-    color:var(--muted);
-    font-size:.67rem;
-    line-height:1.35;
-}
 
+/* =========================================================
+   QR PAYMENT
+========================================================= */
 
-/* =========================
-   QR VIEW
-========================= */
-
-.qr-view{
+.qr-panel{
     display:none;
+    position:fixed;
+    inset:0;
+    z-index:10000;
+    align-items:flex-end;
+    justify-content:center;
+    background:rgba(0,0,0,.78);
+    backdrop-filter:blur(7px);
+}
+
+.qr-panel.show{
+    display:flex;
+}
+
+.qr-box{
+    width:100%;
+    max-width:520px;
+    padding:20px;
+    background:
+        linear-gradient(
+            145deg,
+            #111b31,
+            #0a1222
+        );
+    border-radius:22px 22px 0 0;
     text-align:center;
+    animation:modalUp .25s ease;
 }
 
-.qr-view.show{
-    display:block;
-}
-
-.qr-view h3{
-    font-size:1rem;
-}
-
-.qr-view p{
-    margin-top:5px;
-    color:var(--muted);
-    font-size:.72rem;
-}
-
-.qr-image{
-    display:block;
-    width:230px;
-    height:230px;
-    max-width:100%;
-    object-fit:contain;
-    margin:16px auto;
-    padding:7px;
-    border-radius:13px;
-    background:#fff;
+.qr-title{
+    font-size:19px;
+    font-weight:900;
 }
 
 .qr-amount{
+    margin-top:4px;
     color:var(--gold);
-    font-size:1.25rem;
+    font-size:20px;
     font-weight:900;
 }
 
-.back-choice{
+.qr-image{
+    width:230px;
+    height:230px;
+    max-width:70vw;
+    object-fit:contain;
+    padding:7px;
+    margin:15px auto;
+    background:#fff;
+    border-radius:13px;
+    display:block;
+}
+
+.qr-note{
+    color:var(--muted);
+    font-size:9px;
+    line-height:1.5;
+}
+
+.qr-whatsapp{
     width:100%;
-    margin-top:13px;
-    padding:11px;
+    height:45px;
+    margin-top:14px;
+    border:0;
+    border-radius:11px;
+    background:var(--green);
+    color:#fff;
+    font-weight:900;
+    font-size:11px;
+}
+
+.close-payment{
+    width:100%;
+    height:42px;
+    margin-top:8px;
     border:1px solid var(--border);
-    border-radius:10px;
+    border-radius:11px;
     background:rgba(255,255,255,.04);
     color:#fff;
-    cursor:pointer;
+    font-size:11px;
+    font-weight:800;
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* =========================================================
+   DESKTOP ENHANCEMENT
+========================================================= */
 
-@media(max-width:1050px){
+@media(min-width:700px){
+
+    .page{
+        padding-top:18px;
+    }
+
+    .hero{
+        height:340px;
+    }
+
+    .hero-content{
+        padding:40px;
+    }
+
+    .ml-logo{
+        width:72px;
+        height:72px;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero p{
+        font-size:14px;
+    }
+
+    .player-box{
+        padding:20px;
+    }
+
+    .player-grid{
+        grid-template-columns:1fr 1fr 150px;
+    }
+
+    .order-area{
+        display:contents;
+    }
+
+    .order-main{
+        grid-column:3;
+        grid-row:1;
+        height:43px;
+        align-self:end;
+    }
+
+    .clear-btn{
+        display:none;
+    }
+
+    .special-grid{
+        grid-template-columns:repeat(4,1fr);
+    }
 
     .diamond-grid{
         grid-template-columns:repeat(4,1fr);
     }
 
-    .special-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-}
-
-@media(max-width:800px){
-
-    .account-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .order-now{
-        grid-column:1/-1;
-        width:100%;
-    }
-
-    .summary-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .summary-item:nth-child(2){
-        border-right:0;
-    }
-
-    .summary-item:nth-child(3),
-    .summary-item:nth-child(4){
-        border-top:1px solid rgba(255,255,255,.055);
-    }
-
-    .payment-choice{
-        grid-template-columns:1fr;
-    }
-}
-
-@media(max-width:600px){
-
-    .page{
-        width:calc(100% - 12px);
-    }
-
-    .hero{
-        min-height:285px;
-        border-radius:18px;
-    }
-
-    .hero-content{
-        min-height:285px;
-        padding:24px 19px;
-    }
-
-    .ml-logo{
-        width:60px;
-        height:60px;
-    }
-
-    .hero h1{
-        font-size:2rem;
-    }
-
-    .hero p{
-        font-size:.8rem;
-    }
-
-    .account-grid{
-        grid-template-columns:1fr;
-    }
-
-    .order-now{
-        grid-column:auto;
-    }
-
-    .special-grid{
-        grid-template-columns:1fr 1fr;
-        gap:8px;
-    }
-
-    .special-card{
-        display:block;
-        padding:7px;
-    }
-
-    .special-card img{
-        width:100%;
-        height:72px;
-        display:block;
-        margin-bottom:7px;
-    }
-
-    .special-name{
-        font-size:.72rem;
-    }
-
-    .special-price{
-        font-size:.76rem;
-    }
-
-    .diamond-grid{
-        grid-template-columns:repeat(2,1fr);
-        gap:8px;
-    }
-
-    .diamond-card{
-        min-height:64px;
-        padding:8px;
-    }
-
-    .diamond-icon{
-        width:29px;
-        height:29px;
-        flex-basis:29px;
-        font-size:.85rem;
-    }
-
-    .diamond-count{
-        font-size:.76rem;
-    }
-
-    .diamond-price{
-        font-size:.72rem;
-    }
-
-    .summary-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .summary-item{
-        padding:11px 9px;
-    }
-
-    .modal-box{
-        padding:16px;
-    }
-}
-
-@media(max-width:360px){
-
-    .special-grid{
-        grid-template-columns:1fr;
-    }
-
-    .special-card{
-        display:flex;
+    .modal,
+    .qr-panel{
         align-items:center;
     }
 
-    .special-card img{
-        width:58px;
-        height:58px;
-        margin:0;
+    .modal-box,
+    .qr-box{
+        border-radius:20px;
     }
 
-    .diamond-grid{
-        grid-template-columns:1fr 1fr;
-    }
 }
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media(max-width:360px){
+
+    .page{
+        width:calc(100% - 10px);
+    }
+
+    .special-grid{
+        grid-template-columns:1fr;
+    }
+
+    .special-card{
+        flex-direction:row;
+    }
+
+    .diamond-card{
+        grid-template-columns:28px 1fr auto;
+        padding:8px;
+    }
+
+    .diamond-count{
+        font-size:11px;
+    }
+
+    .diamond-price{
+        font-size:10px;
+    }
+
+}
+
 </style>
 </head>
-
 
 <body>
 
 <div class="page">
 
-    <a href="index.html" class="back-home">
-        ← Back to Home
-    </a>
+<a href="index.html" class="back-home">
+    ← Back to Home
+</a>
 
 
-    <!-- HERO -->
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-    <section class="hero">
+<section class="hero">
 
-        <img
-            src="assets/mlbb-banner.jpg"
-            alt="Mobile Legends Banner"
-            class="hero-banner"
-        >
+    <img
+        src="assets/mlbb-banner.jpg"
+        alt="Mobile Legends Banner"
+        class="hero-banner"
+    >
 
-        <div class="hero-shade"></div>
+    <div class="hero-overlay"></div>
 
-        <div class="hero-content">
+    <div class="hero-content">
 
-            <div class="hero-inner">
+        <div class="hero-inner">
 
-                <img
-                    src="assets/mlbb-logo.jpg"
-                    alt="Mobile Legends Logo"
-                    class="ml-logo"
-                >
+            <img
+                src="assets/mlbb-logo.jpg"
+                alt="MLBB"
+                class="ml-logo"
+            >
 
-                <span class="hero-tag">
-                    FAST • SECURE • INSTANT
-                </span>
-
-                <h1>
-                    Mobile Legends<br>
-                    Top Up
-                </h1>
-
-                <p>
-                    Recharge your Mobile Legends account quickly.
-                    Enter your Player ID and Server ID, choose your
-                    Diamonds or Special Pass, then place your order.
-                </p>
-
+            <div class="hero-badge">
+                PANTHEOS GLOBAL STORE
             </div>
 
-        </div>
+            <h1>
+                Mobile Legends
+                <br>
+                Top Up
+            </h1>
 
-    </section>
-
-
-    <!-- PLAYER INFORMATION -->
-
-    <section class="account-box">
-
-        <div class="section-heading">
-
-            <h2 class="section-title">
-                Player Information
-            </h2>
-
-            <p class="section-subtitle">
-                Enter your MLBB Player ID and Server ID.
+            <p>
+                Fast and simple MLBB recharge.
+                Enter your Player ID and Server ID,
+                choose your package and place your order.
             </p>
 
         </div>
 
+    </div>
 
-        <div class="account-grid">
-
-            <div>
-
-                <label
-                    for="playerId"
-                    class="input-label"
-                >
-                    Player ID
-                </label>
-
-                <input
-                    id="playerId"
-                    class="input-field"
-                    type="text"
-                    inputmode="numeric"
-                    autocomplete="off"
-                    placeholder="Enter Player ID"
-                >
-
-            </div>
+</section>
 
 
-            <div>
+<!-- =====================================================
+     PLAYER INFORMATION
+===================================================== -->
 
-                <label
-                    for="serverId"
-                    class="input-label"
-                >
-                    Server ID
-                </label>
+<section class="player-box">
 
-                <input
-                    id="serverId"
-                    class="input-field"
-                    type="text"
-                    inputmode="numeric"
-                    autocomplete="off"
-                    placeholder="Enter Server ID"
-                >
+    <h2 class="section-title">
+        Player Information
+    </h2>
 
-            </div>
+    <p class="section-subtitle">
+        Enter your MLBB Player ID and Server ID.
+    </p>
 
 
-            <!-- ORDER BUTTON IS BESIDE THE ID FIELDS -->
+    <div class="player-grid">
 
-            <button
-                type="button"
-                id="orderNowBtn"
-                class="order-now"
+        <div>
+
+            <label
+                class="input-label"
+                for="playerId"
             >
-                ORDER NOW
-            </button>
+                Player ID
+            </label>
+
+            <input
+                id="playerId"
+                class="input"
+                type="text"
+                inputmode="numeric"
+                autocomplete="off"
+                placeholder="Player ID"
+            >
 
         </div>
 
 
-        <div
-            id="message"
-            class="message"
-        ></div>
+        <div>
+
+            <label
+                class="input-label"
+                for="serverId"
+            >
+                Server ID
+            </label>
+
+            <input
+                id="serverId"
+                class="input"
+                type="text"
+                inputmode="numeric"
+                autocomplete="off"
+                placeholder="Server ID"
+            >
+
+        </div>
+
+    </div>
 
 
-        <p class="account-note">
-            Double-check your Player ID and Server ID before placing your order.
-        </p>
+    <div class="order-area">
 
-    </section>
+        <button
+            type="button"
+            id="orderButton"
+            class="order-main"
+        >
+            🛒 Order Now
+        </button>
+
+        <button
+            type="button"
+            id="clearButton"
+            class="clear-btn"
+        >
+            Clear
+        </button>
+
+    </div>
 
 
-    <!-- SPECIAL PASSES -->
+    <div
+        id="accountMessage"
+        class="account-message"
+    ></div>
 
-    <section class="section">
+</section>
 
-        <div class="section-heading">
+
+<!-- =====================================================
+     SPECIAL PASSES
+===================================================== -->
+
+<section class="section">
+
+    <div class="section-head">
+
+        <div>
 
             <h2 class="section-title">
                 Special Passes
             </h2>
 
             <p class="section-subtitle">
-                Premium passes available for your MLBB account.
+                Premium passes and monthly benefits.
             </p>
 
         </div>
 
+    </div>
 
-        <div class="special-grid">
 
-            <button
-                type="button"
-                class="special-card"
-                data-package="Weekly Pass"
-                data-price="149"
+    <div class="special-grid">
+
+        <button
+            type="button"
+            class="special-card"
+            data-package="Weekly Pass"
+            data-price="149"
+        >
+
+            <img
+                src="assets/weekly-pass.jpg"
+                alt="Weekly Pass"
+                class="special-image"
             >
 
-                <img
-                    src="assets/weekly-pass.jpg"
-                    alt="Weekly Pass"
-                >
+            <span class="special-info">
 
-                <span class="special-info">
-
-                    <span class="special-name">
-                        Weekly Pass
-                    </span>
-
-                    <span class="special-price">
-                        ₹149
-                    </span>
-
+                <span class="special-name">
+                    Weekly Pass
                 </span>
 
-            </button>
+                <span class="special-price">
+                    ₹149
+                </span>
+
+            </span>
+
+        </button>
 
 
-            <button
-                type="button"
-                class="special-card"
-                data-package="Twilight Pass"
-                data-price="829"
+        <button
+            type="button"
+            class="special-card"
+            data-package="Twilight Pass"
+            data-price="829"
+        >
+
+            <img
+                src="assets/twilight-pass.jpg"
+                alt="Twilight Pass"
+                class="special-image"
             >
 
-                <img
-                    src="assets/twilight-pass.jpg"
-                    alt="Twilight Pass"
-                >
+            <span class="special-info">
 
-                <span class="special-info">
-
-                    <span class="special-name">
-                        Twilight Pass
-                    </span>
-
-                    <span class="special-price">
-                        ₹829
-                    </span>
-
+                <span class="special-name">
+                    Twilight Pass
                 </span>
 
-            </button>
+                <span class="special-price">
+                    ₹829
+                </span>
+
+            </span>
+
+        </button>
 
 
-            <button
-                type="button"
-                class="special-card"
-                data-package="Starlight Normal"
-                data-price="249"
+        <button
+            type="button"
+            class="special-card"
+            data-package="Starlight Normal"
+            data-price="249"
+        >
+
+            <img
+                src="assets/starlight-normal.jpg"
+                alt="Starlight Normal"
+                class="special-image"
             >
 
-                <img
-                    src="assets/starlight-normal.jpg"
-                    alt="Starlight Normal"
-                >
+            <span class="special-info">
 
-                <span class="special-info">
-
-                    <span class="special-name">
-                        Starlight Normal
-                    </span>
-
-                    <span class="special-price">
-                        ₹249
-                    </span>
-
+                <span class="special-name">
+                    Starlight Normal
                 </span>
 
-            </button>
+                <span class="special-price">
+                    ₹249
+                </span>
+
+            </span>
+
+        </button>
 
 
-            <button
-                type="button"
-                class="special-card"
-                data-package="Starlight Premium"
-                data-price="499"
+        <button
+            type="button"
+            class="special-card"
+            data-package="Starlight Premium"
+            data-price="499"
+        >
+
+            <img
+                src="assets/starlight-premium.jpg"
+                alt="Starlight Premium"
+                class="special-image"
             >
 
-                <img
-                    src="assets/starlight-premium.jpg"
-                    alt="Starlight Premium"
-                >
+            <span class="special-info">
 
-                <span class="special-info">
-
-                    <span class="special-name">
-                        Starlight Premium
-                    </span>
-
-                    <span class="special-price">
-                        ₹499
-                    </span>
-
+                <span class="special-name">
+                    Starlight Premium
                 </span>
 
-            </button>
+                <span class="special-price">
+                    ₹499
+                </span>
 
-        </div>
+            </span>
 
-    </section>
+        </button>
+
+    </div>
+
+</section>
 
 
-    <!-- DIAMOND PACKAGES -->
+<!-- =====================================================
+     DIAMOND PACKAGES
+===================================================== -->
 
-    <section class="section">
+<section class="section">
 
-        <div class="section-heading">
+    <div class="section-head">
+
+        <div>
 
             <h2 class="section-title">
-                Diamond Packages
+                💎 Diamond Packages
             </h2>
 
             <p class="section-subtitle">
-                Select your preferred Diamond package.
+                Choose your preferred Diamond package.
             </p>
 
         </div>
 
+    </div>
 
-        <div class="diamond-grid">
 
+    <div class="diamond-grid">
 
-            <button type="button" class="diamond-card"
-                data-package="5 Diamonds" data-price="13">
-                <span class="diamond-icon">💎</span>
-                <span class="diamond-details">
-                    <span class="diamond-count">5 Diamonds</span>
-                    <span class="diamond-price">₹13</span>
-                </span>
-            </button>
 
-
-            <button type="button" class="diamond-card"
-                data-package="11 Diamonds" data-price="23">
-                <span class="diamond-icon">💎</span>
-                <span class="diamond-details">
-                    <span class="diamond-count">11 Diamonds</span>
-                    <span class="diamond-price">₹23</span>
-                </span>
-            </button>
-
-
-            <button type="button" class="diamond-card"
-                data-package="14 Diamonds" data-price="34">
-                <span class="diamond-icon">💎</span>
-                <span class="diamond-details">
-                    <span class="diamond-count">14 Diamonds</span>
-                    <span class="diamond-price">₹34</span>
-                </span>
-            </button>
-
-
-            <button type="button" class="diamond-card"
-                data-package="22 Diamonds" data-price="44">
-                <span class="diamond-icon">💎</span>
-                <span class="diamond-details">
-                    <span class="diamond-count">22 Diamonds</span>
-                    <span class="diamond-price">₹44</span>
-                </span>
-            </button>
-
-
-            <button type="button" class="diamond-card"
-                data-package="28 Diamonds" data-price="59">
-                <span class="diamond-icon">💎</span>
-                <span class="diamond-details">
-                    <span class="diamond-count">28 Diamonds</span>
-                    <span class="diamond-price">₹59</span>
-                </span>
-            </button>
-
-
-            <button type="button" class="diamond-card"
-                data-package="55 Diamonds" data-price="89">
-                <span class="diamond-icon">💎</span>
-                <span class="diamond-details">
-                    <span class="diamond-count">55 Diamonds</span>
-                    <span class="diamond-price">₹89</span>
-                </span>
-            </button>
-
-
-            <button type="button" class="diamond-card"
-                data-package="86 Diamonds" data-price="129">
-                <span class="diamond-icon">💎</span>
-                <span class="diamond-details">
-                    <span class="diamond-count">86 Diamonds</span>
-                    <span class="diamond-price">₹129</span>
-                </span>
-            </button>
-
-
-            <button type="button" class="diamond-card"
-                data-package="110 Diamonds" data-price="169">
-                <span class="diamond-icon">💎</span>
-                <span class="diamond-details">
-                    <span class="diamond-count">110 Diamonds</span>
-                    <span class="diamond-price">₹169</span>
-                </span>
-            </button>
-
-
-            <button type="button" class="diamond-card"
-                data-package="172 Diamonds" data-price="259">
-                <span class="diamond-icon">💎</span>
-                <span class="diamond-details">
-                    <span class="diamond-count">172 Diamonds</span>
-                    <span class="diamond-price">₹259</span>
-                </span>
-            </button>
-
-
-            <button type="button" class="diamond-card"
-                data-package="257 Diamonds" data-price="379">
-                <span class="diamond-icon">💎</span>
-                <span class="diamond-details">
-                    <span class="diamond-count">257 Diamonds</span>
-                    <span class="diamond-price">₹379</span>
-                </span>
-            </button>
-
-
-            <button type="button" class="diamond-card"
-                data-package="275 Diamonds" data-price="399">
-                <span class="diamond-icon">💎</span>
-                <span class="diamond-details">
-                    <span class="diamond-count">275 Diamonds</span>
-                    <span class="diamond-price">₹399</span>
-                </span>
-            </button>
-
-
-            <button type="button" class="diamond-card"
-                data-package="312 Diamonds" data-price="469">
-                <span class="diamond-icon">💎</span>
-                <span class="diamond-details">
-                    <span class="diamond-count">312 Diamonds</span>
-                    <span class="diamond-price">₹469</span>
-                </span>
-            </button>
-
-
-            <button type="button" class="diamond-card"
-                data-package="361 Diamonds" data-price="529">
-                <span class="diamond-icon">💎</span>
-                <span class="diamond-details">
-                    <span class="diamond-count">361 Diamonds</span>
-                    <span class="diamond-price">₹529</span>
-                </span>
-            </button>
-
-
-            <button type="button" class="diamond-card"
-                data-package="429 Diamonds" data-price="634">
-                <span class="diamond-icon">💎</span>
-                <span class="diamond-details">
-                    <span class="diamond-count">429 Diamonds</span>
-                    <span class="diamond-price">₹634</span>
-                </span>
-            </button>
-
-
-            <button type="button" class="diamond-card"
-                data-package="451 Diamonds" data-price="689">
-                <span class="diamond-icon">💎</span>
-                <span class="diamond-details">
-                    <span class="diamond-count">451 Diamonds</span>
-                    <span class="diamond-price">₹689</span>
-                </span>
-            </button>
-
-
-            <button type="button" class="diamond-card"
-                data-package="514 Diamonds" data-price="749">
-                <span class="diamond-icon">💎</span>
-                <span class="diamond-details">
-                    <span class="diamond-count">514 Diamonds</span>
-                    <span class="diamond-price">₹749</span>
-                </span>
-            </button>
-
-
-            <button type="button" class="diamond-card"
-                data-package="565 Diamonds" data-price="819">
-                <span class="diamond-icon">💎</span>
-                <span class="diamond-details">
-                    <span class="diamond-count">565 Diamonds</span>
-                    <span class="diamond-price">₹819</span>
-                </span>
-            </button>
-
-
-            <button type="button" class="diamond-card"
-                data-package="706 Diamonds" data-price="1029">
-                <span class="diamond-icon">💎</span>
-                <span class="diamond-details">
-                    <span class="diamond-count">706 Diamonds</span>
-                    <span class="diamond-price">₹1029</span>
-                </span>
-            </button>
-
-
-            <button type="button" class="diamond-card"
-                data-package="720 Diamonds" data-price="1059">
-                <span class="diamond-icon">💎</span>
-                <span class="diamond-details">
-                    <span class="diamond-count">720 Diamonds</span>
-                    <span class="diamond-price">₹1059</span>
-                </span>
-            </button>
-
-
-            <button type="button" class="diamond-card"
-                data-package="803 Diamonds" data-price="1179">
-                <span class="diamond-icon">💎</span>
-                <span class="diamond-details">
-                    <span class="diamond-count">803 Diamonds</span>
-                    <span class="diamond-price">₹1179</span>
-                </span>
-            </button>
-
-
-            <button type="button" class="diamond-card"
-                data-package="900 Diamonds" data-price="1329">
-                <span class="diamond-icon">💎</span>
-                <span class="diamond-details">
-                    <span class="diamond-count">900 Diamonds</span>
-                    <span class="diamond-price">₹1329</span>
-                </span>
-            </button>
-
-
-            <button type="button" class="diamond-card"
-                data-package="1049 Diamonds" data-price="1539">
-                <span class="diamond-icon">💎</span>
-                <span class="diamond-details">
-                    <span class="diamond-count">1049 Diamonds</span>
-                    <span class="diamond-price">₹1539</span>
-                </span>
-            </button>
-
-
-            <button type="button" class="diamond-card"
-                data-package="1130 Diamonds" data-price="1649">
-                <span class="diamond-icon">💎</span>
-                <span class="diamond-details">
-                    <span class="diamond-count">1130 Diamonds</span>
-                    <span class="diamond-price">₹1649</span>
-                </span>
-            </button>
-
-
-            <button type="button" class="diamond-card"
-                data-package="1412 Diamonds" data-price="2059">
-                <span class="diamond-icon">💎</span>
-                <span class="diamond-details">
-                    <span class="diamond-count">1412 Diamonds</span>
-                    <span class="diamond-price">₹2059</span>
-                </span>
-            </button>
-
-
-            <button type="button" class="diamond-card"
-                data-package="1503 Diamonds" data-price="2199">
-                <span class="diamond-icon">💎</span>
-                <span class="diamond-details">
-                    <span class="diamond-count">1503 Diamonds</span>
-                    <span class="diamond-price">₹2199</span>
-                </span>
-            </button>
-
-
-            <button type="button" class="diamond-card"
-                data-package="2195 Diamonds" data-price="3089">
-                <span class="diamond-icon">💎</span>
-                <span class="diamond-details">
-                    <span class="diamond-count">2195 Diamonds</span>
-                    <span class="diamond-price">₹3089</span>
-                </span>
-            </button>
-
-
-            <button type="button" class="diamond-card"
-                data-package="3688 Diamonds" data-price="5139">
-                <span class="diamond-icon">💎</span>
-                <span class="diamond-details">
-                    <span class="diamond-count">3688 Diamonds</span>
-                    <span class="diamond-price">₹5139</span>
-                </span>
-            </button>
-
-
-            <button type="button" class="diamond-card"
-                data-package="5532 Diamonds" data-price="7649">
-                <span class="diamond-icon">💎</span>
-                <span class="diamond-details">
-                    <span class="diamond-count">5532 Diamonds</span>
-                    <span class="diamond-price">₹7649</span>
-                </span>
-            </button>
-
-
-            <button type="button" class="diamond-card"
-                data-package="6046 Diamonds" data-price="8399">
-                <span class="diamond-icon">💎</span>
-                <span class="diamond-details">
-                    <span class="diamond-count">6046 Diamonds</span>
-                    <span class="diamond-price">₹8399</span>
-                </span>
-            </button>
-
-
-            <button type="button" class="diamond-card"
-                data-package="9288 Diamonds" data-price="12899">
-                <span class="diamond-icon">💎</span>
-                <span class="diamond-details">
-                    <span class="diamond-count">9288 Diamonds</span>
-                    <span class="diamond-price">₹12899</span>
-                </span>
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- ORDER SUMMARY -->
-
-    <section class="summary">
-
-        <div class="summary-head">
-
-            <h2 class="summary-title">
-                Order Summary
-            </h2>
-
-            <span
-                id="status"
-                class="status"
-            >
-                No package selected
+        <button type="button" class="diamond-card"
+            data-package="5 Diamonds" data-price="13">
+            <span class="diamond-symbol">💎</span>
+            <span class="diamond-details">
+                <span class="diamond-count">5 Diamonds</span>
+                <span class="diamond-label">Instant Recharge</span>
             </span>
-
-        </div>
-
-
-        <div class="summary-grid">
-
-            <div class="summary-item">
-
-                <span class="summary-label">
-                    Player ID
-                </span>
-
-                <span
-                    id="summaryPlayer"
-                    class="summary-value"
-                >
-                    —
-                </span>
-
-            </div>
+            <span class="diamond-price">₹13</span>
+        </button>
 
 
-            <div class="summary-item">
-
-                <span class="summary-label">
-                    Server ID
-                </span>
-
-                <span
-                    id="summaryServer"
-                    class="summary-value"
-                >
-                    —
-                </span>
-
-            </div>
+        <button type="button" class="diamond-card"
+            data-package="11 Diamonds" data-price="23">
+            <span class="diamond-symbol">💎</span>
+            <span class="diamond-details">
+                <span class="diamond-count">11 Diamonds</span>
+                <span class="diamond-label">Instant Recharge</span>
+            </span>
+            <span class="diamond-price">₹23</span>
+        </button>
 
 
-            <div class="summary-item">
-
-                <span class="summary-label">
-                    Package
-                </span>
-
-                <span
-                    id="summaryPackage"
-                    class="summary-value"
-                >
-                    Not selected
-                </span>
-
-            </div>
+        <button type="button" class="diamond-card"
+            data-package="14 Diamonds" data-price="34">
+            <span class="diamond-symbol">💎</span>
+            <span class="diamond-details">
+                <span class="diamond-count">14 Diamonds</span>
+                <span class="diamond-label">Instant Recharge</span>
+            </span>
+            <span class="diamond-price">₹34</span>
+        </button>
 
 
-            <div class="summary-item">
-
-                <span class="summary-label">
-                    Total
-                </span>
-
-                <span
-                    id="summaryPrice"
-                    class="summary-value summary-price"
-                >
-                    ₹0
-                </span>
-
-            </div>
-
-        </div>
+        <button type="button" class="diamond-card"
+            data-package="22 Diamonds" data-price="44">
+            <span class="diamond-symbol">💎</span>
+            <span class="diamond-details">
+                <span class="diamond-count">22 Diamonds</span>
+                <span class="diamond-label">Instant Recharge</span>
+            </span>
+            <span class="diamond-price">₹44</span>
+        </button>
 
 
-        <p class="summary-note">
-            Select a package above, then use the ORDER NOW button beside your Player ID and Server ID.
-        </p>
+        <button type="button" class="diamond-card"
+            data-package="28 Diamonds" data-price="59">
+            <span class="diamond-symbol">💎</span>
+            <span class="diamond-details">
+                <span class="diamond-count">28 Diamonds</span>
+                <span class="diamond-label">Instant Recharge</span>
+            </span>
+            <span class="diamond-price">₹59</span>
+        </button>
 
-    </section>
+
+        <button type="button" class="diamond-card"
+            data-package="55 Diamonds" data-price="89">
+            <span class="diamond-symbol">💎</span>
+            <span class="diamond-details">
+                <span class="diamond-count">55 Diamonds</span>
+                <span class="diamond-label">Instant Recharge</span>
+            </span>
+            <span class="diamond-price">₹89</span>
+        </button>
+
+
+        <button type="button" class="diamond-card"
+            data-package="86 Diamonds" data-price="129">
+            <span class="diamond-symbol">💎</span>
+            <span class="diamond-details">
+                <span class="diamond-count">86 Diamonds</span>
+                <span class="diamond-label">Instant Recharge</span>
+            </span>
+            <span class="diamond-price">₹129</span>
+        </button>
+
+
+        <button type="button" class="diamond-card"
+            data-package="110 Diamonds" data-price="169">
+            <span class="diamond-symbol">💎</span>
+            <span class="diamond-details">
+                <span class="diamond-count">110 Diamonds</span>
+                <span class="diamond-label">Instant Recharge</span>
+            </span>
+            <span class="diamond-price">₹169</span>
+        </button>
+
+
+        <button type="button" class="diamond-card"
+            data-package="172 Diamonds" data-price="259">
+            <span class="diamond-symbol">💎</span>
+            <span class="diamond-details">
+                <span class="diamond-count">172 Diamonds</span>
+                <span class="diamond-label">Instant Recharge</span>
+            </span>
+            <span class="diamond-price">₹259</span>
+        </button>
+
+
+        <button type="button" class="diamond-card"
+            data-package="257 Diamonds" data-price="379">
+            <span class="diamond-symbol">💎</span>
+            <span class="diamond-details">
+                <span class="diamond-count">257 Diamonds</span>
+                <span class="diamond-label">Instant Recharge</span>
+            </span>
+            <span class="diamond-price">₹379</span>
+        </button>
+
+
+        <button type="button" class="diamond-card"
+            data-package="275 Diamonds" data-price="399">
+            <span class="diamond-symbol">💎</span>
+            <span class="diamond-details">
+                <span class="diamond-count">275 Diamonds</span>
+                <span class="diamond-label">Instant Recharge</span>
+            </span>
+            <span class="diamond-price">₹399</span>
+        </button>
+
+
+        <button type="button" class="diamond-card"
+            data-package="312 Diamonds" data-price="469">
+            <span class="diamond-symbol">💎</span>
+            <span class="diamond-details">
+                <span class="diamond-count">312 Diamonds</span>
+                <span class="diamond-label">Instant Recharge</span>
+            </span>
+            <span class="diamond-price">₹469</span>
+        </button>
+
+
+        <button type="button" class="diamond-card"
+            data-package="361 Diamonds" data-price="529">
+            <span class="diamond-symbol">💎</span>
+            <span class="diamond-details">
+                <span class="diamond-count">361 Diamonds</span>
+                <span class="diamond-label">Instant Recharge</span>
+            </span>
+            <span class="diamond-price">₹529</span>
+        </button>
+
+
+        <button type="button" class="diamond-card"
+            data-package="429 Diamonds" data-price="634">
+            <span class="diamond-symbol">💎</span>
+            <span class="diamond-details">
+                <span class="diamond-count">429 Diamonds</span>
+                <span class="diamond-label">Instant Recharge</span>
+            </span>
+            <span class="diamond-price">₹634</span>
+        </button>
+
+
+        <button type="button" class="diamond-card"
+            data-package="451 Diamonds" data-price="689">
+            <span class="diamond-symbol">💎</span>
+            <span class="diamond-details">
+                <span class="diamond-count">451 Diamonds</span>
+                <span class="diamond-label">Instant Recharge</span>
+            </span>
+            <span class="diamond-price">₹689</span>
+        </button>
+
+
+        <button type="button" class="diamond-card"
+            data-package="514 Diamonds" data-price="749">
+            <span class="diamond-symbol">💎</span>
+            <span class="diamond-details">
+                <span class="diamond-count">514 Diamonds</span>
+                <span class="diamond-label">Instant Recharge</span>
+            </span>
+            <span class="diamond-price">₹749</span>
+        </button>
+
+
+        <button type="button" class="diamond-card"
+            data-package="565 Diamonds" data-price="819">
+            <span class="diamond-symbol">💎</span>
+            <span class="diamond-details">
+                <span class="diamond-count">565 Diamonds</span>
+                <span class="diamond-label">Instant Recharge</span>
+            </span>
+            <span class="diamond-price">₹819</span>
+        </button>
+
+
+        <button type="button" class="diamond-card"
+            data-package="706 Diamonds" data-price="1029">
+            <span class="diamond-symbol">💎</span>
+            <span class="diamond-details">
+                <span class="diamond-count">706 Diamonds</span>
+                <span class="diamond-label">Instant Recharge</span>
+            </span>
+            <span class="diamond-price">₹1029</span>
+        </button>
+
+
+        <button type="button" class="diamond-card"
+            data-package="720 Diamonds" data-price="1059">
+            <span class="diamond-symbol">💎</span>
+            <span class="diamond-details">
+                <span class="diamond-count">720 Diamonds</span>
+                <span class="diamond-label">Instant Recharge</span>
+            </span>
+            <span class="diamond-price">₹1059</span>
+        </button>
+
+
+        <button type="button" class="diamond-card"
+            data-package="803 Diamonds" data-price="1179">
+            <span class="diamond-symbol">💎</span>
+            <span class="diamond-details">
+                <span class="diamond-count">803 Diamonds</span>
+                <span class="diamond-label">Instant Recharge</span>
+            </span>
+            <span class="diamond-price">₹1179</span>
+        </button>
+
+
+        <button type="button" class="diamond-card"
+            data-package="900 Diamonds" data-price="1329">
+            <span class="diamond-symbol">💎</span>
+            <span class="diamond-details">
+                <span class="diamond-count">900 Diamonds</span>
+                <span class="diamond-label">Instant Recharge</span>
+            </span>
+            <span class="diamond-price">₹1329</span>
+        </button>
+
+
+        <button type="button" class="diamond-card"
+            data-package="1049 Diamonds" data-price="1539">
+            <span class="diamond-symbol">💎</span>
+            <span class="diamond-details">
+                <span class="diamond-count">1049 Diamonds</span>
+                <span class="diamond-label">Instant Recharge</span>
+            </span>
+            <span class="diamond-price">₹1539</span>
+        </button>
+
+
+        <button type="button" class="diamond-card"
+            data-package="1130 Diamonds" data-price="1649">
+            <span class="diamond-symbol">💎</span>
+            <span class="diamond-details">
+                <span class="diamond-count">1130 Diamonds</span>
+                <span class="diamond-label">Instant Recharge</span>
+            </span>
+            <span class="diamond-price">₹1649</span>
+        </button>
+
+
+        <button type="button" class="diamond-card"
+            data-package="1412 Diamonds" data-price="2059">
+            <span class="diamond-symbol">💎</span>
+            <span class="diamond-details">
+                <span class="diamond-count">1412 Diamonds</span>
+                <span class="diamond-label">Instant Recharge</span>
+            </span>
+            <span class="diamond-price">₹2059</span>
+        </button>
+
+
+        <button type="button" class="diamond-card"
+            data-package="1503 Diamonds" data-price="2199">
+            <span class="diamond-symbol">💎</span>
+            <span class="diamond-details">
+                <span class="diamond-count">1503 Diamonds</span>
+                <span class="diamond-label">Instant Recharge</span>
+            </span>
+            <span class="diamond-price">₹2199</span>
+        </button>
+
+
+        <button type="button" class="diamond-card"
+            data-package="2195 Diamonds" data-price="3089">
+            <span class="diamond-symbol">💎</span>
+            <span class="diamond-details">
+                <span class="diamond-count">2195 Diamonds</span>
+                <span class="diamond-label">Instant Recharge</span>
+            </span>
+            <span class="diamond-price">₹3089</span>
+        </button>
+
+
+        <button type="button" class="diamond-card"
+            data-package="3688 Diamonds" data-price="5139">
+            <span class="diamond-symbol">💎</span>
+            <span class="diamond-details">
+                <span class="diamond-count">3688 Diamonds</span>
+                <span class="diamond-label">Instant Recharge</span>
+            </span>
+            <span class="diamond-price">₹5139</span>
+        </button>
+
+
+        <button type="button" class="diamond-card"
+            data-package="5532 Diamonds" data-price="7649">
+            <span class="diamond-symbol">💎</span>
+            <span class="diamond-details">
+                <span class="diamond-count">5532 Diamonds</span>
+                <span class="diamond-label">Instant Recharge</span>
+            </span>
+            <span class="diamond-price">₹7649</span>
+        </button>
+
+
+        <button type="button" class="diamond-card"
+            data-package="6046 Diamonds" data-price="8399">
+            <span class="diamond-symbol">💎</span>
+            <span class="diamond-details">
+                <span class="diamond-count">6046 Diamonds</span>
+                <span class="diamond-label">Instant Recharge</span>
+            </span>
+            <span class="diamond-price">₹8399</span>
+        </button>
+
+
+        <button type="button" class="diamond-card"
+            data-package="9288 Diamonds" data-price="12899">
+            <span class="diamond-symbol">💎</span>
+            <span class="diamond-details">
+                <span class="diamond-count">9288 Diamonds</span>
+                <span class="diamond-label">Instant Recharge</span>
+            </span>
+            <span class="diamond-price">₹12899</span>
+            <span class="popular">VIP</span>
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ORDER SUMMARY
+===================================================== -->
+
+<section class="summary">
+
+    <div class="summary-header">
+
+        <h2 class="summary-title">
+            Order Summary
+        </h2>
+
+        <span
+            id="selectedBadge"
+            class="selected-badge"
+        >
+            Not Selected
+        </span>
+
+    </div>
+
+
+    <div class="summary-row">
+
+        <span>
+            Player ID
+        </span>
+
+        <span id="summaryPlayer">
+            —
+        </span>
+
+    </div>
+
+
+    <div class="summary-row">
+
+        <span>
+            Server ID
+        </span>
+
+        <span id="summaryServer">
+            —
+        </span>
+
+    </div>
+
+
+    <div class="summary-row">
+
+        <span>
+            Package
+        </span>
+
+        <span
+            id="summaryPackage"
+            class="gold"
+        >
+            Not Selected
+        </span>
+
+    </div>
+
+
+    <div class="summary-row summary-total">
+
+        <span>
+            Total
+        </span>
+
+        <span id="summaryPrice">
+            ₹0
+        </span>
+
+    </div>
+
+</section>
+
 
 </div>
 
 
-<!-- =========================
-     PAYMENT / ORDER MODAL
-========================= -->
+<!-- =====================================================
+     PAYMENT CHOICE
+===================================================== -->
 
 <div
-    id="paymentModal"
+    id="paymentChoice"
     class="modal"
 >
 
     <div class="modal-box">
 
-
-        <!-- CHOICE VIEW -->
-
-        <div id="choiceView">
-
-            <div class="modal-top">
-
-                <div>
-
-                    <h2>
-                        Complete Your Order
-                    </h2>
-
-                    <p>
-                        Choose how you want to continue.
-                    </p>
-
-                </div>
-
-                <button
-                    type="button"
-                    id="closeModal"
-                    class="close-modal"
-                >
-                    ×
-                </button>
-
-            </div>
-
-
-            <div class="order-preview">
-
-                <div class="preview-row">
-
-                    <span>
-                        Player ID
-                    </span>
-
-                    <span id="previewPlayer">
-                        —
-                    </span>
-
-                </div>
-
-
-                <div class="preview-row">
-
-                    <span>
-                        Server ID
-                    </span>
-
-                    <span id="previewServer">
-                        —
-                    </span>
-
-                </div>
-
-
-                <div class="preview-row">
-
-                    <span>
-                        Package
-                    </span>
-
-                    <span id="previewPackage">
-                        —
-                    </span>
-
-                </div>
-
-
-                <div class="preview-row preview-total">
-
-                    <span>
-                        Total
-                    </span>
-
-                    <span id="previewPrice">
-                        ₹0
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <div class="payment-choice">
-
-                <button
-                    type="button"
-                    id="qrChoice"
-                    class="choice-btn choice-qr"
-                >
-
-                    <span class="choice-icon">
-                        💳
-                    </span>
-
-                    <span class="choice-title">
-                        Pay Now
-                    </span>
-
-                    <span class="choice-desc">
-                        Show the payment QR code and pay the displayed amount.
-                    </span>
-
-                </button>
-
-
-                <button
-                    type="button"
-                    id="whatsappChoice"
-                    class="choice-btn choice-wa"
-                >
-
-                    <span class="choice-icon">
-                        💬
-                    </span>
-
-                    <span class="choice-title">
-                        Order via WhatsApp
-                    </span>
-
-                    <span class="choice-desc">
-                        Send your order details directly to Pantheos Global Store.
-                    </span>
-
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <!-- QR VIEW -->
-
-        <div id="qrView" class="qr-view">
-
-            <div class="modal-top">
-
-                <div>
-
-                    <h2>
-                        Scan & Pay
-                    </h2>
-
-                    <p>
-                        Scan the QR code with your preferred UPI app.
-                    </p>
-
-                </div>
-
-                <button
-                    type="button"
-                    id="closeQr"
-                    class="close-modal"
-                >
-                    ×
-                </button>
-
-            </div>
-
-
-            <div class="order-preview">
-
-                <div class="preview-row">
-
-                    <span>
-                        Package
-                    </span>
-
-                    <span id="qrPackage">
-                        —
-                    </span>
-
-                </div>
-
-
-                <div class="preview-row">
-
-                    <span>
-                        Player ID
-                    </span>
-
-                    <span id="qrPlayer">
-                        —
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <img
-                src="assets/qr-payment.jpg"
-                alt="Pantheos Global Store Payment QR"
-                class="qr-image"
-            >
-
-
-            <div class="qr-amount">
-                ₹<span id="qrAmount">0</span>
-            </div>
-
-
-            <p>
-                After payment, you can send the order through WhatsApp.
-            </p>
-
+        <div class="modal-top">
+
+            <h2 class="modal-title">
+                Choose Payment
+            </h2>
 
             <button
                 type="button"
-                id="qrWhatsappBtn"
-                class="order-now"
-                style="width:100%;margin-top:14px;"
+                id="closeChoice"
+                class="modal-close"
             >
-                💬 Send Order via WhatsApp
-            </button>
-
-
-            <button
-                type="button"
-                id="backChoice"
-                class="back-choice"
-            >
-                ← Back to Payment Options
+                ×
             </button>
 
         </div>
+
+
+        <p class="modal-subtitle">
+            Your order is ready. Choose how you want to continue.
+        </p>
+
+
+        <button
+            type="button"
+            id="qrChoice"
+            class="choice"
+        >
+
+            <span class="choice-icon">
+                💳
+            </span>
+
+            <span class="choice-info">
+
+                <strong>
+                    Pay by QR
+                </strong>
+
+                <span>
+                    Show the payment QR and pay ₹<span id="choiceAmount">0</span>
+                </span>
+
+            </span>
+
+            <span class="choice-arrow">
+                →
+            </span>
+
+        </button>
+
+
+        <button
+            type="button"
+            id="whatsappChoice"
+            class="choice"
+        >
+
+            <span class="choice-icon">
+                💬
+            </span>
+
+            <span class="choice-info">
+
+                <strong>
+                    Order via WhatsApp
+                </strong>
+
+                <span>
+                    Send your order details directly to Pantheos.
+                </span>
+
+            </span>
+
+            <span class="choice-arrow">
+                →
+            </span>
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     QR PAYMENT PANEL
+===================================================== -->
+
+<div
+    id="qrPanel"
+    class="qr-panel"
+>
+
+    <div class="qr-box">
+
+        <h2 class="qr-title">
+            Scan & Pay
+        </h2>
+
+        <div
+            id="qrAmount"
+            class="qr-amount"
+        >
+            ₹0
+        </div>
+
+
+        <img
+            src="assets/qr-payment.jpg"
+            alt="Pantheos Payment QR"
+            class="qr-image"
+        >
+
+
+        <p class="qr-note">
+            Complete the exact payment amount shown above.
+            After payment, use the WhatsApp button to send your order.
+        </p>
+
+
+        <button
+            type="button"
+            id="qrWhatsapp"
+            class="qr-whatsapp"
+        >
+            💬 Send Order via WhatsApp
+        </button>
+
+
+        <button
+            type="button"
+            id="closeQR"
+            class="close-payment"
+        >
+            Close
+        </button>
 
     </div>
 
@@ -1897,22 +1821,35 @@ button{
 
 
 <script>
+
 document.addEventListener("DOMContentLoaded", function(){
+
+    /* =====================================================
+       STATE
+    ===================================================== */
 
     let selectedPackage = "";
     let selectedPrice = "";
 
-    const playerId =
+
+    /* =====================================================
+       ELEMENTS
+    ===================================================== */
+
+    const playerInput =
         document.getElementById("playerId");
 
-    const serverId =
+    const serverInput =
         document.getElementById("serverId");
 
-    const orderNowBtn =
-        document.getElementById("orderNowBtn");
+    const orderButton =
+        document.getElementById("orderButton");
 
-    const message =
-        document.getElementById("message");
+    const clearButton =
+        document.getElementById("clearButton");
+
+    const accountMessage =
+        document.getElementById("accountMessage");
 
     const specialCards =
         document.querySelectorAll(".special-card");
@@ -1932,23 +1869,14 @@ document.addEventListener("DOMContentLoaded", function(){
     const summaryPrice =
         document.getElementById("summaryPrice");
 
-    const status =
-        document.getElementById("status");
+    const selectedBadge =
+        document.getElementById("selectedBadge");
 
-    const paymentModal =
-        document.getElementById("paymentModal");
+    const paymentChoice =
+        document.getElementById("paymentChoice");
 
-    const choiceView =
-        document.getElementById("choiceView");
-
-    const qrView =
-        document.getElementById("qrView");
-
-    const closeModal =
-        document.getElementById("closeModal");
-
-    const closeQr =
-        document.getElementById("closeQr");
+    const closeChoice =
+        document.getElementById("closeChoice");
 
     const qrChoice =
         document.getElementById("qrChoice");
@@ -1956,59 +1884,53 @@ document.addEventListener("DOMContentLoaded", function(){
     const whatsappChoice =
         document.getElementById("whatsappChoice");
 
-    const backChoice =
-        document.getElementById("backChoice");
+    const choiceAmount =
+        document.getElementById("choiceAmount");
 
-    const qrWhatsappBtn =
-        document.getElementById("qrWhatsappBtn");
+    const qrPanel =
+        document.getElementById("qrPanel");
+
+    const qrAmount =
+        document.getElementById("qrAmount");
+
+    const qrWhatsapp =
+        document.getElementById("qrWhatsapp");
+
+    const closeQR =
+        document.getElementById("closeQR");
 
 
-    /* =========================
+    /* =====================================================
        MESSAGE
-    ========================= */
+    ===================================================== */
 
-    function showError(text){
+    function message(text,type){
 
-        message.textContent = text;
+        accountMessage.textContent = text;
 
-        message.className =
-            "message show error";
-
-    }
-
-
-    function clearMessage(){
-
-        message.textContent = "";
-
-        message.className =
-            "message";
+        accountMessage.className =
+            "account-message show " + type;
 
     }
 
 
-    /* =========================
-       CARD SELECTION
-    ========================= */
-
-    function clearSelection(){
-
-        specialCards.forEach(function(card){
-            card.classList.remove("active");
-        });
-
-        diamondCards.forEach(function(card){
-            card.classList.remove("active");
-        });
-
-    }
-
+    /* =====================================================
+       SELECT PACKAGE
+    ===================================================== */
 
     function selectPackage(card){
 
-        clearSelection();
+        specialCards.forEach(function(item){
+            item.classList.remove("active");
+        });
+
+        diamondCards.forEach(function(item){
+            item.classList.remove("active");
+        });
+
 
         card.classList.add("active");
+
 
         selectedPackage =
             card.dataset.package;
@@ -2024,15 +1946,17 @@ document.addEventListener("DOMContentLoaded", function(){
             "₹" + selectedPrice;
 
 
-        status.textContent =
-            "Package selected";
+        selectedBadge.textContent =
+            "Ready to Order";
 
-        status.classList.add("selected");
-
-        clearMessage();
+        selectedBadge.classList.add("ready");
 
     }
 
+
+    /* =====================================================
+       SPECIAL PACKAGE CLICK
+    ===================================================== */
 
     specialCards.forEach(function(card){
 
@@ -2046,6 +1970,10 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 
 
+    /* =====================================================
+       DIAMOND CLICK
+    ===================================================== */
+
     diamondCards.forEach(function(card){
 
         card.addEventListener(
@@ -2058,273 +1986,264 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 
 
-    /* =========================
-       ORDER NOW
-       BESIDE PLAYER ID/SERVER ID
-    ========================= */
+    /* =====================================================
+       UPDATE PLAYER INFO
+    ===================================================== */
 
-    orderNowBtn.addEventListener(
+    function updatePlayerInfo(){
+
+        summaryPlayer.textContent =
+            playerInput.value.trim() || "—";
+
+        summaryServer.textContent =
+            serverInput.value.trim() || "—";
+
+    }
+
+
+    playerInput.addEventListener(
+        "input",
+        updatePlayerInfo
+    );
+
+    serverInput.addEventListener(
+        "input",
+        updatePlayerInfo
+    );
+
+
+    /* =====================================================
+       ORDER BUTTON
+    ===================================================== */
+
+    orderButton.addEventListener(
         "click",
         function(){
 
-            const pid =
-                playerId.value.trim();
+            const playerId =
+                playerInput.value.trim();
 
-            const sid =
-                serverId.value.trim();
+            const serverId =
+                serverInput.value.trim();
 
 
-            if(pid === ""){
+            if(playerId === ""){
 
-                showError(
-                    "Please enter your Player ID first."
+                message(
+                    "Please enter your Player ID first.",
+                    "error"
                 );
 
-                playerId.focus();
+                playerInput.focus();
 
                 return;
+
             }
 
 
-            if(sid === ""){
+            if(serverId === ""){
 
-                showError(
-                    "Please enter your Server ID first."
+                message(
+                    "Please enter your Server ID first.",
+                    "error"
                 );
 
-                serverId.focus();
+                serverInput.focus();
 
                 return;
+
             }
 
 
             if(selectedPackage === ""){
 
-                showError(
-                    "Please select a Diamond package or Special Pass before ordering."
+                message(
+                    "Please select a Diamond package or Special Pass.",
+                    "error"
                 );
 
                 return;
+
             }
 
 
-            clearMessage();
+            message(
+                "✓ Order details ready. Choose your payment method.",
+                "success"
+            );
 
 
-            /* Update summary */
-
-            summaryPlayer.textContent =
-                pid;
-
-            summaryServer.textContent =
-                sid;
-
-
-            /* Update payment preview */
-
-            document.getElementById(
-                "previewPlayer"
-            ).textContent = pid;
-
-            document.getElementById(
-                "previewServer"
-            ).textContent = sid;
-
-            document.getElementById(
-                "previewPackage"
-            ).textContent =
-                selectedPackage;
-
-            document.getElementById(
-                "previewPrice"
-            ).textContent =
-                "₹" + selectedPrice;
-
-
-            /* QR information */
-
-            document.getElementById(
-                "qrPackage"
-            ).textContent =
-                selectedPackage;
-
-            document.getElementById(
-                "qrPlayer"
-            ).textContent =
-                pid;
-
-            document.getElementById(
-                "qrAmount"
-            ).textContent =
+            choiceAmount.textContent =
                 selectedPrice;
 
 
-            /* Show payment options */
-
-            choiceView.style.display =
-                "block";
-
-            qrView.classList.remove("show");
-
-            paymentModal.classList.add("show");
-
-            document.body.style.overflow =
-                "hidden";
+            paymentChoice.classList.add("show");
 
         }
     );
 
 
-    /* =========================
+    /* =====================================================
+       CLOSE PAYMENT CHOICE
+    ===================================================== */
+
+    closeChoice.addEventListener(
+        "click",
+        function(){
+
+            paymentChoice.classList.remove("show");
+
+        }
+    );
+
+
+    paymentChoice.addEventListener(
+        "click",
+        function(event){
+
+            if(event.target === paymentChoice){
+
+                paymentChoice.classList.remove("show");
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
        QR OPTION
-    ========================= */
+    ===================================================== */
 
     qrChoice.addEventListener(
         "click",
         function(){
 
-            choiceView.style.display =
-                "none";
+            paymentChoice.classList.remove("show");
 
-            qrView.classList.add("show");
+            qrAmount.textContent =
+                "₹" + selectedPrice;
+
+            qrPanel.classList.add("show");
 
         }
     );
 
 
-    /* =========================
-       WHATSAPP
-    ========================= */
+    /* =====================================================
+       WHATSAPP MESSAGE
+    ===================================================== */
 
     function sendWhatsApp(){
 
-        const pid =
-            playerId.value.trim();
+        const playerId =
+            playerInput.value.trim();
 
-        const sid =
-            serverId.value.trim();
+        const serverId =
+            serverInput.value.trim();
 
 
         if(
-            pid === "" ||
-            sid === "" ||
+            playerId === "" ||
+            serverId === "" ||
             selectedPackage === ""
         ){
-
-            closePaymentModal();
-
-            showError(
-                "Please enter your IDs and select a package first."
-            );
 
             return;
 
         }
 
 
-        const whatsappNumber =
-            "919310651934";
-
-
-        const text =
+        const messageText =
 `🎮 PANTHEOS GLOBAL STORE
 
 ━━━━━━━━━━━━━━━━━━
+
 🎯 Game: Mobile Legends
 
-👤 Player ID: ${pid}
-🌐 Server ID: ${sid}
+👤 Player ID: ${playerId}
+🌐 Server ID: ${serverId}
 
 📦 Package: ${selectedPackage}
 💰 Amount: ₹${selectedPrice}
 
-💳 Payment: QR / UPI
+━━━━━━━━━━━━━━━━━━
 
-Please verify my order and process it.
+Please process my MLBB top-up order.
 
 Thank you!`;
 
 
-        const url =
+        const whatsappNumber =
+            "919310651934";
+
+
+        const whatsappURL =
             "https://wa.me/" +
             whatsappNumber +
             "?text=" +
-            encodeURIComponent(text);
+            encodeURIComponent(messageText);
 
 
         window.open(
-            url,
+            whatsappURL,
             "_blank"
         );
 
     }
 
 
+    /* =====================================================
+       WHATSAPP FROM PAYMENT CHOICE
+    ===================================================== */
+
     whatsappChoice.addEventListener(
-        "click",
-        sendWhatsApp
-    );
-
-
-    qrWhatsappBtn.addEventListener(
-        "click",
-        sendWhatsApp
-    );
-
-
-    /* =========================
-       MODAL CONTROLS
-    ========================= */
-
-    function closePaymentModal(){
-
-        paymentModal.classList.remove("show");
-
-        document.body.style.overflow =
-            "";
-
-        choiceView.style.display =
-            "block";
-
-        qrView.classList.remove("show");
-
-    }
-
-
-    closeModal.addEventListener(
-        "click",
-        closePaymentModal
-    );
-
-
-    closeQr.addEventListener(
-        "click",
-        closePaymentModal
-    );
-
-
-    backChoice.addEventListener(
         "click",
         function(){
 
-            qrView.classList.remove("show");
+            paymentChoice.classList.remove("show");
 
-            choiceView.style.display =
-                "block";
+            sendWhatsApp();
 
         }
     );
 
 
-    /* Close when clicking outside */
+    /* =====================================================
+       WHATSAPP FROM QR SCREEN
+    ===================================================== */
 
-    paymentModal.addEventListener(
+    qrWhatsapp.addEventListener(
+        "click",
+        function(){
+
+            sendWhatsApp();
+
+        }
+    );
+
+
+    /* =====================================================
+       CLOSE QR
+    ===================================================== */
+
+    closeQR.addEventListener(
+        "click",
+        function(){
+
+            qrPanel.classList.remove("show");
+
+        }
+    );
+
+
+    qrPanel.addEventListener(
         "click",
         function(event){
 
-            if(event.target === paymentModal){
+            if(event.target === qrPanel){
 
-                closePaymentModal();
+                qrPanel.classList.remove("show");
 
             }
 
@@ -2332,80 +2251,67 @@ Thank you!`;
     );
 
 
-    /* ESC key */
+    /* =====================================================
+       CLEAR
+    ===================================================== */
+
+    clearButton.addEventListener(
+        "click",
+        function(){
+
+            playerInput.value = "";
+            serverInput.value = "";
+
+            updatePlayerInfo();
+
+
+            specialCards.forEach(function(card){
+                card.classList.remove("active");
+            });
+
+
+            diamondCards.forEach(function(card){
+                card.classList.remove("active");
+            });
+
+
+            selectedPackage = "";
+            selectedPrice = "";
+
+
+            summaryPackage.textContent =
+                "Not Selected";
+
+            summaryPrice.textContent =
+                "₹0";
+
+
+            selectedBadge.textContent =
+                "Not Selected";
+
+            selectedBadge.classList.remove("ready");
+
+
+            accountMessage.className =
+                "account-message";
+
+        }
+    );
+
+
+    /* =====================================================
+       ESCAPE TO CLOSE POPUPS
+    ===================================================== */
 
     document.addEventListener(
         "keydown",
         function(event){
 
-            if(
-                event.key === "Escape" &&
-                paymentModal.classList.contains("show")
-            ){
+            if(event.key === "Escape"){
 
-                closePaymentModal();
+                paymentChoice.classList.remove("show");
 
-            }
-
-        }
-    );
-
-
-    /* =========================
-       LIVE SUMMARY IDS
-    ========================= */
-
-    playerId.addEventListener(
-        "input",
-        function(){
-
-            summaryPlayer.textContent =
-                playerId.value.trim() || "—";
-
-        }
-    );
-
-
-    serverId.addEventListener(
-        "input",
-        function(){
-
-            summaryServer.textContent =
-                serverId.value.trim() || "—";
-
-        }
-    );
-
-
-    /* =========================
-       ENTER KEY
-    ========================= */
-
-    playerId.addEventListener(
-        "keydown",
-        function(event){
-
-            if(event.key === "Enter"){
-
-                event.preventDefault();
-
-                serverId.focus();
-
-            }
-
-        }
-    );
-
-
-    serverId.addEventListener(
-        "keydown",
-        function(event){
-
-            if(event.key === "Enter"){
-
-                event.preventDefault();
-
-                orderNowBtn.click();
+                qrPanel.classList.remove("show");
 
             }
 
@@ -2413,9 +2319,8 @@ Thank you!`;
     );
 
 });
-</script>
 
-<script src="js/app.js"></script>
+</script>
 
 </body>
 </html>
