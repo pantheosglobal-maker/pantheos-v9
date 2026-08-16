@@ -6,381 +6,648 @@
     <meta name="theme-color" content="#07080d">
 
     <meta name="description"
-        content="V9 Pantheos Store - Premium OTT subscriptions including Netflix, Prime Video and YouTube Premium.">
+        content="V9 Pantheos Store - OTT subscriptions including Netflix Premium, Prime Video and YouTube Premium.">
 
     <title>OTT Services | V9 Pantheos Store</title>
 
     <link rel="stylesheet" href="css/style.css">
 
     <style>
+
         /* =====================================================
-           V9 OTT SERVICES PAGE
+           V9 OTT PAGE
         ===================================================== */
 
-        .service-page {
+        .ott-page {
             min-height: 100vh;
             padding-top: 120px;
             padding-bottom: 100px;
         }
 
-        .service-hero {
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .ott-hero {
             position: relative;
             overflow: hidden;
+
             padding: 45px;
             margin-bottom: 35px;
+
             border: 1px solid var(--border);
             border-radius: 24px;
+
             background:
                 linear-gradient(
                     120deg,
-                    rgba(139,92,246,0.13),
+                    rgba(220,38,38,0.12),
                     rgba(16,19,28,0.96)
                 );
         }
 
-        .service-hero::before {
+
+        .ott-hero::before {
             content: "";
+
             position: absolute;
-            width: 360px;
-            height: 360px;
-            right: -130px;
-            top: -160px;
+
+            width: 420px;
+            height: 420px;
+
+            right: -170px;
+            top: -190px;
+
             border-radius: 50%;
-            background: rgba(139,92,246,0.10);
-            filter: blur(12px);
+
+            background:
+                rgba(220,38,38,0.10);
+
+            filter: blur(20px);
         }
+
 
         .breadcrumb {
             position: relative;
             z-index: 2;
+
             display: flex;
             align-items: center;
-            gap: 8px;
+
             flex-wrap: wrap;
+
+            gap: 8px;
+
             margin-bottom: 30px;
+
             color: var(--text-muted);
+
             font-size: 11px;
         }
+
 
         .breadcrumb a {
             color: var(--text-soft);
         }
 
+
         .breadcrumb a:hover {
-            color: #a78bfa;
+            color: #f87171;
         }
 
-        .service-hero-content {
+
+        .ott-hero-content {
             position: relative;
             z-index: 2;
         }
 
-        .service-hero-content h1 {
-            max-width: 800px;
+
+        .ott-hero-content h1 {
+            max-width: 850px;
+
             margin-bottom: 15px;
-            font-size: clamp(38px, 6vw, 68px);
+
+            font-size:
+                clamp(
+                    38px,
+                    6vw,
+                    68px
+                );
+
             line-height: 0.98;
-            letter-spacing: -0.05em;
+
+            letter-spacing:
+                -0.05em;
         }
 
-        .service-hero-content h1 span {
-            color: #a78bfa;
+
+        .ott-hero-content h1 span {
+            color: #f87171;
         }
 
-        .service-hero-content p {
+
+        .ott-hero-content p {
             max-width: 650px;
-            color: var(--text-muted);
+
+            color:
+                var(--text-muted);
+
             font-size: 14px;
+
             line-height: 1.8;
         }
 
-        .service-badges {
+
+        .ott-badges {
             display: flex;
+
             flex-wrap: wrap;
+
             gap: 9px;
+
             margin-top: 25px;
         }
 
-        .service-badge {
+
+        .ott-badge {
             padding: 8px 12px;
-            border: 1px solid var(--border);
+
+            border:
+                1px solid
+                var(--border);
+
             border-radius: 999px;
-            background: rgba(255,255,255,0.03);
-            color: var(--text-soft);
+
+            background:
+                rgba(255,255,255,0.03);
+
+            color:
+                var(--text-soft);
+
             font-size: 10px;
+
             font-weight: 800;
         }
 
+
+        /* =====================================================
+           SECTION HEADER
+        ===================================================== */
+
         .section-heading {
             display: flex;
+
             align-items: flex-end;
+
             justify-content: space-between;
+
             gap: 20px;
+
             margin-bottom: 20px;
         }
+
 
         .section-heading h2 {
             font-size: 25px;
         }
 
+
         .section-heading p {
             max-width: 500px;
-            color: var(--text-muted);
+
+            color:
+                var(--text-muted);
+
             font-size: 11px;
+
             line-height: 1.6;
+
             text-align: right;
         }
 
-        .service-grid {
+
+        /* =====================================================
+           OTT GRID
+        ===================================================== */
+
+        .ott-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 14px;
         }
 
-        .service-card {
+
+        .ott-card {
             position: relative;
+
             overflow: hidden;
-            padding: 24px;
-            border: 1px solid var(--border);
+
+            padding: 22px;
+
+            border:
+                1px solid var(--border);
+
             border-radius: 18px;
-            background: var(--card);
+
+            background:
+                var(--card);
+
             transition:
                 transform var(--transition),
                 border var(--transition),
                 background var(--transition);
         }
 
-        .service-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(139,92,246,0.35);
-            background: rgba(255,255,255,0.045);
+
+        .ott-card:hover {
+            transform:
+                translateY(-5px);
+
+            border-color:
+                rgba(220,38,38,0.35);
+
+            background:
+                rgba(255,255,255,0.045);
         }
 
-        .service-card::after {
+
+        .ott-card::after {
             content: "";
+
             position: absolute;
-            width: 150px;
-            height: 150px;
-            right: -80px;
-            top: -80px;
+
+            width: 110px;
+            height: 110px;
+
+            right: -50px;
+            bottom: -50px;
+
             border-radius: 50%;
-            background: rgba(139,92,246,0.07);
+
+            background:
+                rgba(220,38,38,0.07);
+
+            filter: blur(8px);
+
+            pointer-events: none;
         }
 
-        .service-icon {
+
+        /* =====================================================
+           SERVICE HEADER
+        ===================================================== */
+
+        .ott-service-header {
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .ott-logo {
             width: 58px;
             height: 58px;
+
             display: grid;
+
             place-items: center;
-            margin-bottom: 20px;
+
+            flex-shrink: 0;
+
             overflow: hidden;
-            border: 1px solid var(--border);
+
+            border:
+                1px solid var(--border);
+
             border-radius: 15px;
-            background: #0b0e15;
+
+            background:
+                #0b0e15;
+
             font-size: 25px;
-        }
 
-        .service-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .service-card h3 {
-            margin-bottom: 7px;
-            font-size: 19px;
-        }
-
-        .service-card-description {
-            min-height: 42px;
-            margin-bottom: 20px;
-            color: var(--text-muted);
-            font-size: 10px;
-            line-height: 1.7;
-        }
-
-        .offer-list {
-            display: flex;
-            flex-direction: column;
-            gap: 9px;
-        }
-
-        .offer {
-            padding: 13px;
-            border: 1px solid var(--border);
-            border-radius: 11px;
-            background: rgba(255,255,255,0.025);
-        }
-
-        .offer-top {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            gap: 12px;
-        }
-
-        .offer-title {
-            color: white;
-            font-size: 11px;
-            font-weight: 800;
-            line-height: 1.5;
-        }
-
-        .offer-price {
-            color: #a78bfa;
-            white-space: nowrap;
-            font-size: 12px;
             font-weight: 900;
         }
 
-        .offer-description {
-            margin-top: 5px;
-            color: var(--text-muted);
+
+        .ott-logo img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+
+        .ott-service-header h3 {
+            margin-bottom: 4px;
+
+            color: white;
+
+            font-size: 16px;
+        }
+
+
+        .ott-service-header span {
+            color:
+                var(--text-muted);
+
             font-size: 9px;
+        }
+
+
+        /* =====================================================
+           PLANS
+        ===================================================== */
+
+        .ott-plans {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 9px;
+        }
+
+
+        .ott-plan {
+            padding: 14px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 12px;
+
+            background:
+                rgba(255,255,255,0.025);
+        }
+
+
+        .ott-plan-top {
+            display: flex;
+
+            align-items: flex-start;
+
+            justify-content: space-between;
+
+            gap: 15px;
+        }
+
+
+        .ott-plan-name {
+            color: white;
+
+            font-size: 10px;
+
+            font-weight: 900;
+
+            line-height: 1.5;
+        }
+
+
+        .ott-plan-price {
+            color:
+                #f87171;
+
+            white-space: nowrap;
+
+            font-size: 14px;
+
+            font-weight: 900;
+        }
+
+
+        .ott-plan-description {
+            margin-top: 6px;
+
+            color:
+                var(--text-muted);
+
+            font-size: 8px;
+
             line-height: 1.6;
         }
 
-        .offer-old-price {
-            margin-left: 4px;
-            color: #6b7280;
-            text-decoration: line-through;
-            font-size: 9px;
-            font-weight: 600;
-        }
 
-        .order-service-button {
+        .ott-order {
             width: 100%;
-            margin-top: 18px;
+
+            margin-top: 13px;
         }
 
-        .important-box {
+
+        /* =====================================================
+           NOTICE
+        ===================================================== */
+
+        .ott-notice {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
+
+            grid-template-columns:
+                auto 1fr;
+
+            gap: 15px;
+
+            align-items: start;
+
             margin-top: 30px;
+
+            padding: 20px;
+
+            border:
+                1px solid
+                rgba(245,158,11,0.18);
+
+            border-radius: 16px;
+
+            background:
+                rgba(245,158,11,0.045);
         }
 
-        .important-item {
-            padding: 17px;
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            background: rgba(255,255,255,0.025);
+
+        .notice-icon {
+            width: 40px;
+            height: 40px;
+
+            display: grid;
+
+            place-items: center;
+
+            border-radius: 11px;
+
+            background:
+                rgba(245,158,11,0.10);
+
+            font-size: 18px;
         }
 
-        .important-item strong {
-            display: block;
+
+        .ott-notice h3 {
             margin-bottom: 5px;
-            color: white;
+
             font-size: 11px;
         }
 
-        .important-item p {
-            color: var(--text-muted);
+
+        .ott-notice p {
+            color:
+                var(--text-muted);
+
             font-size: 9px;
+
             line-height: 1.7;
         }
 
+
+        /* =====================================================
+           CONTACT PANEL
+        ===================================================== */
+
         .contact-panel {
             display: grid;
-            grid-template-columns: 1fr auto;
+
+            grid-template-columns:
+                1fr auto;
+
             align-items: center;
+
             gap: 30px;
+
             margin-top: 30px;
+
             padding: 28px;
-            border: 1px solid rgba(139,92,246,0.18);
+
+            border:
+                1px solid
+                rgba(220,38,38,0.18);
+
             border-radius: 18px;
+
             background:
                 linear-gradient(
                     120deg,
-                    rgba(139,92,246,0.08),
+                    rgba(220,38,38,0.07),
                     rgba(255,255,255,0.02)
                 );
         }
 
+
         .contact-panel h2 {
             margin-bottom: 7px;
+
             font-size: 20px;
         }
 
+
         .contact-panel p {
             max-width: 600px;
-            color: var(--text-muted);
+
+            color:
+                var(--text-muted);
+
             font-size: 10px;
+
             line-height: 1.7;
         }
 
+
         .contact-actions {
             display: flex;
-            gap: 9px;
+
             flex-wrap: wrap;
+
+            gap: 9px;
         }
+
 
         .back-store {
             display: inline-flex;
+
             align-items: center;
+
             gap: 8px;
+
             margin-top: 25px;
-            color: var(--text-muted);
+
+            color:
+                var(--text-muted);
+
             font-size: 11px;
+
             font-weight: 700;
         }
+
 
         .back-store:hover {
             color: white;
         }
 
-        @media (max-width: 950px) {
-            .service-grid {
-                grid-template-columns: 1fr 1fr;
-            }
 
-            .important-box {
-                grid-template-columns: 1fr;
-            }
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
 
-            .contact-panel {
-                grid-template-columns: 1fr;
+        @media (max-width: 1000px) {
+
+            .ott-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
             }
         }
 
-        @media (max-width: 650px) {
-            .service-page {
+
+        @media (max-width: 750px) {
+
+            .contact-panel {
+                grid-template-columns:
+                    1fr;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .ott-page {
                 padding-top: 95px;
             }
 
-            .service-hero {
-                padding: 28px 20px;
+
+            .ott-hero {
+                padding:
+                    28px 20px;
             }
 
-            .service-grid {
-                grid-template-columns: 1fr;
+
+            .ott-grid {
+                grid-template-columns:
+                    1fr;
             }
+
 
             .section-heading {
-                align-items: flex-start;
-                flex-direction: column;
+                align-items:
+                    flex-start;
+
+                flex-direction:
+                    column;
             }
+
 
             .section-heading p {
-                text-align: left;
+                text-align:
+                    left;
             }
 
+
             .contact-panel {
-                padding: 22px 18px;
+                padding:
+                    22px 18px;
             }
+
 
             .contact-actions {
                 width: 100%;
             }
 
+
             .contact-actions .btn {
                 flex: 1;
             }
+
         }
+
     </style>
 </head>
 
+
 <body>
+
 
 <!-- =====================================================
      PAGE LOADER
@@ -389,15 +656,18 @@
 <div id="page-loader">
 
     <div class="loader-logo">
+
         <img
             src="assets/pantheos-logo.PNG"
             alt="V9 Pantheos Store"
         >
+
     </div>
 
     <div class="loader-line"></div>
 
 </div>
+
 
 
 <!-- =====================================================
@@ -411,6 +681,7 @@
 
     <div class="container nav-container">
 
+
         <a
             href="index.html"
             class="brand"
@@ -422,6 +693,7 @@
                 class="brand-logo"
             >
 
+
             <div class="brand-text">
 
                 <span class="brand-name">
@@ -431,10 +703,10 @@
                 <span class="brand-subtitle">
                     STORE
                 </span>
-
             </div>
 
         </a>
+
 
 
         <nav class="desktop-nav">
@@ -446,12 +718,14 @@
                 Home
             </a>
 
+
             <a
                 href="index.html#games"
                 class="nav-link"
             >
                 Games
             </a>
+
 
             <a
                 href="index.html#services"
@@ -460,6 +734,7 @@
                 Services
             </a>
 
+
             <a
                 href="index.html#giftcards"
                 class="nav-link"
@@ -467,12 +742,14 @@
                 Gift Cards
             </a>
 
+
             <a
                 href="index.html#community"
                 class="nav-link"
             >
                 Community
             </a>
+
 
             <a
                 href="index.html#support"
@@ -484,7 +761,9 @@
         </nav>
 
 
+
         <div class="nav-actions">
+
 
             <a
                 href="https://wa.me/919310651934"
@@ -513,6 +792,7 @@
     </div>
 
 
+
     <div
         class="mobile-nav"
         id="mobileNav"
@@ -522,25 +802,31 @@
             Home
         </a>
 
+
         <a href="index.html#games">
             Games
         </a>
+
 
         <a href="index.html#services">
             Services
         </a>
 
+
         <a href="index.html#giftcards">
             Gift Cards
         </a>
+
 
         <a href="index.html#community">
             Community
         </a>
 
+
         <a href="index.html#support">
             Support
         </a>
+
 
         <a
             href="https://wa.me/919310651934"
@@ -556,11 +842,12 @@
 </header>
 
 
+
 <!-- =====================================================
      MAIN
 ===================================================== -->
 
-<main class="service-page">
+<main class="ott-page">
 
     <div class="container">
 
@@ -569,7 +856,8 @@
              HERO
         ================================================= -->
 
-        <section class="service-hero">
+        <section class="ott-hero">
+
 
             <div class="breadcrumb">
 
@@ -577,13 +865,17 @@
                     Home
                 </a>
 
-                <span>›</span>
+                <span>
+                    ›
+                </span>
 
                 <a href="index.html#services">
                     Services
                 </a>
 
-                <span>›</span>
+                <span>
+                    ›
+                </span>
 
                 <span>
                     OTT Services
@@ -592,37 +884,51 @@
             </div>
 
 
-            <div class="service-hero-content">
+
+            <div class="ott-hero-content">
 
                 <span class="eyebrow">
-                    PREMIUM DIGITAL SERVICES
+                    OTT ENTERTAINMENT
                 </span>
 
+
                 <h1>
-                    ENTERTAINMENT
-                    <span>WITHOUT LIMITS.</span>
+
+                    WATCH MORE.
+                    <span>
+                        PAY LESS.
+                    </span>
+
                 </h1>
 
+
                 <p>
-                    Get premium OTT subscriptions through
-                    V9 Pantheos Store. Choose your preferred
-                    service and plan, then contact us to
-                    complete your order.
+
+                    Enjoy selected OTT subscriptions
+                    through V9 Pantheos Store. Choose
+                    your preferred service and plan,
+                    then contact us to place your order.
+
                 </p>
 
 
-                <div class="service-badges">
 
-                    <span class="service-badge">
-                        ⚡ Fast Delivery
+                <div class="ott-badges">
+
+                    <span class="ott-badge">
+                        🎬 Netflix
                     </span>
 
-                    <span class="service-badge">
-                        🔒 Secure Ordering
+                    <span class="ott-badge">
+                        ▶️ YouTube Premium
                     </span>
 
-                    <span class="service-badge">
-                        💬 WhatsApp Support
+                    <span class="ott-badge">
+                        📺 Prime Video
+                    </span>
+
+                    <span class="ott-badge">
+                        ⚡ Digital Delivery
                     </span>
 
                 </div>
@@ -630,6 +936,7 @@
             </div>
 
         </section>
+
 
 
         <!-- =================================================
@@ -641,386 +948,478 @@
             <div>
 
                 <span class="eyebrow">
-                    AVAILABLE SERVICES
+                    OTT SERVICES
                 </span>
 
                 <h2>
-                    Choose Your Platform
+                    Choose Your Service
                 </h2>
 
             </div>
 
+
             <p>
-                Select a service below to view the
-                currently available plans.
+
+                Select a subscription below and
+                contact V9 Pantheos Store to order.
+
             </p>
 
         </div>
 
 
-        <section class="service-grid">
+
+        <section class="ott-grid">
 
 
             <!-- =================================================
-                 YOUTUBE
+                 YOUTUBE PREMIUM
             ================================================= -->
 
-            <article class="service-card">
-
-                <div class="service-icon">
-                    ▶️
-                </div>
+            <article class="ott-card">
 
 
-                <h3>
-                    YouTube Premium
-                </h3>
+                <div class="ott-service-header">
+
+                    <div class="ott-logo">
+                        ▶️
+                    </div>
 
 
-                <p class="service-card-description">
-                    Enjoy YouTube without ads and access
-                    premium features with a convenient
-                    subscription.
-                </p>
+                    <div>
 
+                        <h3>
+                            YouTube Premium
+                        </h3>
 
-                <div class="offer-list">
-
-                    <div class="offer">
-
-                        <div class="offer-top">
-
-                            <span class="offer-title">
-                                One Month
-                            </span>
-
-                            <span class="offer-price">
-                                ₹30
-                            </span>
-
-                        </div>
-
-                        <p class="offer-description">
-                            Via invite
-                        </p>
+                        <span>
+                            Premium YouTube experience
+                        </span>
 
                     </div>
 
                 </div>
 
 
-                <a
-                    href="https://wa.me/919310651934?text=Hello%20V9%20Pantheos%20Store%2C%20I%20want%20YouTube%20Premium."
-                    class="btn btn-primary order-service-button"
-                    target="_blank"
-                    rel="noopener"
-                >
-                    Order on WhatsApp
-                    <span>→</span>
-                </a>
+
+                <div class="ott-plans">
+
+
+                    <div class="ott-plan">
+
+                        <div class="ott-plan-top">
+
+                            <span class="ott-plan-name">
+                                One Month
+                            </span>
+
+                            <span class="ott-plan-price">
+                                ₹30
+                            </span>
+
+                        </div>
+
+
+                        <p class="ott-plan-description">
+                            Via invite.
+                        </p>
+
+
+                        <a
+                            href="https://wa.me/919310651934?text=Hello%20V9%20Pantheos%20Store%2C%20I%20want%20YouTube%20Premium%20for%20one%20month%20via%20invite."
+                            class="btn btn-primary ott-order"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Order
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                </div>
 
             </article>
+
 
 
             <!-- =================================================
                  NETFLIX
             ================================================= -->
 
-            <article class="service-card">
+            <article class="ott-card">
 
-                <div class="service-icon">
-                    🎬
+
+                <div class="ott-service-header">
+
+                    <div class="ott-logo">
+                        N
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Netflix Premium
+                        </h3>
+
+                        <span>
+                            Premium entertainment
+                        </span>
+
+                    </div>
+
                 </div>
 
 
-                <h3>
-                    Netflix Premium
-                </h3>
+
+                <div class="ott-plans">
 
 
-                <p class="service-card-description">
-                    Premium Netflix plans with 4K quality
-                    and different account/profile options.
-                </p>
+                    <!-- NETFLIX 1 -->
 
+                    <div class="ott-plan">
 
-                <div class="offer-list">
+                        <div class="ott-plan-top">
 
-
-                    <div class="offer">
-
-                        <div class="offer-top">
-
-                            <span class="offer-title">
-                                1 Month · 1 Device
+                            <span class="ott-plan-name">
+                                1 Month / 1 Device
                             </span>
 
-                            <span class="offer-price">
+                            <span class="ott-plan-price">
                                 ₹150
                             </span>
 
                         </div>
 
-                        <p class="offer-description">
-                            4K Quality · Shared Profile
-                            <span class="offer-old-price">
-                                ₹700
-                            </span>
+
+                        <p class="ott-plan-description">
+
+                            4K quality • Shared profile
+
                         </p>
+
+
+                        <a
+                            href="https://wa.me/919310651934?text=Hello%20V9%20Pantheos%20Store%2C%20I%20want%20Netflix%20Premium%20-%201%20Month%20-%201%20Device%20-%20Shared%20Profile."
+                            class="btn btn-primary ott-order"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Order
+                            <span>→</span>
+                        </a>
 
                     </div>
 
 
-                    <div class="offer">
 
-                        <div class="offer-top">
+                    <!-- NETFLIX 2 -->
 
-                            <span class="offer-title">
-                                1 Month · 4 Devices
+                    <div class="ott-plan">
+
+                        <div class="ott-plan-top">
+
+                            <span class="ott-plan-name">
+                                1 Month / 4 Devices
                             </span>
 
-                            <span class="offer-price">
+                            <span class="ott-plan-price">
                                 ₹399
                             </span>
 
                         </div>
 
-                        <p class="offer-description">
-                            4K HD · Your Own Mail
-                            <span class="offer-old-price">
-                                ₹660
-                            </span>
+
+                        <p class="ott-plan-description">
+
+                            4K HD quality • Own mail
+
                         </p>
+
+
+                        <a
+                            href="https://wa.me/919310651934?text=Hello%20V9%20Pantheos%20Store%2C%20I%20want%20Netflix%20Premium%20-%201%20Month%20-%204%20Devices%20-%20My%20Own%20Mail."
+                            class="btn btn-primary ott-order"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Order
+                            <span>→</span>
+                        </a>
 
                     </div>
 
 
-                    <div class="offer">
 
-                        <div class="offer-top">
+                    <!-- NETFLIX 3 -->
 
-                            <span class="offer-title">
-                                1 Year · 1 Device
+                    <div class="ott-plan">
+
+                        <div class="ott-plan-top">
+
+                            <span class="ott-plan-name">
+                                1 Year / 1 Device
                             </span>
 
-                            <span class="offer-price">
+                            <span class="ott-plan-price">
                                 ₹2,199
                             </span>
 
                         </div>
 
-                        <p class="offer-description">
-                            4K Quality · Private Profile
-                            <span class="offer-old-price">
-                                ₹9,360
-                            </span>
+
+                        <p class="ott-plan-description">
+
+                            4K quality • Private profile
+
                         </p>
+
+
+                        <a
+                            href="https://wa.me/919310651934?text=Hello%20V9%20Pantheos%20Store%2C%20I%20want%20Netflix%20Premium%20-%201%20Year%20-%201%20Device%20-%20Private%20Profile."
+                            class="btn btn-primary ott-order"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Order
+                            <span>→</span>
+                        </a>
 
                     </div>
 
 
-                    <div class="offer">
 
-                        <div class="offer-top">
+                    <!-- NETFLIX 4 -->
 
-                            <span class="offer-title">
-                                1 Day
+                    <div class="ott-plan">
+
+                        <div class="ott-plan-top">
+
+                            <span class="ott-plan-name">
+                                1 Day / 1 Device
                             </span>
 
-                            <span class="offer-price">
+                            <span class="ott-plan-price">
                                 ₹30
                             </span>
 
                         </div>
 
-                        <p class="offer-description">
-                            4K Quality
-                            <span class="offer-old-price">
-                                ₹100
-                            </span>
+
+                        <p class="ott-plan-description">
+
+                            4K quality • One day access
+
                         </p>
+
+
+                        <a
+                            href="https://wa.me/919310651934?text=Hello%20V9%20Pantheos%20Store%2C%20I%20want%20Netflix%20Premium%20for%20one%20day."
+                            class="btn btn-primary ott-order"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Order
+                            <span>→</span>
+                        </a>
 
                     </div>
 
                 </div>
 
-
-                <a
-                    href="https://wa.me/919310651934?text=Hello%20V9%20Pantheos%20Store%2C%20I%20want%20Netflix%20Premium."
-                    class="btn btn-primary order-service-button"
-                    target="_blank"
-                    rel="noopener"
-                >
-                    Order on WhatsApp
-                    <span>→</span>
-                </a>
-
             </article>
+
 
 
             <!-- =================================================
                  PRIME VIDEO
             ================================================= -->
 
-            <article class="service-card">
+            <article class="ott-card">
 
-                <div class="service-icon">
-                    📺
+
+                <div class="ott-service-header">
+
+                    <div class="ott-logo">
+                        P
+                    </div>
+
+
+                    <div>
+
+                        <h3>
+                            Prime Video
+                        </h3>
+
+                        <span>
+                            Movies & entertainment
+                        </span>
+
+                    </div>
+
                 </div>
 
 
-                <h3>
-                    Prime Video
-                </h3>
+
+                <div class="ott-plans">
 
 
-                <p class="service-card-description">
-                    Stream movies and shows with Prime Video
-                    plans available through V9 Pantheos Store.
-                </p>
+                    <!-- PRIME 1 -->
 
+                    <div class="ott-plan">
 
-                <div class="offer-list">
+                        <div class="ott-plan-top">
 
-
-                    <div class="offer">
-
-                        <div class="offer-top">
-
-                            <span class="offer-title">
-                                1 Month
+                            <span class="ott-plan-name">
+                                One Month
                             </span>
 
-                            <span class="offer-price">
+                            <span class="ott-plan-price">
                                 ₹59
                             </span>
 
                         </div>
 
-                        <p class="offer-description">
-                            1 Device · Private Profile
-                            · ID & Password Given
-                            <span class="offer-old-price">
-                                ₹121
-                            </span>
+
+                        <p class="ott-plan-description">
+
+                            ID & password given • Private
+                            profile • Shared account
+
                         </p>
+
+
+                        <a
+                            href="https://wa.me/919310651934?text=Hello%20V9%20Pantheos%20Store%2C%20I%20want%20Prime%20Video%20for%20one%20month."
+                            class="btn btn-primary ott-order"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Order
+                            <span>→</span>
+                        </a>
 
                     </div>
 
 
-                    <div class="offer">
 
-                        <div class="offer-top">
+                    <!-- PRIME 2 -->
 
-                            <span class="offer-title">
-                                3 Months
+                    <div class="ott-plan">
+
+                        <div class="ott-plan-top">
+
+                            <span class="ott-plan-name">
+                                Three Months
                             </span>
 
-                            <span class="offer-price">
+                            <span class="ott-plan-price">
                                 ₹149
                             </span>
 
                         </div>
 
-                        <p class="offer-description">
-                            Private Profile · Shared Account
-                            · ID & Password Given
-                            <span class="offer-old-price">
-                                ₹361
-                            </span>
+
+                        <p class="ott-plan-description">
+
+                            ID & password given • Private
+                            profile • Shared account
+
                         </p>
+
+
+                        <a
+                            href="https://wa.me/919310651934?text=Hello%20V9%20Pantheos%20Store%2C%20I%20want%20Prime%20Video%20for%20three%20months."
+                            class="btn btn-primary ott-order"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Order
+                            <span>→</span>
+                        </a>
 
                     </div>
 
 
-                    <div class="offer">
 
-                        <div class="offer-top">
+                    <!-- PRIME 3 -->
 
-                            <span class="offer-title">
-                                6 Months
+                    <div class="ott-plan">
+
+                        <div class="ott-plan-top">
+
+                            <span class="ott-plan-name">
+                                Six Months
                             </span>
 
-                            <span class="offer-price">
+                            <span class="ott-plan-price">
                                 ₹299
                             </span>
 
                         </div>
 
-                        <p class="offer-description">
-                            Contact us for current availability
+
+                        <p class="ott-plan-description">
+
+                            Contact us for current
+                            account/profile details.
+
                         </p>
+
+
+                        <a
+                            href="https://wa.me/919310651934?text=Hello%20V9%20Pantheos%20Store%2C%20I%20want%20Prime%20Video%20for%20six%20months."
+                            class="btn btn-primary ott-order"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Order
+                            <span>→</span>
+                        </a>
 
                     </div>
 
                 </div>
-
-
-                <a
-                    href="https://wa.me/919310651934?text=Hello%20V9%20Pantheos%20Store%2C%20I%20want%20Prime%20Video."
-                    class="btn btn-primary order-service-button"
-                    target="_blank"
-                    rel="noopener"
-                >
-                    Order on WhatsApp
-                    <span>→</span>
-                </a>
 
             </article>
 
         </section>
 
 
+
         <!-- =================================================
-             IMPORTANT INFORMATION
+             NOTICE
         ================================================= -->
 
-        <section class="important-box">
+        <section class="ott-notice">
 
-
-            <div class="important-item">
-
-                <strong>
-                    ⚡ Fast Processing
-                </strong>
-
-                <p>
-                    Orders are processed after payment
-                    and confirmation through WhatsApp.
-                </p>
-
+            <div class="notice-icon">
+                ⚠️
             </div>
 
 
-            <div class="important-item">
+            <div>
 
-                <strong>
-                    📩 Order Confirmation
-                </strong>
+                <h3>
+                    Please read before ordering
+                </h3>
+
 
                 <p>
-                    Contact V9 Pantheos Store before
-                    payment if you need clarification.
-                </p>
 
-            </div>
+                    OTT plans may have different account,
+                    profile, device and invitation
+                    arrangements. Please confirm the
+                    exact plan details with V9 Pantheos
+                    Store before making payment.
 
-
-            <div class="important-item">
-
-                <strong>
-                    🔐 Account Safety
-                </strong>
-
-                <p>
-                    Never share sensitive information
-                    beyond what is required for the
-                    selected service.
                 </p>
 
             </div>
 
         </section>
+
 
 
         <!-- =================================================
@@ -1029,26 +1428,33 @@
 
         <section class="contact-panel">
 
+
             <div>
 
                 <span class="eyebrow">
                     NEED HELP?
                 </span>
 
+
                 <h2>
-                    Can't find what you need?
+                    Find the right OTT plan.
                 </h2>
 
+
                 <p>
-                    Message V9 Pantheos Store on WhatsApp
-                    and tell us which OTT service or plan
-                    you're looking for.
+
+                    Not sure which plan is right for
+                    you? Message V9 Pantheos Store on
+                    WhatsApp and we'll help you choose.
+
                 </p>
 
             </div>
 
 
+
             <div class="contact-actions">
+
 
                 <a
                     href="https://wa.me/919310651934"
@@ -1056,9 +1462,15 @@
                     target="_blank"
                     rel="noopener"
                 >
+
                     WhatsApp
-                    <span>→</span>
+
+                    <span>
+                        →
+                    </span>
+
                 </a>
+
 
                 <a
                     href="https://www.instagram.com/pantheosglobalstore?igsh=YnpyczFmYTJsbnhh&utm_source=qr"
@@ -1074,16 +1486,20 @@
         </section>
 
 
+
         <a
             href="index.html"
             class="back-store"
         >
+
             ← Back to V9 Pantheos Store
+
         </a>
 
     </div>
 
 </main>
+
 
 
 <!-- =====================================================
@@ -1110,6 +1526,7 @@
 </a>
 
 
+
 <button
     class="back-to-top"
     id="backToTop"
@@ -1117,6 +1534,7 @@
 >
     ↑
 </button>
+
 
 
 <script src="js/app.js"></script>
