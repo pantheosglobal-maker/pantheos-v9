@@ -10,17 +10,18 @@
 
 <style>
 :root{
-    --bg:#080c18;
-    --card:#11182b;
-    --card2:#18213a;
-    --card3:#202b49;
-    --accent:#ffd447;
-    --accent2:#ffb800;
-    --text:#ffffff;
-    --muted:#aeb8d0;
-    --green:#25d366;
+    --bg:#070b16;
+    --bg2:#0d1426;
+    --card:#111a2e;
+    --card2:#17223a;
     --border:rgba(255,255,255,.08);
-    --danger:#ff5b6e;
+    --accent:#ffd54a;
+    --accent2:#ffbf00;
+    --text:#fff;
+    --muted:#9ca8c2;
+    --green:#25D366;
+    --red:#ff6464;
+    --blue:#5da9ff;
 }
 
 *{
@@ -34,13 +35,13 @@ html{
 }
 
 body{
+    min-height:100vh;
     background:
-        radial-gradient(circle at top right,rgba(71,91,170,.18),transparent 35%),
-        radial-gradient(circle at bottom left,rgba(255,212,71,.07),transparent 30%),
+        radial-gradient(circle at top right,rgba(70,100,190,.15),transparent 32%),
+        radial-gradient(circle at bottom left,rgba(255,213,74,.05),transparent 28%),
         var(--bg);
     color:var(--text);
     font-family:Arial,Helvetica,sans-serif;
-    min-height:100vh;
 }
 
 button,
@@ -48,136 +49,159 @@ input{
     font:inherit;
 }
 
-.container{
-    width:min(1180px,calc(100% - 28px));
-    margin:auto;
-    padding:18px 0 50px;
+button{
+    -webkit-tap-highlight-color:transparent;
 }
 
-/* BACK BUTTON */
+.container{
+    width:min(1180px,calc(100% - 24px));
+    margin:auto;
+    padding:16px 0 60px;
+}
+
+
+/* =========================
+   BACK
+========================= */
 
 .back-btn{
     display:inline-flex;
     align-items:center;
-    gap:7px;
+    gap:8px;
     color:#fff;
     text-decoration:none;
-    font-size:.92rem;
-    margin-bottom:15px;
-    opacity:.85;
+    padding:10px 14px;
+    margin-bottom:16px;
+    border:1px solid var(--border);
+    border-radius:11px;
+    background:rgba(255,255,255,.04);
     transition:.2s;
 }
 
 .back-btn:hover{
-    opacity:1;
-    color:var(--accent);
+    background:rgba(255,255,255,.08);
+    transform:translateX(-2px);
 }
 
-/* HERO */
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
     position:relative;
-    min-height:280px;
+    min-height:340px;
     overflow:hidden;
     border-radius:24px;
     border:1px solid var(--border);
-    box-shadow:0 20px 60px rgba(0,0,0,.35);
-    margin-bottom:22px;
+    box-shadow:0 20px 55px rgba(0,0,0,.3);
+    margin-bottom:25px;
 }
 
 .hero-banner{
+    position:absolute;
+    inset:0;
     width:100%;
     height:100%;
-    min-height:280px;
-    display:block;
     object-fit:cover;
 }
 
-.hero::after{
-    content:"";
+.hero-overlay{
     position:absolute;
     inset:0;
+    z-index:1;
     background:
         linear-gradient(
             90deg,
-            rgba(5,8,18,.92) 0%,
-            rgba(5,8,18,.65) 45%,
-            rgba(5,8,18,.25) 100%
+            rgba(3,7,17,.94) 0%,
+            rgba(3,7,17,.72) 46%,
+            rgba(3,7,17,.25) 100%
         );
 }
 
 .hero-content{
-    position:absolute;
+    position:relative;
     z-index:2;
-    inset:0;
+    min-height:340px;
     display:flex;
     align-items:center;
-    padding:30px;
+    padding:40px;
 }
 
 .hero-inner{
-    max-width:700px;
+    max-width:680px;
 }
 
-.ml-logo{
-    width:68px;
-    height:68px;
+.hero-logo{
+    width:76px;
+    height:76px;
     object-fit:cover;
-    border-radius:16px;
-    border:2px solid rgba(255,255,255,.3);
-    background:#fff;
-    margin-bottom:15px;
+    border-radius:17px;
+    border:2px solid rgba(255,255,255,.15);
     box-shadow:0 8px 25px rgba(0,0,0,.35);
+    margin-bottom:16px;
+}
+
+.hero-badge{
+    display:inline-flex;
+    padding:7px 11px;
+    margin-bottom:11px;
+    border-radius:999px;
+    background:rgba(255,213,74,.1);
+    border:1px solid rgba(255,213,74,.2);
+    color:var(--accent);
+    font-size:.72rem;
+    font-weight:800;
+    letter-spacing:.5px;
 }
 
 .hero h1{
-    font-size:clamp(1.8rem,4vw,3rem);
-    line-height:1.1;
-    margin-bottom:10px;
+    font-size:clamp(2rem,5vw,3.1rem);
+    line-height:1.08;
+    margin-bottom:12px;
 }
 
-.hero p{
-    color:#d8deef;
-    line-height:1.6;
-    max-width:620px;
+.hero-description{
+    max-width:600px;
+    color:#d1d7e5;
+    line-height:1.65;
+    font-size:.95rem;
 }
 
-.hero-badges{
-    display:flex;
-    flex-wrap:wrap;
-    gap:8px;
-    margin-top:17px;
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section{
+    margin-top:26px;
 }
 
-.badge{
-    background:rgba(255,255,255,.09);
-    border:1px solid rgba(255,255,255,.1);
-    padding:7px 11px;
-    border-radius:999px;
-    font-size:.78rem;
-    color:#fff;
+.section-heading{
+    margin-bottom:14px;
 }
-
-/* COMMON */
 
 .section-title{
     font-size:1.35rem;
-    margin:25px 0 13px;
+    font-weight:800;
 }
 
 .section-subtitle{
+    margin-top:5px;
     color:var(--muted);
-    font-size:.9rem;
-    margin:-5px 0 14px;
+    font-size:.84rem;
 }
 
-/* ACCOUNT */
+
+/* =========================
+   PLAYER ACCOUNT
+========================= */
 
 .account-box{
-    background:linear-gradient(145deg,var(--card),#0f1628);
+    padding:21px;
+    border-radius:19px;
     border:1px solid var(--border);
-    border-radius:20px;
-    padding:20px;
+    background:linear-gradient(145deg,var(--card),var(--bg2));
     box-shadow:0 12px 35px rgba(0,0,0,.18);
 }
 
@@ -190,44 +214,40 @@ input{
 
 .input-group label{
     display:block;
-    font-size:.85rem;
-    font-weight:700;
-    color:#e8ecf8;
     margin-bottom:7px;
-}
-
-.input-wrap{
-    position:relative;
+    color:#e7ebf4;
+    font-size:.86rem;
+    font-weight:700;
 }
 
 .input-group input{
     width:100%;
-    padding:14px 14px;
-    border-radius:12px;
+    height:48px;
+    padding:0 14px;
     border:1px solid var(--border);
     outline:none;
-    background:var(--card2);
+    border-radius:11px;
+    background:var(--bg2);
     color:#fff;
-    transition:.2s;
 }
 
 .input-group input::placeholder{
-    color:#77829e;
+    color:#66728b;
 }
 
 .input-group input:focus{
-    border-color:var(--accent);
-    box-shadow:0 0 0 3px rgba(255,212,71,.08);
+    border-color:rgba(255,213,74,.6);
+    box-shadow:0 0 0 3px rgba(255,213,74,.08);
 }
 
 .validate-btn{
-    height:47px;
+    height:48px;
     padding:0 22px;
     border:0;
-    border-radius:12px;
-    background:linear-gradient(135deg,var(--accent),var(--accent2));
+    border-radius:11px;
+    background:var(--accent);
     color:#111;
-    font-weight:800;
+    font-weight:900;
     cursor:pointer;
     white-space:nowrap;
     transition:.2s;
@@ -235,211 +255,55 @@ input{
 
 .validate-btn:hover{
     transform:translateY(-1px);
-    box-shadow:0 8px 22px rgba(255,190,0,.2);
+    filter:brightness(1.05);
 }
 
-.validate-btn:disabled{
-    opacity:.45;
-    cursor:not-allowed;
-    transform:none;
-    box-shadow:none;
+.validate-btn:active{
+    transform:translateY(0);
 }
 
-.validation-message{
+.validation-status{
     display:none;
     margin-top:13px;
     padding:11px 13px;
     border-radius:11px;
-    font-size:.86rem;
+    font-size:.84rem;
+    line-height:1.4;
 }
 
-.validation-message.success{
+.validation-status.show{
     display:block;
-    background:rgba(37,211,102,.09);
-    border:1px solid rgba(37,211,102,.22);
-    color:#7ff0a8;
 }
 
-.validation-message.error{
-    display:block;
-    background:rgba(255,91,110,.09);
-    border:1px solid rgba(255,91,110,.22);
-    color:#ff9aa8;
+.validation-status.success{
+    color:#65ed99;
+    background:rgba(37,211,102,.08);
+    border:1px solid rgba(37,211,102,.16);
 }
 
-/* SPECIAL PASSES */
-
-.special-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:11px;
+.validation-status.error{
+    color:#ff8585;
+    background:rgba(255,100,100,.08);
+    border:1px solid rgba(255,100,100,.15);
 }
 
-.special-card{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    min-width:0;
-    padding:10px;
-    border-radius:15px;
-    background:var(--card);
-    border:1px solid var(--border);
-    cursor:pointer;
-    transition:.2s;
+.account-note{
+    margin-top:10px;
+    color:var(--muted);
+    font-size:.76rem;
+    line-height:1.5;
 }
 
-.special-card:hover{
-    transform:translateY(-2px);
-    border-color:rgba(255,212,71,.45);
-}
 
-.special-card.active{
-    border:2px solid var(--accent);
-    background:linear-gradient(
-        145deg,
-        rgba(255,212,71,.10),
-        var(--card)
-    );
-}
+/* =========================
+   ORDER AREA
+========================= */
 
-.special-card img{
-    width:58px;
-    height:58px;
-    flex-shrink:0;
-    object-fit:cover;
-    border-radius:10px;
-}
-
-.special-info{
-    min-width:0;
-}
-
-.special-info h4{
-    font-size:.82rem;
-    line-height:1.25;
-    margin-bottom:5px;
-}
-
-.special-info p{
-    color:var(--accent);
-    font-weight:800;
-    font-size:.88rem;
-}
-
-/* DIAMONDS */
-
-.diamond-grid{
-    display:grid;
-    grid-template-columns:
-        repeat(auto-fill,minmax(125px,1fr));
-    gap:9px;
-}
-
-.diamond-card{
-    position:relative;
-    text-align:center;
-    padding:13px 8px;
-    min-height:73px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    border-radius:13px;
-    background:var(--card);
-    border:1px solid var(--border);
-    cursor:pointer;
-    transition:.2s;
-}
-
-.diamond-card:hover{
-    transform:translateY(-2px);
-    border-color:rgba(255,212,71,.5);
-}
-
-.diamond-card.active{
-    border:2px solid var(--accent);
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,212,71,.12),
-            var(--card)
-        );
-}
-
-.diamond-card h4{
-    font-size:.92rem;
-    margin-bottom:5px;
-}
-
-.diamond-card p{
-    color:var(--accent);
-    font-weight:800;
-    font-size:.86rem;
-}
-
-/* ORDER SUMMARY */
-
-.summary-box{
-    margin-top:22px;
-    background:
-        linear-gradient(145deg,var(--card),#0f1628);
-    border:1px solid var(--border);
-    border-radius:20px;
-    padding:20px;
-}
-
-.summary-title{
-    font-size:1.15rem;
-    margin-bottom:14px;
-}
-
-.summary-row{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:15px;
-    padding:10px 0;
-    border-bottom:1px solid rgba(255,255,255,.06);
-}
-
-.summary-row:last-of-type{
-    border-bottom:0;
-}
-
-.summary-value{
-    color:var(--accent);
-    font-weight:800;
-    text-align:right;
-}
-
-.continue-btn{
-    width:100%;
-    padding:15px;
-    margin-top:13px;
-    border:0;
-    border-radius:13px;
-    background:linear-gradient(135deg,var(--accent),var(--accent2));
-    color:#111;
-    font-weight:900;
-    cursor:pointer;
-    transition:.2s;
-}
-
-.continue-btn:hover{
-    transform:translateY(-1px);
-}
-
-/* PAYMENT */
-
-.payment-section{
+#orderArea{
     display:none;
-    margin-top:22px;
-    background:linear-gradient(145deg,var(--card),#0f1628);
-    border:1px solid var(--border);
-    border-radius:20px;
-    padding:20px;
 }
 
-.payment-section.show{
+#orderArea.show{
     display:block;
     animation:fadeUp .35s ease;
 }
@@ -455,169 +319,521 @@ input{
     }
 }
 
-.payment-header{
+
+/* =========================
+   SPECIAL PASSES
+========================= */
+
+.special-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:12px;
+}
+
+.special-card{
+    width:100%;
+    min-width:0;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:9px;
+    border:1px solid var(--border);
+    border-radius:15px;
+    background:linear-gradient(145deg,var(--card),var(--card2));
+    color:#fff;
+    text-align:left;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.special-card:hover{
+    transform:translateY(-2px);
+    border-color:rgba(255,213,74,.5);
+}
+
+.special-card.active{
+    border-color:var(--accent);
+    box-shadow:0 0 0 1px rgba(255,213,74,.16);
+}
+
+.special-card img{
+    width:64px;
+    height:64px;
+    flex:0 0 64px;
+    object-fit:cover;
+    border-radius:11px;
+}
+
+.special-info{
+    min-width:0;
+}
+
+.special-name{
+    display:block;
+    font-size:.9rem;
+    font-weight:800;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+.special-price{
+    display:block;
+    margin-top:5px;
+    color:var(--accent);
+    font-size:.9rem;
+    font-weight:900;
+}
+
+
+/* =========================
+   DIAMONDS
+========================= */
+
+.diamond-grid{
+    display:grid;
+    grid-template-columns:repeat(6,minmax(0,1fr));
+    gap:9px;
+}
+
+.diamond-card{
+    min-height:91px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:4px;
+    padding:8px 5px;
+    border:1px solid var(--border);
+    border-radius:13px;
+    background:linear-gradient(145deg,var(--card),var(--card2));
+    color:#fff;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.diamond-card:hover{
+    transform:translateY(-2px);
+    border-color:rgba(255,213,74,.5);
+}
+
+.diamond-card.active{
+    border-color:var(--accent);
+    box-shadow:0 0 0 1px rgba(255,213,74,.18);
+}
+
+.diamond-icon{
+    font-size:1rem;
+}
+
+.diamond-amount{
+    font-size:.94rem;
+    font-weight:800;
+}
+
+.diamond-price{
+    color:var(--accent);
+    font-size:.84rem;
+    font-weight:900;
+}
+
+
+/* =========================
+   SUMMARY
+========================= */
+
+.summary-box{
+    margin-top:26px;
+    padding:21px;
+    border-radius:19px;
+    border:1px solid var(--border);
+    background:linear-gradient(145deg,var(--card),var(--card2));
+    box-shadow:0 12px 35px rgba(0,0,0,.18);
+}
+
+.summary-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:15px;
+    margin-bottom:17px;
+}
+
+.summary-title{
+    font-size:1.25rem;
+    font-weight:800;
+}
+
+.summary-subtitle{
+    margin-top:5px;
+    color:var(--muted);
+    font-size:.82rem;
+}
+
+.summary-status{
+    padding:6px 10px;
+    border-radius:999px;
+    background:rgba(255,255,255,.06);
+    color:var(--muted);
+    font-size:.7rem;
+    font-weight:800;
+    white-space:nowrap;
+}
+
+.summary-status.selected{
+    color:#65ed99;
+    background:rgba(37,211,102,.1);
+}
+
+.summary-row{
     display:flex;
     justify-content:space-between;
     align-items:center;
     gap:15px;
-    margin-bottom:10px;
+    padding:10px 0;
+    border-top:1px solid rgba(255,255,255,.055);
 }
 
-.payment-title{
-    font-size:1.2rem;
-}
-
-.secure-label{
-    font-size:.72rem;
-    padding:6px 9px;
-    border-radius:999px;
-    background:rgba(37,211,102,.1);
-    color:#7ff0a8;
-}
-
-.payment-note{
+.summary-label{
     color:var(--muted);
-    line-height:1.55;
-    font-size:.88rem;
+    font-size:.85rem;
 }
 
-.payment-order-box{
-    margin-top:16px;
-    padding:14px;
-    border-radius:14px;
-    background:var(--card2);
+.summary-value{
+    text-align:right;
+    font-size:.86rem;
 }
 
-.payment-order-row{
-    display:flex;
-    justify-content:space-between;
-    gap:15px;
-    margin:7px 0;
-    font-size:.9rem;
-}
-
-.payment-order-row strong{
+.summary-value.highlight{
     color:var(--accent);
 }
 
-.qr-wrapper{
-    display:flex;
-    justify-content:center;
-    margin:20px 0;
+.total-row{
+    margin-top:3px;
+    padding-top:14px;
+    border-top:1px dashed rgba(255,255,255,.1);
 }
 
-.qr-wrapper img{
-    width:245px;
-    max-width:100%;
-    background:white;
-    padding:8px;
-    border-radius:15px;
+.summary-total{
+    color:var(--accent);
+    font-size:1.2rem;
 }
 
-.optional-note{
+.summary-message{
+    margin-top:12px;
     color:var(--muted);
-    font-size:.78rem;
-    text-align:center;
-    margin-top:-7px;
-    margin-bottom:15px;
+    font-size:.82rem;
 }
 
-.upload-input{
+.summary-message.error{
+    color:#ff8585;
+}
+
+.continue-btn{
     width:100%;
-    padding:12px;
-    background:var(--card2);
-    border:1px solid var(--border);
-    border-radius:11px;
-    color:#fff;
-}
-
-.upload-label{
-    display:block;
-    margin-bottom:7px;
-    font-size:.83rem;
-    font-weight:700;
-}
-
-.order-btn{
-    width:100%;
-    padding:16px;
     margin-top:15px;
+    padding:15px;
     border:0;
-    border-radius:13px;
-    background:var(--green);
-    color:white;
+    border-radius:12px;
+    background:var(--accent);
+    color:#111;
     font-weight:900;
     cursor:pointer;
     transition:.2s;
 }
 
-.order-btn:hover{
+.continue-btn:hover{
     transform:translateY(-1px);
-    box-shadow:0 8px 20px rgba(37,211,102,.15);
+    filter:brightness(1.04);
 }
 
-.payment-status{
-    text-align:center;
-    margin-top:10px;
-    font-size:.76rem;
+
+/* =========================
+   PAYMENT
+========================= */
+
+#paymentSection{
+    display:none;
+}
+
+#paymentSection.show{
+    display:block;
+    animation:fadeUp .35s ease;
+}
+
+.payment-box{
+    margin-top:26px;
+    padding:21px;
+    border-radius:19px;
+    border:1px solid var(--border);
+    background:linear-gradient(145deg,var(--card),var(--card2));
+}
+
+.payment-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:20px;
+    padding-bottom:18px;
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.payment-badge{
+    display:inline-block;
+    margin-bottom:8px;
+    padding:5px 9px;
+    border-radius:999px;
+    background:rgba(37,211,102,.1);
+    color:#65ed99;
+    font-size:.67rem;
+    font-weight:900;
+}
+
+.payment-title{
+    font-size:1.3rem;
+}
+
+.payment-subtitle{
+    max-width:600px;
+    margin-top:6px;
     color:var(--muted);
+    font-size:.82rem;
+    line-height:1.5;
 }
 
-/* MOBILE */
+.payment-amount{
+    padding:10px 14px;
+    border-radius:12px;
+    background:rgba(255,213,74,.08);
+    border:1px solid rgba(255,213,74,.15);
+    white-space:nowrap;
+}
 
-@media(max-width:900px){
+.payment-amount span{
+    display:block;
+    color:var(--muted);
+    font-size:.68rem;
+}
 
-    .special-grid{
-        grid-template-columns:repeat(2,1fr);
+.payment-amount strong{
+    color:var(--accent);
+    font-size:1.15rem;
+}
+
+.payment-content{
+    display:grid;
+    grid-template-columns:330px 1fr;
+    gap:20px;
+    padding-top:20px;
+}
+
+.qr-card{
+    padding:17px;
+    border-radius:16px;
+    text-align:center;
+    background:rgba(0,0,0,.15);
+    border:1px solid rgba(255,255,255,.06);
+}
+
+.qr-title{
+    font-weight:900;
+}
+
+.qr-description{
+    margin-top:5px;
+    color:var(--muted);
+    font-size:.75rem;
+    line-height:1.4;
+}
+
+.qr-wrapper{
+    display:flex;
+    justify-content:center;
+    margin:15px 0;
+}
+
+.qr-wrapper img{
+    width:225px;
+    height:225px;
+    max-width:100%;
+    object-fit:contain;
+    background:#fff;
+    padding:7px;
+    border-radius:13px;
+}
+
+.upi-note{
+    color:var(--muted);
+    font-size:.74rem;
+    line-height:1.4;
+}
+
+.payment-info{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.payment-info-card{
+    display:flex;
+    align-items:flex-start;
+    gap:11px;
+    padding:13px;
+    border-radius:13px;
+    background:rgba(255,255,255,.035);
+    border:1px solid rgba(255,255,255,.05);
+}
+
+.info-number{
+    width:27px;
+    height:27px;
+    flex:0 0 27px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    background:rgba(255,213,74,.1);
+    color:var(--accent);
+    font-size:.75rem;
+    font-weight:900;
+}
+
+.payment-info-card strong{
+    font-size:.83rem;
+}
+
+.payment-info-card p{
+    margin-top:4px;
+    color:var(--muted);
+    font-size:.75rem;
+    line-height:1.4;
+}
+
+.payment-notice{
+    margin-top:auto;
+    padding:12px;
+    border-radius:12px;
+    background:rgba(255,213,74,.05);
+    border:1px solid rgba(255,213,74,.1);
+    color:var(--muted);
+    font-size:.74rem;
+    line-height:1.45;
+}
+
+.payment-notice strong{
+    color:var(--accent);
+}
+
+
+/* =========================
+   WHATSAPP
+========================= */
+
+.whatsapp-btn{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin-top:19px;
+    padding:16px;
+    border:0;
+    border-radius:13px;
+    background:var(--green);
+    color:#fff;
+    font-weight:900;
+    font-size:1rem;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.whatsapp-btn:hover{
+    transform:translateY(-1px);
+    filter:brightness(1.05);
+}
+
+.whatsapp-icon{
+    font-size:1.2rem;
+}
+
+.whatsapp-arrow{
+    margin-left:auto;
+    font-size:1.15rem;
+}
+
+.payment-footer{
+    margin-top:9px;
+    text-align:center;
+    color:var(--muted);
+    font-size:.7rem;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1000px){
+
+    .diamond-grid{
+        grid-template-columns:repeat(5,minmax(0,1fr));
     }
+
+}
+
+@media(max-width:800px){
 
     .account-grid{
         grid-template-columns:1fr 1fr;
     }
 
     .validate-btn{
-        grid-column:1 / -1;
+        grid-column:1/-1;
         width:100%;
     }
+
+    .diamond-grid{
+        grid-template-columns:repeat(4,minmax(0,1fr));
+    }
+
+    .payment-content{
+        grid-template-columns:1fr;
+    }
+
+    .payment-amount{
+        text-align:left;
+    }
+
 }
 
 @media(max-width:600px){
 
     .container{
-        width:min(100% - 18px,1180px);
-        padding-top:12px;
+        width:min(100% - 16px,1180px);
+        padding-top:10px;
     }
 
-    .hero,
-    .hero-banner{
-        min-height:300px;
+    .hero{
+        min-height:290px;
+        border-radius:18px;
     }
 
     .hero-content{
-        padding:20px;
-        align-items:flex-end;
+        min-height:290px;
+        padding:25px 20px;
     }
 
-    .hero-inner{
-        width:100%;
-    }
-
-    .ml-logo{
-        width:55px;
-        height:55px;
-        margin-bottom:10px;
+    .hero-logo{
+        width:64px;
+        height:64px;
     }
 
     .hero h1{
-        font-size:1.7rem;
+        font-size:2rem;
     }
 
-    .hero p{
-        font-size:.85rem;
-    }
-
-    .hero-badges{
-        margin-top:12px;
+    .hero-description{
+        font-size:.84rem;
     }
 
     .account-grid{
@@ -633,2004 +849,213 @@ input{
     }
 
     .special-card{
+        flex-direction:column;
+        align-items:stretch;
         padding:8px;
-        gap:7px;
     }
 
     .special-card img{
-        width:48px;
-        height:48px;
+        width:100%;
+        height:80px;
     }
 
-    .special-info h4{
-        font-size:.72rem;
+    .special-info{
+        padding:2px;
     }
 
-    .special-info p{
+    .special-name{
         font-size:.78rem;
+    }
+
+    .special-price{
+        font-size:.82rem;
     }
 
     .diamond-grid{
-        grid-template-columns:
-            repeat(3,1fr);
-        gap:7px;
+        grid-template-columns:repeat(3,minmax(0,1fr));
+        gap:8px;
     }
 
     .diamond-card{
-        min-height:66px;
-        padding:9px 4px;
+        min-height:82px;
     }
 
-    .diamond-card h4{
+    .diamond-amount{
+        font-size:.88rem;
+    }
+
+    .diamond-price{
         font-size:.78rem;
     }
 
-    .diamond-card p{
-        font-size:.73rem;
+    .summary-header{
+        display:block;
     }
 
-    .summary-row{
-        font-size:.84rem;
+    .summary-status{
+        display:inline-block;
+        margin-top:10px;
     }
 
     .payment-header{
-        align-items:flex-start;
+        display:block;
     }
+
+    .payment-amount{
+        margin-top:13px;
+    }
+
+}
+
+@media(max-width:380px){
+
+    .diamond-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+
 }
 </style>
-</head>
-
-<body>
-
-<div class="container">
-
-<a href="index.html" class="back-btn">
-← Back to Pantheos Global Store
-</a>
-
-<!-- HERO -->
-
-<section class="hero">
-
-<img
-src="assets/mlbb-banner.jpg"
-alt="Mobile Legends Banner"
-class="hero-banner"
->
-
-<div class="hero-content">
-
-<div class="hero-inner">
-
-<img
-src="assets/mlbb-logo.jpg"
-alt="Mobile Legends"
-class="ml-logo"
->
-
-<h1>Mobile Legends Top Up</h1>
-
-<p>
-Recharge your Mobile Legends account quickly and securely.
-Enter your Player ID and Server ID, select your diamonds or
-special pass, then validate your order.
-</p>
-
-<div class="hero-badges">
-<span class="badge">⚡ Fast Delivery</span>
-<span class="badge">🔒 Secure Payment</span>
-<span class="badge">💬 WhatsApp Support</span>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- PLAYER INFORMATION -->
-
-<h2 class="section-title">
-Player Information
-</h2>
-
-<div class="account-box">
-
-<div class="account-grid">
-
-<div class="input-group">
-
-<label for="playerId">
-Player ID
-</label>
-
-<input
-type="text"
-id="playerId"
-inputmode="numeric"
-autocomplete="off"
-placeholder="Enter Player ID"
->
-
-</div>
-
-
-<div class="input-group">
-
-<label for="serverId">
-Server ID
-</label>
-
-<input
-type="text"
-id="serverId"
-inputmode="numeric"
-autocomplete="off"
-placeholder="Enter Server ID"
->
-
-</div>
-
-
-<button
-type="button"
-class="validate-btn"
-id="validateBtn"
-disabled
->
-✓ Validate & Continue
-</button>
-
-</div>
-
-<div
-id="validationMessage"
-class="validation-message"
->
-</div>
-
-</div>
-
-
-<!-- SPECIAL PASSES -->
-
-<h2 class="section-title">
-Special Passes
-</h2>
-
-<p class="section-subtitle">
-Select a pass if you prefer a special recharge option.
-</p>
-
-<div class="special-grid">
-
-<div
-class="special-card"
-data-package="Weekly Pass"
-data-price="149"
->
-
-<img
-src="assets/weekly-pass.jpg"
-alt="Weekly Pass"
->
-
-<div class="special-info">
-
-<h4>Weekly Pass</h4>
-<p>₹149</p>
-
-</div>
-
-</div>
-
-
-<div
-class="special-card"
-data-package="Twilight Pass"
-data-price="829"
->
-
-<img
-src="assets/twilight-pass.jpg"
-alt="Twilight Pass"
->
-
-<div class="special-info">
-
-<h4>Twilight Pass</h4>
-<p>₹829</p>
-
-</div>
-
-</div>
-
-
-<div
-class="special-card"
-data-package="Starlight Normal"
-data-price="249"
->
-
-<img
-src="assets/starlight-normal.jpg"
-alt="Starlight Normal"
->
-
-<div class="special-info">
-
-<h4>Starlight Normal</h4>
-<p>₹249</p>
-
-</div>
-
-</div>
-
-
-<div
-class="special-card"
-data-package="Starlight Premium"
-data-price="499"
->
-
-<img
-src="assets/starlight-premium.jpg"
-alt="Starlight Premium"
->
-
-<div class="special-info">
-
-<h4>Starlight Premium</h4>
-<p>₹499</p>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- DIAMONDS -->
-
-<h2 class="section-title">
-Diamond Packages
-</h2>
-
-<p class="section-subtitle">
-Choose the diamond package you want to purchase.
-</p>
-
-<div
-class="diamond-grid"
-id="diamondGrid"
->
-
-<div class="diamond-card" data-package="💎 5 Diamonds" data-price="13">
-<h4>💎 5</h4>
-<p>₹13</p>
-</div>
-
-<div class="diamond-card" data-package="💎 11 Diamonds" data-price="23">
-<h4>💎 11</h4>
-<p>₹23</p>
-</div>
-
-<div class="diamond-card" data-package="💎 14 Diamonds" data-price="34">
-<h4>💎 14</h4>
-<p>₹34</p>
-</div>
-
-<div class="diamond-card" data-package="💎 22 Diamonds" data-price="44">
-<h4>💎 22</h4>
-<p>₹44</p>
-</div>
-
-<div class="diamond-card" data-package="💎 28 Diamonds" data-price="59">
-<h4>💎 28</h4>
-<p>₹59</p>
-</div>
-
-<div class="diamond-card" data-package="💎 55 Diamonds" data-price="89">
-<h4>💎 55</h4>
-<p>₹89</p>
-</div>
-
-<div class="diamond-card" data-package="💎 86 Diamonds" data-price="129">
-<h4>💎 86</h4>
-<p>₹129</p>
-</div>
-
-<div class="diamond-card" data-package="💎 110 Diamonds" data-price="169">
-<h4>💎 110</h4>
-<p>₹169</p>
-</div>
-
-<div class="diamond-card" data-package="💎 172 Diamonds" data-price="259">
-<h4>💎 172</h4>
-<p>₹259</p>
-</div>
-
-<div class="diamond-card" data-package="💎 257 Diamonds" data-price="379">
-<h4>💎 257</h4>
-<p>₹379</p>
-</div>
-
-<div class="diamond-card" data-package="💎 275 Diamonds" data-price="399">
-<h4>💎 275</h4>
-<p>₹399</p>
-</div>
-
-<div class="diamond-card" data-package="💎 312 Diamonds" data-price="469">
-<h4>💎 312</h4>
-<p>₹469</p>
-</div>
-
-<div class="diamond-card" data-package="💎 361 Diamonds" data-price="529">
-<h4>💎 361</h4>
-<p>₹529</p>
-</div>
-
-<div class="diamond-card" data-package="💎 429 Diamonds" data-price="634">
-<h4>💎 429</h4>
-<p>₹634</p>
-</div>
-
-<div class="diamond-card" data-package="💎 451 Diamonds" data-price="689">
-<h4>💎 451</h4>
-<p>₹689</p>
-</div>
-
-<div class="diamond-card" data-package="💎 514 Diamonds" data-price="749">
-<h4>💎 514</h4>
-<p>₹749</p>
-</div>
-
-<div class="diamond-card" data-package="💎 565 Diamonds" data-price="819">
-<h4>💎 565</h4>
-<p>₹819</p>
-</div>
-
-<div class="diamond-card" data-package="💎 706 Diamonds" data-price="1029">
-<h4>💎 706</h4>
-<p>₹1029</p>
-</div>
-
-<div class="diamond-card" data-package="💎 720 Diamonds" data-price="1059">
-<h4>💎 720</h4>
-<p>₹1059</p>
-</div>
-
-<div class="diamond-card" data-package="💎 803 Diamonds" data-price="1179">
-<h4>💎 803</h4>
-<p>₹1179</p>
-</div>
-
-<div class="diamond-card" data-package="💎 900 Diamonds" data-price="1329">
-<h4>💎 900</h4>
-<p>₹1329</p>
-</div>
-
-<div class="diamond-card" data-package="💎 1049 Diamonds" data-price="1539">
-<h4>💎 1049</h4>
-<p>₹1539</p>
-</div>
-
-<div class="diamond-card" data-package="💎 1130 Diamonds" data-price="1649">
-<h4>💎 1130</h4>
-<p>₹1649</p>
-</div>
-
-<div class="diamond-card" data-package="💎 1412 Diamonds" data-price="2059">
-<h4>💎 1412</h4>
-<p>₹2059</p>
-</div>
-
-<div class="diamond-card" data-package="💎 1503 Diamonds" data-price="2199">
-<h4>💎 1503</h4>
-<p>₹2199</p>
-</div>
-
-<div class="diamond-card" data-package="💎 2195 Diamonds" data-price="3089">
-<h4>💎 2195</h4>
-<p>₹3089</p>
-</div>
-
-<div class="diamond-card" data-package="💎 3688 Diamonds" data-price="5139">
-<h4>💎 3688</h4>
-<p>₹5139</p>
-</div>
-
-<div class="diamond-card" data-package="💎 5532 Diamonds" data-price="7649">
-<h4>💎 5532</h4>
-<p>₹7649</p>
-</div>
-
-<div class="diamond-card" data-package="💎 6046 Diamonds" data-price="8399">
-<h4>💎 6046</h4>
-<p>₹8399</p>
-</div>
-
-<div class="diamond-card" data-package="💎 9288 Diamonds" data-price="12899">
-<h4>💎 9288</h4>
-<p>₹12899</p>
-</div>
-
-</div>
-
-
-<!-- ORDER SUMMARY -->
-
-<div class="summary-box">
-
-<h3 class="summary-title">
-Order Summary
-</h3>
-
-<div class="summary-row">
-
-<span>
-Selected Package
-</span>
-
-<span
-id="selectedPackage"
-class="summary-value"
->
-Not Selected
-</span>
-
-</div>
-
-<div class="summary-row">
-
-<span>
-Total Amount
-</span>
-
-<span
-id="selectedPrice"
-class="summary-value"
->
-₹0
-</span>
-
-</div>
-
-<button
-type="button"
-class="continue-btn"
-id="summaryContinueBtn"
->
-Continue to Payment
-</button>
-
-</div>
-
-
-<!-- PAYMENT -->
-
-<div
-class="payment-section"
-id="paymentSection"
->
-
-<div class="payment-header">
-
-<h3 class="payment-title">
-Payment
-</h3>
-
-<span class="secure-label">
-🔒 Secure Checkout
-</span>
-
-</div>
-
-<p class="payment-note">
-Complete the payment using the QR code below.
-After payment, you can continue directly to WhatsApp.
-Uploading a payment screenshot is optional.
-</p>
-
-
-<div class="payment-order-box">
-
-<div class="payment-order-row">
-<span>Player ID</span>
-<strong id="paymentPlayerId">—</strong>
-</div>
-
-<div class="payment-order-row">
-<span>Server ID</span>
-<strong id="paymentServerId">—</strong>
-</div>
-
-<div class="payment-order-row">
-<span>Package</span>
-<strong id="paymentPackage">—</strong>
-</div>
-
-<div class="payment-order-row">
-<span>Total</span>
-<strong id="paymentPrice">₹0</strong>
-</div>
-
-</div>
-
-
-<div class="qr-wrapper">
-
-<img
-src="assets/qr-payment.jpg"
-alt="Pantheos Global Store Payment QR"
->
-
-</div>
-
-<p class="optional-note">
-Payment screenshot is optional.
-</p>
-
-
-<label
-for="paymentProof"
-class="upload-label"
->
-Payment Screenshot — Optional
-</label>
-
-<input
-type="file"
-id="paymentProof"
-accept="image/*"
-class="upload-input"
->
-
-
-<button
-type="button"
-class="order-btn"
-id="orderBtn"
->
-💬 Continue to WhatsApp
-</button>
-
-<p class="payment-status">
-Your order details will be prepared automatically for WhatsApp.
-</p>
-
-</div>
-
-</div>
 
 
 <script>
 
-/* =========================================
-   MLBB ORDER SYSTEM
-   ========================================= */
+document.addEventListener("DOMContentLoaded",function(){
 
-let selectedPackage = "";
-let selectedPrice = "";
-let isValidated = false;
+    /* =========================
+       STATE
+    ========================= */
 
+    let selectedPackage = "";
+    let selectedPrice = "";
+    let validated = false;
 
-/* ELEMENTS */
 
-const playerIdInput =
-document.getElementById("playerId");
-
-const serverIdInput =
-document.getElementById("serverId");
-
-const validateBtn =
-document.getElementById("validateBtn");
-
-const validationMessage =
-document.getElementById("validationMessage");
-
-const diamondCards =
-document.querySelectorAll(".diamond-card");
-
-const specialCards =
-document.querySelectorAll(".special-card");
-
-const selectedPackageText =
-document.getElementById("selectedPackage");
-
-const selectedPriceText =
-document.getElementById("selectedPrice");
-
-const paymentSection =
-document.getElementById("paymentSection");
-
-const summaryContinueBtn =
-document.getElementById("summaryContinueBtn");
-
-const orderBtn =
-document.getElementById("orderBtn");
-
-
-/* =========================================
-   ENABLE VALIDATE BUTTON
-   ========================================= */
-
-function updateValidateButton(){
-
-    const player =
-    playerIdInput.value.trim();
-
-    const server =
-    serverIdInput.value.trim();
-
-    validateBtn.disabled =
-    !(player.length > 0 && server.length > 0);
-
-}
-
-
-playerIdInput.addEventListener(
-"input",
-updateValidateButton
-);
-
-serverIdInput.addEventListener(
-"input",
-updateValidateButton
-);
-
-
-/* =========================================
-   CLEAR PACKAGE SELECTION
-   ========================================= */
-
-function clearPackageSelection(){
-
-    diamondCards.forEach(card=>{
-        card.classList.remove("active");
-    });
-
-    specialCards.forEach(card=>{
-        card.classList.remove("active");
-    });
-
-}
-
-
-/* =========================================
-   SELECT PACKAGE
-   ========================================= */
-
-function selectPackage(card){
-
-    clearPackageSelection();
-
-    card.classList.add("active");
-
-    selectedPackage =
-    card.dataset.package;
-
-    selectedPrice =
-    card.dataset.price;
-
-    selectedPackageText.textContent =
-    selectedPackage;
-
-    selectedPriceText.textContent =
-    "₹" + selectedPrice;
-
-}
-
-
-/* DIAMONDS */
-
-diamondCards.forEach(card=>{
-
-    card.addEventListener(
-    "click",
-    ()=>{
-
-        selectPackage(card);
-
-        /* If customer has already validated,
-           refresh payment details automatically. */
-
-        if(isValidated){
-
-            updatePaymentDetails();
-
-        }
-
-    });
-
-});
-
-
-/* SPECIAL PASSES */
-
-specialCards.forEach(card=>{
-
-    card.addEventListener(
-    "click",
-    ()=>{
-
-        selectPackage(card);
-
-        if(isValidated){
-
-            updatePaymentDetails();
-
-        }
-
-    });
-
-});
-
-
-/* =========================================
-   VALIDATE PLAYER DETAILS
-   ========================================= */
-
-validateBtn.addEventListener(
-"click",
-()=>{
+    /* =========================
+       ELEMENTS
+    ========================= */
 
     const playerId =
-    playerIdInput.value.trim();
+        document.getElementById("playerId");
 
     const serverId =
-    serverIdInput.value.trim();
+        document.getElementById("serverId");
+
+    const validateBtn =
+        document.getElementById("validateBtn");
+
+    const validationStatus =
+        document.getElementById("validationStatus");
+
+    const orderArea =
+        document.getElementById("orderArea");
+
+    const diamondCards =
+        document.querySelectorAll(".diamond-card");
+
+    const specialCards =
+        document.querySelectorAll(".special-card");
+
+    const selectedPackageEl =
+        document.getElementById("selectedPackage");
+
+    const selectedPriceEl =
+        document.getElementById("selectedPrice");
+
+    const summaryPlayerId =
+        document.getElementById("summaryPlayerId");
+
+    const summaryServerId =
+        document.getElementById("summaryServerId");
+
+    const summaryStatus =
+        document.getElementById("summaryStatus");
+
+    const summaryMessage =
+        document.getElementById("summaryMessage");
+
+    const continueBtn =
+        document.getElementById("continueBtn");
+
+    const paymentSection =
+        document.getElementById("paymentSection");
+
+    const paymentAmount =
+        document.getElementById("paymentAmount");
+
+    const orderBtn =
+        document.getElementById("orderBtn");
 
 
-    if(!playerId || !serverId){
+    /* =========================
+       VALIDATION
+    ========================= */
 
-        validationMessage.className =
-        "validation-message error";
+    function showValidation(message,type){
 
-        validationMessage.textContent =
-        "Please enter both Player ID and Server ID.";
+        validationStatus.textContent = message;
 
-        return;
-
-    }
-
-
-    /* Basic numeric validation */
-
-    if(!/^\d+$/.test(playerId)){
-
-        validationMessage.className =
-        "validation-message error";
-
-        validationMessage.textContent =
-        "Player ID should contain numbers only.";
-
-        return;
-
-    }
-
-
-    if(!/^\d+$/.test(serverId)){
-
-        validationMessage.className =
-        "validation-message error";
-
-        validationMessage.textContent =
-        "Server ID should contain numbers only.";
-
-        return;
-
-    }
-
-
-    isValidated = true;
-
-
-    validationMessage.className =
-    "validation-message success";
-
-    validationMessage.textContent =
-    "✓ Player details accepted. You can now select your package and continue to payment.";
-
-
-    updatePaymentDetails();
-
-
-    /* If a package is already selected,
-       reveal payment automatically. */
-
-    if(selectedPackage){
-
-        showPayment();
-
-    }
-
-});
-
-
-/* =========================================
-   PAYMENT DETAILS
-   ========================================= */
-
-function updatePaymentDetails(){
-
-    document.getElementById(
-        "paymentPlayerId"
-    ).textContent =
-    playerIdInput.value.trim();
-
-    document.getElementById(
-        "paymentServerId"
-    ).textContent =
-    serverIdInput.value.trim();
-
-    document.getElementById(
-        "paymentPackage"
-    ).textContent =
-    selectedPackage || "Not Selected";
-
-    document.getElementById(
-        "paymentPrice"
-    ).textContent =
-    selectedPrice
-    ? "₹" + selectedPrice
-    : "₹0";
-
-}
-
-
-/* =========================================
-   SHOW PAYMENT
-   ========================================= */
-
-function showPayment(){
-
-    if(!isValidated){
-
-        validationMessage.className =
-        "validation-message error";
-
-        validationMessage.textContent =
-        "Please enter and validate your Player ID and Server ID first.";
-
-        document
-        .querySelector(".account-box")
-        .scrollIntoView({
-            behavior:"smooth",
-            block:"center"
-        });
-
-        return;
+        validationStatus.className =
+            "validation-status show " + type;
 
     }
 
 
-    if(!selectedPackage){
+    function validateAccount(){
 
-        alert(
-            "Please select a Diamond Package or Special Pass first."
-        );
+        const pid =
+            playerId.value.trim();
 
-        return;
+        const sid =
+            serverId.value.trim();
 
-    }
 
+        if(!pid){
 
-    updatePaymentDetails();
-
-    paymentSection.classList.add("show");
-
-    setTimeout(()=>{
-
-        paymentSection.scrollIntoView({
-            behavior:"smooth",
-            block:"start"
-        });
-
-    },100);
-
-}
-
-
-/* SUMMARY BUTTON */
-
-summaryContinueBtn.addEventListener(
-"click",
-showPayment
-);
-
-
-/* =========================================
-   WHATSAPP ORDER
-   ========================================= */
-
-orderBtn.addEventListener(
-"click",
-()=>{
-
-    const playerId =
-    playerIdInput.value.trim();
-
-    const serverId =
-    serverIdInput.value.trim();
-
-
-    if(!isValidated){
-
-        alert(
-            "Please validate your Player ID and Server ID first."
-        );
-
-        return;
-
-    }
-
-
-    if(!selectedPackage){
-
-        alert(
-            "Please select a package first."
-        );
-
-        return;
-
-    }
-
-
-    const proof =
-    document.getElementById(
-        "paymentProof"
-    ).files.length > 0;
-
-
-    const paymentStatus =
-    proof
-    ? "Payment screenshot attached by customer"
-    : "Payment screenshot not uploaded";
-
-
-    const message =
-
-`🎮 PANTHEOS GLOBAL STORE
-
-🛒 NEW MLBB ORDER
-
-━━━━━━━━━━━━━━━━━━
-
-🎯 Game: Mobile Legends
-
-👤 Player ID: ${playerId}
-🌐 Server ID: ${serverId}
-
-📦 Package:
-${selectedPackage}
-
-💰 Amount:
-₹${selectedPrice}
-
-💳 Payment:
-QR Payment
-
-📸 Screenshot:
-${paymentStatus}
-
-━━━━━━━━━━━━━━━━━━
-
-Please verify my payment and process my MLBB top-up.
-
-Thank you!
-Pantheos Global Store`;
-
-
-    const whatsappURL =
-    "https://wa.me/919310651934?text="
-    + encodeURIComponent(message);
-
-
-    window.open(
-        whatsappURL,
-        "_blank"
-    );
-
-});
-
-
-/* =========================================
-   KEEP PAYMENT INFORMATION UPDATED
-   ========================================= */
-
-playerIdInput.addEventListener(
-"input",
-()=>{
-
-    if(isValidated){
-        updatePaymentDetails();
-    }
-
-});
-
-serverIdInput.addEventListener(
-"input",
-()=>{
-
-    if(isValidated){
-        updatePaymentDetails();
-    }
-
-);
-
-
-/* INITIAL STATE */
-
-updateValidateButton();
-
-</script>
-
-
-<script src="js/app.js"></script>
-
-</body>
-</html>      
-<!-- =========================================
-     SPECIAL PASSES
-========================================= -->
-
-<h2 class="section-title">
-    Special Passes
-</h2>
-
-<p class="section-subtitle">
-    Select a special pass instead of diamonds.
-</p>
-
-<div class="special-grid">
-
-    <div class="special-card"
-         data-package="Weekly Pass"
-         data-price="149">
-
-        <img
-            src="assets/weekly-pass.jpg"
-            alt="Weekly Pass"
-        >
-
-        <div class="special-info">
-            <h4>Weekly Pass</h4>
-            <p>₹149</p>
-        </div>
-
-    </div>
-
-
-    <div class="special-card"
-         data-package="Twilight Pass"
-         data-price="829">
-
-        <img
-            src="assets/twilight-pass.jpg"
-            alt="Twilight Pass"
-        >
-
-        <div class="special-info">
-            <h4>Twilight Pass</h4>
-            <p>₹829</p>
-        </div>
-
-    </div>
-
-
-    <div class="special-card"
-         data-package="Starlight Normal"
-         data-price="249">
-
-        <img
-            src="assets/starlight-normal.jpg"
-            alt="Starlight Normal"
-        >
-
-        <div class="special-info">
-            <h4>Starlight Normal</h4>
-            <p>₹249</p>
-        </div>
-
-    </div>
-
-
-    <div class="special-card"
-         data-package="Starlight Premium"
-         data-price="499">
-
-        <img
-            src="assets/starlight-premium.jpg"
-            alt="Starlight Premium"
-        >
-
-        <div class="special-info">
-            <h4>Starlight Premium</h4>
-            <p>₹499</p>
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- =========================================
-     DIAMOND PACKAGES
-========================================= -->
-
-<h2 class="section-title">
-    Diamond Packages
-</h2>
-
-<p class="section-subtitle">
-    Select the amount of Diamonds you want to purchase.
-</p>
-
-<div class="diamond-grid" id="diamondGrid">
-
-    <div class="diamond-card"
-         data-package="💎 5 Diamonds"
-         data-price="13">
-        <h4>💎 5</h4>
-        <p>₹13</p>
-    </div>
-
-
-    <div class="diamond-card"
-         data-package="💎 11 Diamonds"
-         data-price="23">
-        <h4>💎 11</h4>
-        <p>₹23</p>
-    </div>
-
-
-    <div class="diamond-card"
-         data-package="💎 14 Diamonds"
-         data-price="34">
-        <h4>💎 14</h4>
-        <p>₹34</p>
-    </div>
-
-
-    <div class="diamond-card"
-         data-package="💎 22 Diamonds"
-         data-price="44">
-        <h4>💎 22</h4>
-        <p>₹44</p>
-    </div>
-
-
-    <div class="diamond-card"
-         data-package="💎 28 Diamonds"
-         data-price="59">
-        <h4>💎 28</h4>
-        <p>₹59</p>
-    </div>
-
-
-    <div class="diamond-card"
-         data-package="💎 55 Diamonds"
-         data-price="89">
-        <h4>💎 55</h4>
-        <p>₹89</p>
-    </div>
-
-
-    <div class="diamond-card"
-         data-package="💎 86 Diamonds"
-         data-price="129">
-        <h4>💎 86</h4>
-        <p>₹129</p>
-    </div>
-
-
-    <div class="diamond-card"
-         data-package="💎 110 Diamonds"
-         data-price="169">
-        <h4>💎 110</h4>
-        <p>₹169</p>
-    </div>
-
-
-    <div class="diamond-card"
-         data-package="💎 172 Diamonds"
-         data-price="259">
-        <h4>💎 172</h4>
-        <p>₹259</p>
-    </div>
-
-
-    <div class="diamond-card"
-         data-package="💎 257 Diamonds"
-         data-price="379">
-        <h4>💎 257</h4>
-        <p>₹379</p>
-    </div>
-
-
-    <div class="diamond-card"
-         data-package="💎 275 Diamonds"
-         data-price="399">
-        <h4>💎 275</h4>
-        <p>₹399</p>
-    </div>
-
-
-    <div class="diamond-card"
-         data-package="💎 312 Diamonds"
-         data-price="469">
-        <h4>💎 312</h4>
-        <p>₹469</p>
-    </div>
-
-
-    <div class="diamond-card"
-         data-package="💎 361 Diamonds"
-         data-price="529">
-        <h4>💎 361</h4>
-        <p>₹529</p>
-    </div>
-
-
-    <div class="diamond-card"
-         data-package="💎 429 Diamonds"
-         data-price="634">
-        <h4>💎 429</h4>
-        <p>₹634</p>
-    </div>
-
-
-    <div class="diamond-card"
-         data-package="💎 451 Diamonds"
-         data-price="689">
-        <h4>💎 451</h4>
-        <p>₹689</p>
-    </div>
-
-
-    <div class="diamond-card"
-         data-package="💎 514 Diamonds"
-         data-price="749">
-        <h4>💎 514</h4>
-        <p>₹749</p>
-    </div>
-
-
-    <div class="diamond-card"
-         data-package="💎 565 Diamonds"
-         data-price="819">
-        <h4>💎 565</h4>
-        <p>₹819</p>
-    </div>
-
-
-    <div class="diamond-card"
-         data-package="💎 706 Diamonds"
-         data-price="1029">
-        <h4>💎 706</h4>
-        <p>₹1029</p>
-    </div>
-
-
-    <div class="diamond-card"
-         data-package="💎 720 Diamonds"
-         data-price="1059">
-        <h4>💎 720</h4>
-        <p>₹1059</p>
-    </div>
-
-
-    <div class="diamond-card"
-         data-package="💎 803 Diamonds"
-         data-price="1179">
-        <h4>💎 803</h4>
-        <p>₹1179</p>
-    </div>
-
-
-    <div class="diamond-card"
-         data-package="💎 900 Diamonds"
-         data-price="1329">
-        <h4>💎 900</h4>
-        <p>₹1329</p>
-    </div>
-
-
-    <div class="diamond-card"
-         data-package="💎 1049 Diamonds"
-         data-price="1539">
-        <h4>💎 1049</h4>
-        <p>₹1539</p>
-    </div>
-
-
-    <div class="diamond-card"
-         data-package="💎 1130 Diamonds"
-         data-price="1649">
-        <h4>💎 1130</h4>
-        <p>₹1649</p>
-    </div>
-
-
-    <div class="diamond-card"
-         data-package="💎 1412 Diamonds"
-         data-price="2059">
-        <h4>💎 1412</h4>
-        <p>₹2059</p>
-    </div>
-
-
-    <div class="diamond-card"
-         data-package="💎 1503 Diamonds"
-         data-price="2199">
-        <h4>💎 1503</h4>
-        <p>₹2199</p>
-    </div>
-
-
-    <div class="diamond-card"
-         data-package="💎 2195 Diamonds"
-         data-price="3089">
-        <h4>💎 2195</h4>
-        <p>₹3089</p>
-    </div>
-
-
-    <div class="diamond-card"
-         data-package="💎 3688 Diamonds"
-         data-price="5139">
-        <h4>💎 3688</h4>
-        <p>₹5139</p>
-    </div>
-
-
-    <div class="diamond-card"
-         data-package="💎 5532 Diamonds"
-         data-price="7649">
-        <h4>💎 5532</h4>
-        <p>₹7649</p>
-    </div>
-
-
-    <div class="diamond-card"
-         data-package="💎 6046 Diamonds"
-         data-price="8399">
-        <h4>💎 6046</h4>
-        <p>₹8399</p>
-    </div>
-
-
-    <div class="diamond-card"
-         data-package="💎 9288 Diamonds"
-         data-price="12899">
-        <h4>💎 9288</h4>
-        <p>₹12899</p>
-    </div>
-
-</div>
-<!-- =========================================
-     ORDER SUMMARY
-========================================= -->
-
-<section class="order-area" id="orderArea">
-
-    <div class="summary-card">
-
-        <div class="summary-header">
-            <div>
-                <span class="summary-label">YOUR ORDER</span>
-                <h2>Order Summary</h2>
-            </div>
-
-            <div class="summary-icon">🛒</div>
-        </div>
-
-        <div class="summary-content">
-
-            <div class="summary-row">
-                <span>Selected Item</span>
-                <strong id="selectedPackage">
-                    Not Selected
-                </strong>
-            </div>
-
-            <div class="summary-row">
-                <span>Price</span>
-                <strong id="selectedPrice">
-                    ₹0
-                </strong>
-            </div>
-
-            <div class="summary-row">
-                <span>Player ID</span>
-                <strong id="summaryPlayer">
-                    —
-                </strong>
-            </div>
-
-            <div class="summary-row">
-                <span>Server ID</span>
-                <strong id="summaryServer">
-                    —
-                </strong>
-            </div>
-
-        </div>
-
-        <button
-            type="button"
-            class="validate-btn"
-            id="validateBtn"
-        >
-            <span>✓</span>
-            Validate & Continue
-        </button>
-
-        <p class="validate-note" id="validateNote">
-            Enter your Player ID and Server ID, then validate your order.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     PAYMENT SECTION
-     Hidden until VALIDATE is clicked
-========================================= -->
-
-<section
-    class="payment-section"
-    id="paymentSection"
-    aria-hidden="true"
->
-
-    <div class="payment-card">
-
-        <div class="payment-header">
-
-            <div>
-                <span class="payment-label">
-                    SECURE CHECKOUT
-                </span>
-
-                <h2>Complete Payment</h2>
-
-                <p>
-                    Your order details have been verified.
-                    Complete the payment below to continue.
-                </p>
-            </div>
-
-            <div class="payment-status">
-                <span>✓</span>
-                Ready
-            </div>
-
-        </div>
-
-
-        <!-- PAYMENT SUMMARY -->
-
-        <div class="payment-order">
-
-            <div class="payment-order-item">
-
-                <span>Product</span>
-
-                <strong id="paymentPackage">
-                    —
-                </strong>
-
-            </div>
-
-            <div class="payment-order-item">
-
-                <span>Amount</span>
-
-                <strong
-                    id="paymentPrice"
-                    class="payment-price"
-                >
-                    ₹0
-                </strong>
-
-            </div>
-
-        </div>
-
-
-        <!-- QR -->
-
-        <div class="qr-payment-box">
-
-            <div class="qr-title">
-                <span>1</span>
-                Scan & Pay
-            </div>
-
-            <p class="qr-description">
-                Scan the QR code using your preferred UPI
-                application and pay the exact amount shown above.
-            </p>
-
-            <div class="qr-frame">
-
-                <img
-                    src="assets/qr-payment.jpg"
-                    alt="Pantheos Global Store UPI Payment QR"
-                >
-
-            </div>
-
-            <div class="upi-note">
-                <span>🔒</span>
-                Pay only the amount shown in your order.
-            </div>
-
-        </div>
-
-
-        <!-- PAYMENT SCREENSHOT -->
-
-        <div class="proof-box">
-
-            <div class="proof-title">
-                <span>2</span>
-                Payment Screenshot
-                <small>Optional</small>
-            </div>
-
-            <p>
-                You can upload your payment screenshot for
-                easier order verification. It is not required
-                to continue to WhatsApp.
-            </p>
-
-            <label
-                for="paymentProof"
-                class="upload-area"
-                id="uploadArea"
-            >
-
-                <span class="upload-icon">📷</span>
-
-                <strong>
-                    Upload Payment Screenshot
-                </strong>
-
-                <small>
-                    JPG, PNG or WEBP
-                </small>
-
-            </label>
-
-            <input
-                type="file"
-                id="paymentProof"
-                accept="image/png,image/jpeg,image/webp"
-                hidden
-            >
-
-            <div
-                class="file-selected"
-                id="fileSelected"
-                style="display:none;"
-            >
-                <span>✓</span>
-                <span id="fileName">
-                    Screenshot selected
-                </span>
-
-                <button
-                    type="button"
-                    id="removeFile"
-                >
-                    Remove
-                </button>
-            </div>
-
-        </div>
-
-
-        <!-- WHATSAPP ORDER -->
-
-        <div class="whatsapp-box">
-
-            <div class="whatsapp-title">
-                <span>3</span>
-                Send Your Order
-            </div>
-
-            <p>
-                Once payment is completed, send the order
-                details to Pantheos Global Store through WhatsApp.
-            </p>
-
-            <button
-                type="button"
-                class="whatsapp-order-btn"
-                id="orderBtn"
-            >
-                <span class="wa-icon">☏</span>
-
-                <span>
-                    Continue to WhatsApp
-                    <small>Send Order Details</small>
-                </span>
-
-                <span class="arrow">→</span>
-            </button>
-
-        </div>
-
-
-        <div class="payment-security">
-
-            <span>🔐 Secure</span>
-            <span>⚡ Fast Processing</span>
-            <span>💬 WhatsApp Support</span>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     SUCCESS / VALIDATION MESSAGE
-========================================= -->
-
-<div
-    class="toast"
-    id="toast"
-    role="status"
-    aria-live="polite"
->
-    <span id="toastIcon">✓</span>
-
-    <div>
-        <strong id="toastTitle">
-            Success
-        </strong>
-
-        <p id="toastMessage">
-            Your order is ready.
-        </p>
-    </div>
-</div>
-
-
-<!-- =========================================
-     PAGE JAVASCRIPT
-========================================= -->
-
-<script>
-
-(function(){
-
-"use strict";
-
-
-/* -----------------------------------------
-   STATE
------------------------------------------ */
-
-let selectedPackage = "";
-let selectedPrice = "";
-
-let paymentScreenshot = null;
-
-
-/* -----------------------------------------
-   ELEMENTS
------------------------------------------ */
-
-const playerIdInput =
-    document.getElementById("playerId");
-
-const serverIdInput =
-    document.getElementById("serverId");
-
-const diamondCards =
-    document.querySelectorAll(".diamond-card");
-
-const specialCards =
-    document.querySelectorAll(".special-card");
-
-const selectedPackageText =
-    document.getElementById("selectedPackage");
-
-const selectedPriceText =
-    document.getElementById("selectedPrice");
-
-const summaryPlayer =
-    document.getElementById("summaryPlayer");
-
-const summaryServer =
-    document.getElementById("summaryServer");
-
-const validateBtn =
-    document.getElementById("validateBtn");
-
-const validateNote =
-    document.getElementById("validateNote");
-
-const paymentSection =
-    document.getElementById("paymentSection");
-
-const paymentPackage =
-    document.getElementById("paymentPackage");
-
-const paymentPrice =
-    document.getElementById("paymentPrice");
-
-const paymentProof =
-    document.getElementById("paymentProof");
-
-const uploadArea =
-    document.getElementById("uploadArea");
-
-const fileSelected =
-    document.getElementById("fileSelected");
-
-const fileName =
-    document.getElementById("fileName");
-
-const removeFile =
-    document.getElementById("removeFile");
-
-const orderBtn =
-    document.getElementById("orderBtn");
-
-const toast =
-    document.getElementById("toast");
-
-const toastTitle =
-    document.getElementById("toastTitle");
-
-const toastMessage =
-    document.getElementById("toastMessage");
-
-const toastIcon =
-    document.getElementById("toastIcon");
-
-
-/* -----------------------------------------
-   SELECT PACKAGE
------------------------------------------ */
-
-function selectPackage(card){
-
-    diamondCards.forEach(function(item){
-        item.classList.remove("active");
-    });
-
-    specialCards.forEach(function(item){
-        item.classList.remove("active");
-    });
-
-    card.classList.add("active");
-
-    selectedPackage =
-        card.dataset.package;
-
-    selectedPrice =
-        card.dataset.price;
-
-    selectedPackageText.textContent =
-        selectedPackage;
-
-    selectedPriceText.textContent =
-        "₹" + selectedPrice;
-
-    paymentPackage.textContent =
-        selectedPackage;
-
-    paymentPrice.textContent =
-        "₹" + selectedPrice;
-
-    hidePayment();
-
-    showToast(
-        "Package Selected",
-        selectedPackage + " • ₹" + selectedPrice,
-        "✓"
-    );
-}
-
-
-/* -----------------------------------------
-   DIAMOND CLICK
------------------------------------------ */
-
-diamondCards.forEach(function(card){
-
-    card.addEventListener(
-        "click",
-        function(){
-
-            selectPackage(card);
-
-        }
-    );
-
-});
-
-
-/* -----------------------------------------
-   SPECIAL PASS CLICK
------------------------------------------ */
-
-specialCards.forEach(function(card){
-
-    card.addEventListener(
-        "click",
-        function(){
-
-            selectPackage(card);
-
-        }
-    );
-
-});
-
-
-/* -----------------------------------------
-   UPDATE SUMMARY LIVE
------------------------------------------ */
-
-playerIdInput.addEventListener(
-    "input",
-    function(){
-
-        summaryPlayer.textContent =
-            playerIdInput.value.trim() || "—";
-
-        hidePayment();
-
-    }
-);
-
-
-serverIdInput.addEventListener(
-    "input",
-    function(){
-
-        summaryServer.textContent =
-            serverIdInput.value.trim() || "—";
-
-        hidePayment();
-
-    }
-);
-
-
-/* -----------------------------------------
-   HIDE PAYMENT
------------------------------------------ */
-
-function hidePayment(){
-
-    paymentSection.style.display = "none";
-
-    paymentSection.setAttribute(
-        "aria-hidden",
-        "true"
-    );
-
-    validateBtn.classList.remove("validated");
-
-    validateBtn.innerHTML =
-        "<span>✓</span> Validate & Continue";
-
-}
-
-
-/* -----------------------------------------
-   VALIDATE ORDER
------------------------------------------ */
-
-validateBtn.addEventListener(
-    "click",
-    function(){
-
-        const playerId =
-            playerIdInput.value.trim();
-
-        const serverId =
-            serverIdInput.value.trim();
-
-
-        if(!playerId){
-
-            playerIdInput.focus();
-
-            showToast(
-                "Player ID Required",
-                "Please enter your Player ID first.",
-                "!"
+            showValidation(
+                "⚠ Please enter your Player ID.",
+                "error"
             );
 
+            playerId.focus();
+
             return;
+
         }
 
 
-        if(!serverId){
+        if(!sid){
 
-            serverIdInput.focus();
-
-            showToast(
-                "Server ID Required",
-                "Please enter your Server ID first.",
-                "!"
+            showValidation(
+                "⚠ Please enter your Server ID.",
+                "error"
             );
 
+            serverId.focus();
+
             return;
+
         }
 
 
-        if(!selectedPackage){
-
-            showToast(
-                "Select a Package",
-                "Please choose Diamonds or a Special Pass.",
-                "!"
-            );
-
-            return;
-        }
+        validated = true;
 
 
-        summaryPlayer.textContent =
-            playerId;
-
-        summaryServer.textContent =
-            serverId;
-
-
-        paymentPackage.textContent =
-            selectedPackage;
-
-        paymentPrice.textContent =
-            "₹" + selectedPrice;
-
-
-        validateBtn.classList.add(
-            "validated"
-        );
-
-        validateBtn.innerHTML =
-            "<span>✓</span> Order Validated";
-
-
-        validateNote.textContent =
-            "Your details are ready. Complete payment below.";
-
-
-        paymentSection.style.display =
-            "block";
-
-        paymentSection.setAttribute(
-            "aria-hidden",
-            "false"
+        showValidation(
+            "✓ Player ID and Server ID entered successfully. You can now select your package.",
+            "success"
         );
 
 
-        showToast(
-            "Order Validated",
-            "Payment options are now available.",
-            "✓"
-        );
+        summaryPlayerId.textContent = pid;
+        summaryServerId.textContent = sid;
+
+
+        orderArea.classList.add("show");
 
 
         setTimeout(function(){
 
-            paymentSection.scrollIntoView({
+            orderArea.scrollIntoView({
                 behavior:"smooth",
                 block:"start"
             });
@@ -2638,982 +1063,360 @@ validateBtn.addEventListener(
         },150);
 
     }
-);
 
 
-/* -----------------------------------------
-   FILE UPLOAD
------------------------------------------ */
+    validateBtn.addEventListener(
+        "click",
+        validateAccount
+    );
 
-paymentProof.addEventListener(
-    "change",
-    function(){
 
-        const file =
-            paymentProof.files[0];
+    /* =========================
+       ENTER KEY
+    ========================= */
 
-        if(!file){
+    playerId.addEventListener(
+        "keydown",
+        function(e){
 
-            paymentScreenshot = null;
+            if(e.key === "Enter"){
 
-            fileSelected.style.display =
-                "none";
+                e.preventDefault();
 
-            return;
+                serverId.focus();
+
+            }
+
         }
+    );
 
 
-        paymentScreenshot = file;
+    serverId.addEventListener(
+        "keydown",
+        function(e){
 
-        fileName.textContent =
-            file.name;
+            if(e.key === "Enter"){
 
-        fileSelected.style.display =
-            "flex";
+                e.preventDefault();
+
+                validateAccount();
+
+            }
+
+        }
+    );
 
 
-        showToast(
-            "Screenshot Added",
-            "Your payment screenshot is ready.",
-            "✓"
+    /* =========================
+       INPUT CHANGES
+    ========================= */
+
+    function accountChanged(){
+
+        validated = false;
+
+        validationStatus.className =
+            "validation-status";
+
+    }
+
+
+    playerId.addEventListener(
+        "input",
+        accountChanged
+    );
+
+    serverId.addEventListener(
+        "input",
+        accountChanged
+    );
+
+
+    /* =========================
+       PACKAGE SELECTION
+    ========================= */
+
+    function clearSelection(){
+
+        diamondCards.forEach(function(card){
+
+            card.classList.remove("active");
+
+        });
+
+        specialCards.forEach(function(card){
+
+            card.classList.remove("active");
+
+        });
+
+    }
+
+
+    function selectPackage(card){
+
+        clearSelection();
+
+        card.classList.add("active");
+
+
+        selectedPackage =
+            card.dataset.package;
+
+        selectedPrice =
+            card.dataset.price;
+
+
+        selectedPackageEl.textContent =
+            selectedPackage;
+
+        selectedPriceEl.textContent =
+            "₹" + selectedPrice;
+
+
+        summaryStatus.textContent =
+            "Selected";
+
+        summaryStatus.classList.add("selected");
+
+
+        summaryMessage.textContent =
+            "Package selected. Continue to payment when ready.";
+
+        summaryMessage.classList.remove("error");
+
+
+        paymentAmount.textContent =
+            "₹" + selectedPrice;
+
+    }
+
+
+    diamondCards.forEach(function(card){
+
+        card.addEventListener(
+            "click",
+            function(){
+
+                selectPackage(card);
+
+            }
         );
 
-    }
-);
+    });
 
 
-/* -----------------------------------------
-   REMOVE FILE
------------------------------------------ */
+    specialCards.forEach(function(card){
 
-removeFile.addEventListener(
-    "click",
-    function(){
+        card.addEventListener(
+            "click",
+            function(){
 
-        paymentProof.value = "";
+                selectPackage(card);
 
-        paymentScreenshot = null;
+            }
+        );
 
-        fileSelected.style.display =
-            "none";
-
-    }
-);
+    });
 
 
-/* -----------------------------------------
-   WHATSAPP ORDER
------------------------------------------ */
+    /* =========================
+       CONTINUE TO PAYMENT
+    ========================= */
 
-orderBtn.addEventListener(
-    "click",
-    function(){
+    continueBtn.addEventListener(
+        "click",
+        function(){
 
-        const playerId =
-            playerIdInput.value.trim();
+            const pid =
+                playerId.value.trim();
 
-        const serverId =
-            serverIdInput.value.trim();
+            const sid =
+                serverId.value.trim();
 
 
-        if(!playerId){
+            if(!pid || !sid){
 
-            playerIdInput.focus();
+                showValidation(
+                    "⚠ Please enter your Player ID and Server ID first.",
+                    "error"
+                );
 
-            showToast(
-                "Player ID Required",
-                "Please enter your Player ID.",
-                "!"
-            );
+                document
+                    .querySelector(".account-box")
+                    .scrollIntoView({
+                        behavior:"smooth",
+                        block:"center"
+                    });
 
-            return;
+                return;
+
+            }
+
+
+            if(!validated){
+
+                showValidation(
+                    "⚠ Please tap Validate before continuing.",
+                    "error"
+                );
+
+                document
+                    .querySelector(".account-box")
+                    .scrollIntoView({
+                        behavior:"smooth",
+                        block:"center"
+                    });
+
+                return;
+
+            }
+
+
+            if(!selectedPackage){
+
+                summaryMessage.textContent =
+                    "⚠ Please select a Diamond package or Special Pass.";
+
+                summaryMessage.classList.add("error");
+
+                return;
+
+            }
+
+
+            paymentAmount.textContent =
+                "₹" + selectedPrice;
+
+
+            paymentSection.classList.add("show");
+
+
+            setTimeout(function(){
+
+                paymentSection.scrollIntoView({
+                    behavior:"smooth",
+                    block:"start"
+                });
+
+            },100);
+
         }
+    );
 
 
-        if(!serverId){
+    /* =========================
+       WHATSAPP
+    ========================= */
 
-            serverIdInput.focus();
+    orderBtn.addEventListener(
+        "click",
+        function(){
 
-            showToast(
-                "Server ID Required",
-                "Please enter your Server ID.",
-                "!"
-            );
+            const pid =
+                playerId.value.trim();
 
-            return;
-        }
-
-
-        if(!selectedPackage){
-
-            showToast(
-                "Package Required",
-                "Please select a package first.",
-                "!"
-            );
-
-            return;
-        }
+            const sid =
+                serverId.value.trim();
 
 
-        const screenshotStatus =
-            paymentScreenshot
-            ? "Payment screenshot selected"
-            : "Payment screenshot not uploaded";
+            if(!pid || !sid){
+
+                showValidation(
+                    "⚠ Please enter your Player ID and Server ID.",
+                    "error"
+                );
+
+                return;
+
+            }
 
 
-        const message =
+            if(!validated){
+
+                showValidation(
+                    "⚠ Please validate your Player ID and Server ID first.",
+                    "error"
+                );
+
+                return;
+
+            }
+
+
+            if(!selectedPackage){
+
+                summaryMessage.textContent =
+                    "⚠ Please select a package first.";
+
+                summaryMessage.classList.add("error");
+
+                return;
+
+            }
+
+
+            const message =
 `🎮 PANTHEOS GLOBAL STORE
-━━━━━━━━━━━━━━━━━━━━
 
-🎯 GAME
-Mobile Legends
+━━━━━━━━━━━━━━━━━━
 
-👤 PLAYER DETAILS
-Player ID: ${playerId}
-Server ID: ${serverId}
+🎯 Game: Mobile Legends
 
-💎 ORDER
-Package: ${selectedPackage}
-Amount: ₹${selectedPrice}
+👤 Player ID: ${pid}
+🌐 Server ID: ${sid}
 
-💳 PAYMENT
-Payment: QR / UPI
-${screenshotStatus}
+💎 Package: ${selectedPackage}
+💰 Price: ₹${selectedPrice}
 
-━━━━━━━━━━━━━━━━━━━━
-Please verify my payment and process my order.
+━━━━━━━━━━━━━━━━━━
 
-Thank you.
-Pantheos Global Store`;
+💳 Payment: QR / UPI
+
+Please verify my payment and process my MLBB order.
+
+Thank you!`;
 
 
-        const whatsappURL =
-            "https://wa.me/919310651934?text="
-            + encodeURIComponent(message);
+            const whatsappNumber =
+                "919310651934";
 
 
-        window.open(
-            whatsappURL,
-            "_blank",
-            "noopener,noreferrer"
-        );
-
-    }
-);
+            const whatsappURL =
+                "https://wa.me/" +
+                whatsappNumber +
+                "?text=" +
+                encodeURIComponent(message);
 
 
-/* -----------------------------------------
-   TOAST
------------------------------------------ */
-
-let toastTimer;
-
-function showToast(
-    title,
-    message,
-    icon
-){
-
-    toastTitle.textContent =
-        title;
-
-    toastMessage.textContent =
-        message;
-
-    toastIcon.textContent =
-        icon;
-
-
-    toast.classList.add("show");
-
-
-    clearTimeout(toastTimer);
-
-
-    toastTimer =
-        setTimeout(function(){
-
-            toast.classList.remove(
-                "show"
+            window.open(
+                whatsappURL,
+                "_blank"
             );
 
-        },3500);
+        }
+    );
 
-}
 
+    /* =========================
+       INITIAL STATE
+    ========================= */
 
-})();
+    summaryPlayerId.textContent = "—";
+    summaryServerId.textContent = "—";
+
+    selectedPackageEl.textContent =
+        "Not Selected";
+
+    selectedPriceEl.textContent =
+        "₹0";
+
+    paymentAmount.textContent =
+        "₹0";
+
+});
+
 </script>
-<style>
-
-/* =========================================
-   SECTION HEADINGS
-========================================= */
-
-.section-subtitle{
-    color:var(--muted);
-    font-size:.9rem;
-    margin-top:-8px;
-    margin-bottom:15px;
-}
-
-
-/* =========================================
-   SPECIAL PASSES
-========================================= */
-
-.special-grid{
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:12px;
-    margin-bottom:28px;
-}
-
-.special-card{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    min-width:0;
-    padding:10px;
-    background:linear-gradient(
-        145deg,
-        rgba(255,255,255,.06),
-        rgba(255,255,255,.025)
-    );
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:14px;
-    cursor:pointer;
-    transition:
-        transform .2s ease,
-        border-color .2s ease,
-        box-shadow .2s ease;
-}
-
-.special-card:hover{
-    transform:translateY(-2px);
-    border-color:rgba(255,213,74,.55);
-}
-
-.special-card.active{
-    border-color:var(--accent);
-    box-shadow:
-        0 0 0 1px var(--accent),
-        0 8px 25px rgba(255,213,74,.08);
-}
-
-.special-card img{
-    width:58px;
-    height:58px;
-    flex:0 0 58px;
-    object-fit:cover;
-    border-radius:10px;
-}
-
-.special-info{
-    min-width:0;
-}
-
-.special-info h4{
-    font-size:.9rem;
-    margin-bottom:5px;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-}
-
-.special-info p{
-    color:var(--accent);
-    font-weight:800;
-}
-
-
-/* =========================================
-   DIAMOND GRID
-========================================= */
-
-.diamond-grid{
-    display:grid;
-    grid-template-columns:
-        repeat(auto-fill,minmax(115px,1fr));
-    gap:10px;
-    margin-bottom:30px;
-}
-
-.diamond-card{
-    position:relative;
-    background:linear-gradient(
-        145deg,
-        var(--card),
-        rgba(20,28,51,.72)
-    );
-    border:1px solid rgba(255,255,255,.07);
-    border-radius:13px;
-    padding:13px 9px;
-    text-align:center;
-    cursor:pointer;
-    transition:
-        transform .2s ease,
-        border-color .2s ease,
-        box-shadow .2s ease;
-}
-
-.diamond-card:hover{
-    transform:translateY(-2px);
-    border-color:rgba(255,213,74,.5);
-}
-
-.diamond-card.active{
-    border-color:var(--accent);
-    box-shadow:
-        0 0 0 1px var(--accent),
-        0 7px 22px rgba(255,213,74,.08);
-}
-
-.diamond-card h4{
-    font-size:.94rem;
-    margin-bottom:6px;
-}
-
-.diamond-card p{
-    color:var(--accent);
-    font-size:.92rem;
-    font-weight:800;
-}
-
-
-/* =========================================
-   ORDER SUMMARY
-========================================= */
-
-.order-area{
-    margin-top:5px;
-}
-
-.summary-card{
-    background:
-        linear-gradient(
-            145deg,
-            rgba(25,34,60,.98),
-            rgba(16,23,43,.98)
-        );
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:20px;
-    padding:22px;
-    box-shadow:
-        0 15px 40px rgba(0,0,0,.18);
-}
-
-.summary-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:15px;
-    margin-bottom:18px;
-}
-
-.summary-label,
-.payment-label{
-    display:block;
-    color:var(--accent);
-    font-size:.7rem;
-    font-weight:800;
-    letter-spacing:1.5px;
-    margin-bottom:5px;
-}
-
-.summary-header h2,
-.payment-header h2{
-    font-size:1.3rem;
-}
-
-.summary-icon{
-    width:42px;
-    height:42px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:12px;
-    background:rgba(255,213,74,.1);
-    font-size:1.2rem;
-}
-
-.summary-content{
-    background:rgba(0,0,0,.14);
-    border-radius:14px;
-    padding:5px 15px;
-}
-
-.summary-row{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:15px;
-    padding:13px 0;
-    border-bottom:1px solid rgba(255,255,255,.06);
-    font-size:.9rem;
-}
-
-.summary-row:last-child{
-    border-bottom:0;
-}
-
-.summary-row span{
-    color:var(--muted);
-}
-
-.summary-row strong{
-    text-align:right;
-    color:#fff;
-    max-width:60%;
-    overflow-wrap:anywhere;
-}
-
-#selectedPrice{
-    color:var(--accent);
-    font-size:1.05rem;
-}
-
-.validate-btn{
-    width:100%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:9px;
-    padding:15px;
-    margin-top:17px;
-    border:0;
-    border-radius:13px;
-    background:var(--accent);
-    color:#101010;
-    font-size:1rem;
-    font-weight:900;
-    cursor:pointer;
-    transition:.2s ease;
-}
-
-.validate-btn:hover{
-    transform:translateY(-1px);
-    filter:brightness(1.05);
-}
-
-.validate-btn:active{
-    transform:scale(.99);
-}
-
-.validate-btn.validated{
-    background:#27d17f;
-    color:#07160e;
-}
-
-.validate-note{
-    text-align:center;
-    color:var(--muted);
-    font-size:.78rem;
-    margin-top:10px;
-}
-
-
-/* =========================================
-   PAYMENT
-========================================= */
-
-.payment-section{
-    display:none;
-    margin-top:25px;
-}
-
-.payment-card{
-    background:
-        linear-gradient(
-            145deg,
-            #141d35,
-            #0f172b
-        );
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:20px;
-    padding:22px;
-    box-shadow:
-        0 18px 45px rgba(0,0,0,.2);
-}
-
-.payment-header{
-    display:flex;
-    align-items:flex-start;
-    justify-content:space-between;
-    gap:15px;
-    margin-bottom:20px;
-}
-
-.payment-header p{
-    color:var(--muted);
-    line-height:1.5;
-    font-size:.88rem;
-    margin-top:7px;
-}
-
-.payment-status{
-    display:flex;
-    align-items:center;
-    gap:6px;
-    white-space:nowrap;
-    padding:7px 10px;
-    border-radius:20px;
-    background:rgba(37,211,102,.1);
-    color:#61e59a;
-    font-size:.75rem;
-    font-weight:800;
-}
-
-.payment-status span{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    width:17px;
-    height:17px;
-    border-radius:50%;
-    background:#25d366;
-    color:#07160e;
-    font-size:.65rem;
-}
-
-.payment-order{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:10px;
-    margin-bottom:22px;
-}
-
-.payment-order-item{
-    padding:14px;
-    border-radius:13px;
-    background:rgba(0,0,0,.16);
-    border:1px solid rgba(255,255,255,.05);
-}
-
-.payment-order-item span{
-    display:block;
-    color:var(--muted);
-    font-size:.75rem;
-    margin-bottom:6px;
-}
-
-.payment-order-item strong{
-    font-size:.95rem;
-}
-
-.payment-price{
-    color:var(--accent);
-}
-
-
-/* =========================================
-   QR
-========================================= */
-
-.qr-payment-box{
-    text-align:center;
-    padding:20px 15px;
-    background:rgba(255,255,255,.025);
-    border:1px solid rgba(255,255,255,.06);
-    border-radius:17px;
-}
-
-.qr-title,
-.proof-title,
-.whatsapp-title{
-    display:flex;
-    align-items:center;
-    gap:9px;
-    font-weight:800;
-    margin-bottom:8px;
-}
-
-.qr-title span,
-.proof-title span,
-.whatsapp-title span{
-    width:25px;
-    height:25px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:50%;
-    background:var(--accent);
-    color:#111;
-    font-size:.75rem;
-    font-weight:900;
-}
-
-.qr-description{
-    max-width:520px;
-    margin:0 auto 15px;
-    color:var(--muted);
-    font-size:.82rem;
-    line-height:1.5;
-}
-
-.qr-frame{
-    display:inline-flex;
-    padding:10px;
-    background:#fff;
-    border-radius:15px;
-    box-shadow:0 10px 35px rgba(0,0,0,.3);
-}
-
-.qr-frame img{
-    display:block;
-    width:220px;
-    height:220px;
-    object-fit:contain;
-    border-radius:8px;
-}
-
-.upi-note{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:6px;
-    color:var(--muted);
-    font-size:.75rem;
-    margin-top:13px;
-}
-
-
-/* =========================================
-   SCREENSHOT
-========================================= */
-
-.proof-box{
-    margin-top:15px;
-    padding:18px;
-    background:rgba(255,255,255,.025);
-    border:1px solid rgba(255,255,255,.06);
-    border-radius:17px;
-}
-
-.proof-title small{
-    margin-left:auto;
-    color:var(--muted);
-    font-size:.7rem;
-    font-weight:normal;
-}
-
-.proof-box > p{
-    color:var(--muted);
-    font-size:.8rem;
-    line-height:1.5;
-    margin-bottom:14px;
-}
-
-.upload-area{
-    min-height:95px;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    gap:4px;
-    border:1px dashed rgba(255,255,255,.2);
-    border-radius:13px;
-    cursor:pointer;
-    transition:.2s ease;
-}
-
-.upload-area:hover{
-    border-color:var(--accent);
-    background:rgba(255,213,74,.025);
-}
-
-.upload-icon{
-    font-size:1.3rem;
-}
-
-.upload-area strong{
-    font-size:.82rem;
-}
-
-.upload-area small{
-    color:var(--muted);
-    font-size:.7rem;
-}
-
-.file-selected{
-    align-items:center;
-    gap:9px;
-    margin-top:10px;
-    padding:10px 12px;
-    border-radius:10px;
-    background:rgba(37,211,102,.08);
-    color:#71e9a3;
-    font-size:.75rem;
-}
-
-.file-selected > span:nth-child(2){
-    flex:1;
-    overflow:hidden;
-    white-space:nowrap;
-    text-overflow:ellipsis;
-}
-
-.file-selected button{
-    border:0;
-    background:transparent;
-    color:#ff8080;
-    cursor:pointer;
-    font-size:.72rem;
-}
-
-
-/* =========================================
-   WHATSAPP
-========================================= */
-
-.whatsapp-box{
-    margin-top:15px;
-    padding:18px;
-    border-radius:17px;
-    background:rgba(37,211,102,.045);
-    border:1px solid rgba(37,211,102,.12);
-}
-
-.whatsapp-box > p{
-    color:var(--muted);
-    font-size:.8rem;
-    line-height:1.5;
-    margin-bottom:14px;
-}
-
-.whatsapp-order-btn{
-    width:100%;
-    display:flex;
-    align-items:center;
-    gap:12px;
-    padding:14px 16px;
-    border:0;
-    border-radius:13px;
-    background:#25D366;
-    color:#fff;
-    cursor:pointer;
-    text-align:left;
-    font-weight:800;
-    transition:.2s ease;
-}
-
-.whatsapp-order-btn:hover{
-    transform:translateY(-1px);
-    filter:brightness(1.04);
-}
-
-.wa-icon{
-    width:38px;
-    height:38px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:10px;
-    background:rgba(255,255,255,.16);
-    font-size:1.2rem;
-}
-
-.whatsapp-order-btn > span:nth-child(2){
-    flex:1;
-}
-
-.whatsapp-order-btn small{
-    display:block;
-    margin-top:2px;
-    opacity:.8;
-    font-size:.68rem;
-    font-weight:normal;
-}
-
-.arrow{
-    font-size:1.3rem;
-}
-
-
-/* =========================================
-   SECURITY BAR
-========================================= */
-
-.payment-security{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:18px;
-    margin-top:18px;
-    color:var(--muted);
-    font-size:.7rem;
-}
-
-
-/* =========================================
-   TOAST
-========================================= */
-
-.toast{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    z-index:9999;
-    width:min(360px,calc(100vw - 40px));
-    display:flex;
-    align-items:center;
-    gap:11px;
-    padding:13px 15px;
-    background:#18233d;
-    border:1px solid rgba(255,255,255,.1);
-    border-radius:13px;
-    box-shadow:0 15px 40px rgba(0,0,0,.35);
-    transform:translateY(25px);
-    opacity:0;
-    pointer-events:none;
-    transition:.25s ease;
-}
-
-.toast.show{
-    transform:translateY(0);
-    opacity:1;
-}
-
-.toast > span{
-    width:30px;
-    height:30px;
-    flex:0 0 30px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:50%;
-    background:var(--accent);
-    color:#111;
-    font-weight:900;
-}
-
-.toast strong{
-    display:block;
-    font-size:.82rem;
-    margin-bottom:2px;
-}
-
-.toast p{
-    color:var(--muted);
-    font-size:.72rem;
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media(max-width:700px){
-
-    .container{
-        padding:14px;
-    }
-
-    .special-grid{
-        grid-template-columns:1fr 1fr;
-        gap:9px;
-    }
-
-    .special-card{
-        padding:8px;
-        gap:8px;
-    }
-
-    .special-card img{
-        width:48px;
-        height:48px;
-        flex-basis:48px;
-    }
-
-    .special-info h4{
-        font-size:.76rem;
-    }
-
-    .special-info p{
-        font-size:.78rem;
-    }
-
-    .diamond-grid{
-        grid-template-columns:
-            repeat(3,minmax(0,1fr));
-        gap:8px;
-    }
-
-    .diamond-card{
-        padding:11px 5px;
-    }
-
-    .diamond-card h4{
-        font-size:.78rem;
-    }
-
-    .diamond-card p{
-        font-size:.75rem;
-    }
-
-    .summary-card,
-    .payment-card{
-        padding:16px;
-        border-radius:17px;
-    }
-
-    .payment-order{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .qr-frame img{
-        width:190px;
-        height:190px;
-    }
-
-    .payment-header{
-        flex-direction:column;
-    }
-
-    .payment-status{
-        align-self:flex-start;
-    }
-
-}
-
-
-/* =========================================
-   VERY SMALL PHONES
-========================================= */
-
-@media(max-width:380px){
-
-    .diamond-grid{
-        grid-template-columns:
-            repeat(2,minmax(0,1fr));
-    }
-
-    .special-grid{
-        grid-template-columns:1fr;
-    }
-
-    .payment-order{
-        grid-template-columns:1fr;
-    }
-
-}
-
-
-/* =========================================
-   ACCESSIBILITY
-========================================= */
-
-button:focus-visible,
-input:focus-visible,
-label:focus-visible,
-.diamond-card:focus-visible,
-.special-card:focus-visible{
-    outline:2px solid var(--accent);
-    outline-offset:2px;
-}
-
-</style>
 
 
 <script src="js/app.js"></script>
