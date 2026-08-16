@@ -1,1 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#07080d">
 
+    <meta name="description"
+        content="V9 Pantheos Store - Call of Duty Mobile CP Top Up. Fast and reliable recharge.">
+
+    <title>CODM CP Top Up | V9 Pantheos Store</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* =====================================================
+           V9 CODM PRODUCT PAGE
+        ===================================================== */
+
+        .product-page {
+            min-height: 100vh;
+            padding-top: 120px;
+            padding-bottom: 100px;
+        }
+
+        .product-hero {
+            position: relative;
+            overflow: hidden;
+            padding: 45px;
+            margin-bottom: 35px;
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            background:
+                linear-gradient(
+                    120deg,
+                    rgba(245,158,11,0.11),
+                    rgba(16,19,28,0.96)
+                );
+        }
+
+        .product-hero::before {
+            content: "";
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            right: -120px;
+            top: -150px;
+            border-radius: 50%;
+            background: rgba(245,158,11,0.10);
+            filter: blur(10px);
+        }
+
+        .breadcrumb {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+            color: var(--text-muted);
+            font-size: 11px;
+        }
+
+        .breadcrumb a {
+            color: var(--text-soft);
+        }
+
+        .breadcrumb a:hover {
+            color: #fbbf24;
+        }
+
+        .product-hero-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .product-logo {
+            width: 110px;
+            height: 110px;
+            flex-shrink: 0;
+            overflow: hidden;
+            border-radius: 22px;
+            border: 1px solid rgba(255,255,255,0.12);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+        }
+
+        .product-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-title-area {
+            flex: 1;
+        }
+
+        .product-title-area .eyebrow {
+            margin-bottom: 7px;
+        }
+
+        .product-title-area h1 {
+            margin-bottom: 12px;
+            font-size: clamp(35px, 5vw, 58px);
+            line-height: 1;
+            letter-spacing: -0.045em;
+        }
+
+        .product-title-area h1 span {
+            color: #fbbf24;
+        }
+
+        .product-title-area p {
+            max-width: 650px;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .product-layout {
+            display: grid;
+            grid-template-columns:
+                minmax(0, 1.5fr)
+                minmax(300px, 0.75fr);
+            gap: 25px;
+            align-items: start;
+        }
+
+        .product-panel {
+            padding: 28px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: var(--card);
+        }
+
+        .panel-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 22px;
+        }
+
+        .panel-heading h2 {
+            font-size: 20px;
+        }
+
+        .panel-heading span {
+            color: var(--text-muted);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+        }
+
+        .package-section {
+            margin-bottom: 30px;
+        }
+
+        .package-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .package-section-title {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            margin-bottom: 14px;
+        }
+
+        .package-section-title .mini-icon {
+            width: 30px;
+            height: 30px;
+            display: grid;
+            place-items: center;
+            border-radius: 8px;
+            background: rgba(245,158,11,0.12);
+        }
+
+        .package-section-title h3 {
+            font-size: 14px;
+        }
+
+        .package-section-title p {
+            color: var(--text-muted);
+            font-size: 10px;
+        }
+
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .package-option {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .package-option input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .package-card {
+            min-height: 90px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: rgba(255,255,255,0.025);
+            transition:
+                border var(--transition),
+                background var(--transition),
+                transform var(--transition);
+        }
+
+        .package-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(245,158,11,0.35);
+            background: rgba(255,255,255,0.045);
+        }
+
+        .package-option input:checked + .package-card {
+            border-color: #f59e0b;
+            background: rgba(245,158,11,0.10);
+            box-shadow:
+                0 0 0 2px rgba(245,158,11,0.08);
+        }
+
+        .package-amount {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            color: white;
+            font-size: 15px;
+            font-weight: 900;
+        }
+
+        .cp-symbol {
+            color: #fbbf24;
+            font-size: 13px;
+        }
+
+        .package-price {
+            margin-top: 7px;
+            color: #fbbf24;
+            font-size: 13px;
+            font-weight: 900;
+        }
+
+        .empty-packages {
+            padding: 25px 20px;
+            border: 1px dashed rgba(255,255,255,0.13);
+            border-radius: 14px;
+            text-align: center;
+            background: rgba(255,255,255,0.02);
+        }
+
+        .empty-packages .empty-icon {
+            margin-bottom: 8px;
+            font-size: 25px;
+        }
+
+        .empty-packages strong {
+            display: block;
+            margin-bottom: 5px;
+            color: white;
+            font-size: 13px;
+        }
+
+        .empty-packages p {
+            color: var(--text-muted);
+            font-size: 10px;
+            line-height: 1.7;
+        }
+
+        .field-group {
+            margin-bottom: 15px;
+        }
+
+        .field-group label {
+            display: block;
+            margin-bottom: 7px;
+            color: #dce0e9;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .field-group input {
+            width: 100%;
+            height: 48px;
+            padding: 0 14px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            outline: none;
+            background: #0b0e15;
+            color: white;
+            font-size: 13px;
+            transition: border var(--transition);
+        }
+
+        .field-group input:focus {
+            border-color: #f59e0b;
+        }
+
+        .field-group input::placeholder {
+            color: #5e6575;
+        }
+
+        .player-info-box {
+            margin-bottom: 25px;
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid rgba(245,158,11,0.15);
+            background: rgba(245,158,11,0.05);
+        }
+
+        .player-info-box strong {
+            display: block;
+            margin-bottom: 5px;
+            color: white;
+            font-size: 12px;
+        }
+
+        .player-info-box p {
+            color: var(--text-muted);
+            font-size: 10px;
+            line-height: 1.7;
+        }
+
+        .selection-message {
+            min-height: 17px;
+            margin-top: 10px;
+            color: #fca5a5;
+            font-size: 10px;
+        }
+
+        .order-summary {
+            position: sticky;
+            top: 105px;
+        }
+
+        .summary-game {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 18px;
+            margin-bottom: 18px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .summary-game img {
+            width: 48px;
+            height: 48px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .summary-game strong {
+            display: block;
+            font-size: 13px;
+        }
+
+        .summary-game span {
+            color: var(--text-muted);
+            font-size: 10px;
+        }
+
+        .summary-row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 10px 0;
+            color: var(--text-muted);
+            font-size: 11px;
+        }
+
+        .summary-row strong {
+            color: white;
+            text-align: right;
+        }
+
+        .summary-total {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding-top: 18px;
+            margin-top: 10px;
+            border-top: 1px solid var(--border);
+        }
+
+        .summary-total span {
+            color: var(--text-muted);
+            font-size: 11px;
+        }
+
+        .summary-total strong {
+            color: #fbbf24;
+            font-size: 25px;
+        }
+
+        .order-button {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .order-note {
+            margin-top: 12px;
+            color: var(--text-muted);
+            text-align: center;
+            font-size: 9px;
+            line-height: 1.7;
+        }
+
+        .security-note {
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            margin-top: 18px;
+            padding-top: 18px;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 9px;
+            line-height: 1.6;
+        }
+
+        .security-note span {
+            color: #34d399;
+        }
+
+        .back-store {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 25px;
+            color: var(--text-muted);
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .back-store:hover {
+            color: white;
+        }
+
+        .order-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 5000;
+            display: grid;
+            place-items: center;
+            padding: 20px;
+            background: rgba(0,0,0,0.78);
+            backdrop-filter: blur(12px);
+            opacity: 0;
+            visibility: hidden;
+            transition:
+                opacity var(--transition),
+                visibility var(--transition);
+        }
+
+        .order-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-card {
+            width: min(500px, 100%);
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 28px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: #10131c;
+            box-shadow: 0 30px 100px rgba(0,0,0,0.55);
+            transform: translateY(15px);
+            transition: transform var(--transition);
+        }
+
+        .order-modal.active .modal-card {
+            transform: translateY(0);
+        }
+
+        .modal-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .modal-top h2 {
+            font-size: 20px;
+        }
+
+        .modal-close {
+            width: 35px;
+            height: 35px;
+            display: grid;
+            place-items: center;
+            border-radius: 9px;
+            background: rgba(255,255,255,0.06);
+            color: white;
+            font-size: 18px;
+        }
+
+        .modal-summary {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: rgba(255,255,255,0.025);
+        }
+
+        .modal-summary div {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 6px 0;
+            color: var(--text-muted);
+            font-size: 11px;
+        }
+
+        .modal-summary strong {
+            color: white;
+            text-align: right;
+        }
+
+        .modal-total {
+            color: #fbbf24 !important;
+            font-size: 15px !important;
+            font-weight: 900;
+        }
+
+        .modal-instruction {
+            margin-bottom: 18px;
+            color: var(--text-muted);
+            font-size: 10px;
+            line-height: 1.7;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .modal-actions .btn {
+            flex: 1;
+        }
+
+        @media (max-width: 950px) {
+            .product-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .order-summary {
+                position: static;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .product-page {
+                padding-top: 95px;
+            }
+
+            .product-hero {
+                padding: 25px 20px;
+            }
+
+            .product-hero-content {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .product-logo {
+                width: 85px;
+                height: 85px;
+                border-radius: 17px;
+            }
+
+            .product-panel {
+                padding: 20px 15px;
+            }
+
+            .package-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .package-card {
+                min-height: 82px;
+                padding: 12px;
+            }
+
+            .package-amount {
+                font-size: 13px;
+            }
+
+            .package-price {
+                font-size: 12px;
+            }
+
+            .modal-card {
+                padding: 22px 18px;
+            }
+
+            .modal-actions {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 390px) {
+            .package-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     PAGE LOADER
+========================================================= -->
+
+<div id="page-loader">
+
+    <div class="loader-logo">
+
+        <img
+            src="assets/pantheos-logo.PNG"
+            alt="V9 Pantheos Store"
+        >
+
+    </div>
+
+    <div class="loader-line"></div>
+
+</div>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<header
+    class="site-header"
+    id="siteHeader"
+>
+
+    <div class="container nav-container">
+
+        <a
+            href="index.html"
+            class="brand"
+        >
+
+            <img
+                src="assets/pantheos-logo.PNG"
+                alt="V9 Pantheos Store"
+                class="brand-logo"
+            >
+
+            <div class="brand-text">
+
+                <span class="brand-name">
+                    V9 PANTHEOS
+                </span>
+
+                <span class="brand-subtitle">
+                    STORE
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <nav class="desktop-nav">
+
+            <a
+                href="index.html#home"
+                class="nav-link"
+            >
+                Home
+            </a>
+
+            <a
+                href="index.html#games"
+                class="nav-link active"
+            >
+                Games
+            </a>
+
+            <a
+                href="index.html#services"
+                class="nav-link"
+            >
+                Services
+            </a>
+
+            <a
+                href="index.html#giftcards"
+                class="nav-link"
+            >
+                Gift Cards
+            </a>
+
+            <a
+                href="index.html#community"
+                class="nav-link"
+            >
+                Community
+            </a>
+
+            <a
+                href="index.html#support"
+                class="nav-link"
+            >
+                Support
+            </a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <a
+                href="https://wa.me/919310651934"
+                class="nav-whatsapp"
+                target="_blank"
+                rel="noopener"
+            >
+                WhatsApp
+            </a>
+
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Open menu"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="mobile-nav"
+        id="mobileNav"
+    >
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="index.html#games">
+            Games
+        </a>
+
+        <a href="index.html#services">
+            Services
+        </a>
+
+        <a href="index.html#giftcards">
+            Gift Cards
+        </a>
+
+        <a href="index.html#community">
+            Community
+        </a>
+
+        <a href="index.html#support">
+            Support
+        </a>
+
+        <a
+            href="https://wa.me/919310651934"
+            target="_blank"
+            rel="noopener"
+            class="mobile-whatsapp"
+        >
+            Chat on WhatsApp
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main class="product-page">
+
+    <div class="container">
+
+
+        <!-- HERO -->
+
+        <section class="product-hero">
+
+            <div class="breadcrumb">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <span>›</span>
+
+                <a href="index.html#games">
+                    Games
+                </a>
+
+                <span>›</span>
+
+                <span>
+                    Call of Duty Mobile
+                </span>
+
+            </div>
+
+
+            <div class="product-hero-content">
+
+                <div class="product-logo">
+
+                    <img
+                        src="assets/codm-logo.jpg"
+                        alt="Call of Duty Mobile"
+                    >
+
+                </div>
+
+
+                <div class="product-title-area">
+
+                    <span class="eyebrow">
+                        CODM TOP-UP
+                    </span>
+
+                    <h1>
+                        CALL OF DUTY
+                        <span>MOBILE</span>
+                    </h1>
+
+                    <p>
+                        Select your CP package, enter your
+                        Call of Duty Mobile Player ID and place
+                        your order directly with V9 Pantheos Store.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- CONTENT -->
+
+        <div class="product-layout">
+
+
+            <!-- LEFT -->
+
+            <div class="product-panel">
+
+                <div class="panel-heading">
+
+                    <h2>
+                        Select CP Package
+                    </h2>
+
+                    <span>
+                        INR 🇮🇳
+                    </span>
+
+                </div>
+
+
+                <div class="package-section">
+
+                    <div class="package-section-title">
+
+                        <div class="mini-icon">
+                            🪙
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                CP Packages
+                            </h3>
+
+                            <p>
+                                Call of Duty Points
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!--
+                        CODM PRICES WILL BE ADDED HERE
+                        AFTER YOU PROVIDE YOUR PRICE LIST.
+                    -->
+
+                    <div class="empty-packages">
+
+                        <div class="empty-icon">
+                            🪙
+                        </div>
+
+                        <strong>
+                            CODM CP Packages
+                        </strong>
+
+                        <p>
+                            Your CP packages will appear here.
+                            We will add your exact V9 pricing
+                            before the store goes live.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PLAYER INFORMATION -->
+
+                <div class="package-section">
+
+                    <div class="package-section-title">
+
+                        <div class="mini-icon">
+                            👤
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Player Information
+                            </h3>
+
+                            <p>
+                                Required for your recharge
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="player-info-box">
+
+                        <strong>
+                            Where can I find my CODM Player ID?
+                        </strong>
+
+                        <p>
+                            Open Call of Duty Mobile and visit
+                            your profile. Your player information
+                            can be found inside your account.
+                        </p>
+
+                    </div>
+
+
+                    <div class="field-group">
+
+                        <label for="playerId">
+                            CODM Player ID
+                        </label>
+
+                        <input
+                            type="text"
+                            id="playerId"
+                            placeholder="Enter your CODM Player ID"
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+
+                    <div
+                        class="selection-message"
+                        id="selectionMessage"
+                    ></div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RIGHT -->
+
+            <aside class="product-panel order-summary">
+
+                <div class="panel-heading">
+
+                    <h2>
+                        Order Summary
+                    </h2>
+
+                    <span>
+                        V9
+                    </span>
+
+                </div>
+
+
+                <div class="summary-game">
+
+                    <img
+                        src="assets/codm-logo.jpg"
+                        alt="CODM"
+                    >
+
+                    <div>
+
+                        <strong>
+                            Call of Duty Mobile
+                        </strong>
+
+                        <span>
+                            CP Top Up
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>
+                        Package
+                    </span>
+
+                    <strong id="summaryPackage">
+                        Not selected
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>
+                        Player ID
+                    </span>
+
+                    <strong id="summaryPlayer">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-total">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong id="summaryPrice">
+                        ₹0
+                    </strong>
+
+                </div>
+
+
+                <button
+                    class="btn btn-primary order-button"
+                    id="orderButton"
+                    type="button"
+                >
+                    Continue Order
+                    <span>→</span>
+                </button>
+
+
+                <p class="order-note">
+                    Your order details will be sent to
+                    V9 Pantheos Store through WhatsApp
+                    for confirmation.
+                </p>
+
+
+                <div class="security-note">
+
+                    <span>
+                        ✓
+                    </span>
+
+                    <div>
+                        Never share your CODM password.
+                        Only provide the Player ID required
+                        for the recharge.
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+
+        <a
+            href="index.html"
+            class="back-store"
+        >
+            ← Back to V9 Pantheos Store
+        </a>
+
+    </div>
+
+</main>
+
+
+
+<!-- =========================================================
+     ORDER MODAL
+========================================================= -->
+
+<div
+    class="order-modal"
+    id="orderModal"
+    aria-hidden="true"
+>
+
+    <div class="modal-card">
+
+        <div class="modal-top">
+
+            <h2>
+                Confirm Your Order
+            </h2>
+
+            <button
+                class="modal-close"
+                id="modalClose"
+                type="button"
+                aria-label="Close"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="modal-summary">
+
+            <div>
+
+                <span>
+                    Game
+                </span>
+
+                <strong>
+                    Call of Duty Mobile
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Package
+                </span>
+
+                <strong id="modalPackage">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Player ID
+                </span>
+
+                <strong id="modalPlayer">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    Total
+                </span>
+
+                <strong
+                    class="modal-total"
+                    id="modalPrice"
+                >
+                    ₹0
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <p class="modal-instruction">
+            Check your Player ID and selected CP package
+            before sending the order.
+        </p>
+
+
+        <div class="modal-actions">
+
+            <button
+                class="btn btn-secondary"
+                id="modalCancel"
+                type="button"
+            >
+                Cancel
+            </button>
+
+
+            <a
+                href="#"
+                class="btn btn-primary"
+                id="whatsappOrder"
+                target="_blank"
+                rel="noopener"
+            >
+                Order on WhatsApp
+                <span>→</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     FLOATING WHATSAPP
+========================================================= -->
+
+<a
+    href="https://wa.me/919310651934"
+    class="floating-whatsapp"
+    target="_blank"
+    rel="noopener"
+    aria-label="Chat with V9 Pantheos Store on WhatsApp"
+>
+
+    <img
+        src="assets/whatsapp-icon.jpg"
+        alt="WhatsApp"
+    >
+
+    <span class="whatsapp-tooltip">
+        Chat with us
+    </span>
+
+</a>
+
+
+<button
+    class="back-to-top"
+    id="backToTop"
+    aria-label="Back to top"
+>
+    ↑
+</button>
+
+
+
+<script src="js/app.js"></script>
+
+
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        const playerId =
+            document.getElementById(
+                "playerId"
+            );
+
+        const summaryPlayer =
+            document.getElementById(
+                "summaryPlayer"
+            );
+
+        const selectionMessage =
+            document.getElementById(
+                "selectionMessage"
+            );
+
+        const orderButton =
+            document.getElementById(
+                "orderButton"
+            );
+
+
+        playerId.addEventListener(
+            "input",
+            () => {
+
+                summaryPlayer.textContent =
+                    playerId.value.trim() ||
+                    "—";
+
+            }
+        );
+
+
+        orderButton.addEventListener(
+            "click",
+            () => {
+
+                selectionMessage.textContent =
+                    "CODM CP pricing is not added yet. We'll add your exact price list before launch.";
+
+            }
+        );
+
+    }
+);
+
+</script>
+
+</body>
+</html>
