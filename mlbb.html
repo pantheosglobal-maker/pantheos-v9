@@ -6,20 +6,20 @@
 
 <title>MLBB Top Up | Pantheos Global Store</title>
 
-<link rel="stylesheet" href="css/style.css">
-
 <style>
 :root{
     --bg:#070b16;
     --surface:#10182b;
     --surface2:#151f36;
+    --surface3:#1d2945;
     --border:rgba(255,255,255,.08);
     --gold:#ffd54a;
     --gold2:#ffb800;
-    --white:#ffffff;
+    --white:#fff;
     --muted:#9da9c1;
     --green:#25d366;
-    --red:#ff6b6b;
+    --red:#ff6464;
+    --blue:#4da3ff;
 }
 
 *{
@@ -35,8 +35,8 @@ html{
 body{
     min-height:100vh;
     background:
-        radial-gradient(circle at 85% 5%,rgba(71,111,220,.14),transparent 30%),
-        radial-gradient(circle at 10% 90%,rgba(255,213,74,.05),transparent 28%),
+        radial-gradient(circle at 85% 5%,rgba(68,105,220,.16),transparent 30%),
+        radial-gradient(circle at 10% 90%,rgba(255,213,74,.06),transparent 30%),
         var(--bg);
     color:var(--white);
     font-family:Arial,Helvetica,sans-serif;
@@ -52,14 +52,14 @@ button{
 }
 
 .page{
-    width:min(1180px,calc(100% - 24px));
+    width:min(1180px,calc(100% - 20px));
     margin:auto;
-    padding:15px 0 60px;
+    padding:15px 0 70px;
 }
 
 
 /* =========================
-   BACK BUTTON
+   BACK
 ========================= */
 
 .back-home{
@@ -68,19 +68,19 @@ button{
     gap:8px;
     color:#fff;
     text-decoration:none;
-    margin-bottom:15px;
     padding:10px 14px;
+    margin-bottom:15px;
     border:1px solid var(--border);
-    background:rgba(255,255,255,.035);
     border-radius:11px;
-    font-size:.86rem;
-    font-weight:700;
+    background:rgba(255,255,255,.035);
+    font-size:.85rem;
+    font-weight:800;
     transition:.2s;
 }
 
 .back-home:hover{
-    background:rgba(255,255,255,.08);
     transform:translateX(-2px);
+    background:rgba(255,255,255,.08);
 }
 
 
@@ -94,8 +94,8 @@ button{
     overflow:hidden;
     border-radius:24px;
     border:1px solid var(--border);
-    margin-bottom:25px;
     box-shadow:0 20px 60px rgba(0,0,0,.35);
+    margin-bottom:24px;
 }
 
 .hero-banner{
@@ -112,9 +112,9 @@ button{
     background:
         linear-gradient(
             90deg,
-            rgba(3,7,17,.95),
-            rgba(3,7,17,.72) 45%,
-            rgba(3,7,17,.2)
+            rgba(3,7,17,.96),
+            rgba(3,7,17,.70) 50%,
+            rgba(3,7,17,.22)
         );
 }
 
@@ -132,26 +132,26 @@ button{
 }
 
 .ml-logo{
-    width:72px;
-    height:72px;
+    width:70px;
+    height:70px;
     object-fit:cover;
     border-radius:16px;
+    border:2px solid rgba(255,255,255,.14);
     margin-bottom:15px;
-    border:2px solid rgba(255,255,255,.15);
-    box-shadow:0 10px 25px rgba(0,0,0,.35);
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
 }
 
 .hero-tag{
     display:inline-block;
-    padding:6px 10px;
-    margin-bottom:10px;
+    padding:6px 11px;
     border-radius:999px;
     background:rgba(255,213,74,.1);
     border:1px solid rgba(255,213,74,.18);
     color:var(--gold);
-    font-size:.68rem;
+    font-size:.67rem;
     font-weight:900;
     letter-spacing:.6px;
+    margin-bottom:10px;
 }
 
 .hero h1{
@@ -161,10 +161,10 @@ button{
 }
 
 .hero p{
-    color:#d2d8e6;
-    max-width:600px;
+    color:#d1d7e5;
+    max-width:620px;
     line-height:1.65;
-    font-size:.92rem;
+    font-size:.9rem;
 }
 
 
@@ -173,7 +173,7 @@ button{
 ========================= */
 
 .section{
-    margin-top:25px;
+    margin-top:24px;
 }
 
 .section-heading{
@@ -186,20 +186,20 @@ button{
 }
 
 .section-subtitle{
-    margin-top:5px;
     color:var(--muted);
-    font-size:.78rem;
+    margin-top:5px;
+    font-size:.77rem;
 }
 
 
 /* =========================
-   ACCOUNT BOX
+   ACCOUNT
 ========================= */
 
 .account-box{
     padding:21px;
-    border:1px solid var(--border);
     border-radius:19px;
+    border:1px solid var(--border);
     background:linear-gradient(145deg,var(--surface),var(--surface2));
     box-shadow:0 12px 35px rgba(0,0,0,.18);
 }
@@ -214,7 +214,7 @@ button{
 .input-label{
     display:block;
     margin-bottom:7px;
-    font-size:.82rem;
+    font-size:.81rem;
     font-weight:800;
 }
 
@@ -222,28 +222,28 @@ button{
     width:100%;
     height:48px;
     padding:0 14px;
-    border:1px solid var(--border);
     border-radius:11px;
+    border:1px solid var(--border);
     outline:none;
     background:var(--bg);
     color:#fff;
 }
 
 .input-field::placeholder{
-    color:#64718a;
+    color:#65718a;
 }
 
 .input-field:focus{
-    border-color:rgba(255,213,74,.55);
+    border-color:rgba(255,213,74,.6);
     box-shadow:0 0 0 3px rgba(255,213,74,.08);
 }
 
 .validate-btn{
     height:48px;
-    padding:0 22px;
+    padding:0 23px;
     border:0;
     border-radius:11px;
-    background:var(--gold);
+    background:linear-gradient(135deg,var(--gold),var(--gold2));
     color:#111;
     font-weight:900;
     cursor:pointer;
@@ -251,16 +251,21 @@ button{
 }
 
 .validate-btn:hover{
-    filter:brightness(1.05);
     transform:translateY(-1px);
+    filter:brightness(1.05);
+}
+
+.validate-btn:disabled{
+    opacity:.7;
+    cursor:wait;
 }
 
 .validation{
     display:none;
     margin-top:13px;
-    padding:11px 13px;
+    padding:12px 14px;
     border-radius:11px;
-    font-size:.8rem;
+    font-size:.79rem;
     line-height:1.45;
 }
 
@@ -269,21 +274,111 @@ button{
 }
 
 .validation.success{
-    color:#66ed99;
+    color:#67ef9a;
     background:rgba(37,211,102,.08);
-    border:1px solid rgba(37,211,102,.16);
+    border:1px solid rgba(37,211,102,.18);
 }
 
 .validation.error{
-    color:#ff8a8a;
-    background:rgba(255,105,105,.08);
-    border:1px solid rgba(255,105,105,.15);
+    color:#ff8989;
+    background:rgba(255,100,100,.08);
+    border:1px solid rgba(255,100,100,.16);
 }
 
 .account-note{
     margin-top:9px;
     color:var(--muted);
-    font-size:.72rem;
+    font-size:.7rem;
+}
+
+
+/* =========================
+   ORDER STATUS BAR
+========================= */
+
+.order-status{
+    display:none;
+    margin-top:14px;
+    padding:13px 15px;
+    border-radius:13px;
+    background:linear-gradient(
+        135deg,
+        rgba(37,211,102,.09),
+        rgba(255,213,74,.05)
+    );
+    border:1px solid rgba(37,211,102,.16);
+}
+
+.order-status.visible{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+    animation:fadeUp .3s ease;
+}
+
+.order-status-left{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.status-check{
+    width:29px;
+    height:29px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:rgba(37,211,102,.12);
+    color:#67ef9a;
+    font-weight:900;
+}
+
+.status-text strong{
+    display:block;
+    font-size:.82rem;
+}
+
+.status-text span{
+    display:block;
+    margin-top:3px;
+    color:var(--muted);
+    font-size:.7rem;
+}
+
+.status-badge{
+    padding:6px 9px;
+    border-radius:999px;
+    color:#67ef9a;
+    background:rgba(37,211,102,.1);
+    font-size:.64rem;
+    font-weight:900;
+}
+
+
+/* =========================
+   SHOP
+========================= */
+
+.shop-area{
+    display:none;
+}
+
+.shop-area.visible{
+    display:block;
+    animation:fadeUp .35s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 
@@ -294,17 +389,18 @@ button{
 .special-grid{
     display:grid;
     grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:12px;
+    gap:11px;
 }
 
 .special-card{
+    width:100%;
+    min-width:0;
     display:flex;
     align-items:center;
-    gap:12px;
-    width:100%;
+    gap:11px;
     padding:9px;
     border:1px solid var(--border);
-    border-radius:15px;
+    border-radius:14px;
     background:linear-gradient(145deg,var(--surface),var(--surface2));
     color:#fff;
     text-align:left;
@@ -314,47 +410,56 @@ button{
 
 .special-card:hover{
     transform:translateY(-2px);
-    border-color:rgba(255,213,74,.45);
+    border-color:rgba(255,213,74,.4);
 }
 
 .special-card.active{
     border-color:var(--gold);
-    box-shadow:
-        0 0 0 1px rgba(255,213,74,.15),
-        0 8px 25px rgba(255,213,74,.06);
+    box-shadow:0 0 0 1px rgba(255,213,74,.15);
 }
 
 .special-card img{
-    width:65px;
-    height:65px;
-    flex:0 0 65px;
+    width:64px;
+    height:64px;
+    flex:0 0 64px;
     object-fit:cover;
     border-radius:10px;
 }
 
 .special-name{
     display:block;
-    font-size:.88rem;
+    font-size:.86rem;
     font-weight:900;
+}
+
+.special-info{
+    min-width:0;
+}
+
+.special-description{
+    display:block;
+    margin-top:4px;
+    color:var(--muted);
+    font-size:.66rem;
 }
 
 .special-price{
     display:block;
     margin-top:5px;
     color:var(--gold);
-    font-size:.86rem;
+    font-size:.84rem;
     font-weight:900;
 }
 
 
 /* =========================
-   DIAMOND PACKAGES
+   DIAMONDS
 ========================= */
 
 .diamond-grid{
     display:grid;
     grid-template-columns:repeat(6,minmax(0,1fr));
-    gap:9px;
+    gap:8px;
 }
 
 .diamond-card{
@@ -363,9 +468,9 @@ button{
     flex-direction:column;
     align-items:center;
     justify-content:center;
-    gap:4px;
+    gap:3px;
     border:1px solid var(--border);
-    border-radius:13px;
+    border-radius:12px;
     background:linear-gradient(145deg,var(--surface),var(--surface2));
     color:#fff;
     cursor:pointer;
@@ -374,28 +479,31 @@ button{
 
 .diamond-card:hover{
     transform:translateY(-2px);
-    border-color:rgba(255,213,74,.45);
+    border-color:rgba(255,213,74,.4);
 }
 
 .diamond-card.active{
     border-color:var(--gold);
-    box-shadow:
-        0 0 0 1px rgba(255,213,74,.15),
-        0 8px 25px rgba(255,213,74,.06);
+    box-shadow:0 0 0 1px rgba(255,213,74,.15);
+    background:linear-gradient(
+        145deg,
+        rgba(255,213,74,.08),
+        var(--surface2)
+    );
 }
 
 .diamond-icon{
-    font-size:.95rem;
+    font-size:.9rem;
 }
 
 .diamond-count{
-    font-size:.91rem;
+    font-size:.88rem;
     font-weight:900;
 }
 
 .diamond-price{
     color:var(--gold);
-    font-size:.82rem;
+    font-size:.79rem;
     font-weight:900;
 }
 
@@ -405,10 +513,10 @@ button{
 ========================= */
 
 .summary{
-    margin-top:25px;
+    margin-top:24px;
     padding:21px;
-    border:1px solid var(--border);
     border-radius:19px;
+    border:1px solid var(--border);
     background:linear-gradient(145deg,var(--surface),var(--surface2));
     box-shadow:0 12px 35px rgba(0,0,0,.18);
 }
@@ -416,19 +524,19 @@ button{
 .summary-top{
     display:flex;
     justify-content:space-between;
-    gap:15px;
     align-items:flex-start;
+    gap:15px;
     margin-bottom:15px;
 }
 
 .summary h2{
-    font-size:1.25rem;
+    font-size:1.23rem;
 }
 
 .summary-desc{
     margin-top:5px;
     color:var(--muted);
-    font-size:.76rem;
+    font-size:.75rem;
 }
 
 .status-pill{
@@ -436,13 +544,13 @@ button{
     border-radius:999px;
     background:rgba(255,255,255,.05);
     color:var(--muted);
-    font-size:.67rem;
+    font-size:.64rem;
     font-weight:900;
     white-space:nowrap;
 }
 
 .status-pill.active{
-    color:#66ed99;
+    color:#67ef9a;
     background:rgba(37,211,102,.1);
 }
 
@@ -452,7 +560,7 @@ button{
     gap:15px;
     padding:10px 0;
     border-top:1px solid rgba(255,255,255,.055);
-    font-size:.83rem;
+    font-size:.82rem;
 }
 
 .summary-row span:first-child{
@@ -468,76 +576,65 @@ button{
     color:var(--gold)!important;
 }
 
-.total{
+.summary-total{
     margin-top:3px;
     padding-top:14px;
-    border-top:1px dashed rgba(255,255,255,.12);
+    border-top:1px dashed rgba(255,255,255,.14);
 }
 
-.total span:last-child{
-    font-size:1.2rem;
+.summary-total span:last-child{
     color:var(--gold);
+    font-size:1.2rem;
 }
 
 .summary-message{
     margin-top:10px;
     color:var(--muted);
-    font-size:.75rem;
+    font-size:.73rem;
 }
 
 .summary-message.error{
     color:#ff8585;
 }
 
-.payment-btn{
+.order-pay-btn{
     width:100%;
     margin-top:15px;
     padding:15px;
     border:0;
     border-radius:12px;
-    background:var(--gold);
+    background:linear-gradient(135deg,var(--gold),var(--gold2));
     color:#111;
     font-weight:900;
     cursor:pointer;
     transition:.2s;
 }
 
-.payment-btn:hover{
+.order-pay-btn:hover{
     transform:translateY(-1px);
-    filter:brightness(1.05);
 }
 
 
 /* =========================
-   PAYMENT SECTION
+   PAYMENT / ORDER PANEL
 ========================= */
 
-#paymentSection{
+.payment-section{
     display:none;
+    margin-top:24px;
 }
 
-#paymentSection.visible{
+.payment-section.visible{
     display:block;
-    animation:showPayment .35s ease;
-}
-
-@keyframes showPayment{
-    from{
-        opacity:0;
-        transform:translateY(12px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+    animation:fadeUp .35s ease;
 }
 
 .payment-box{
-    margin-top:25px;
     padding:21px;
-    border:1px solid var(--border);
     border-radius:19px;
+    border:1px solid var(--border);
     background:linear-gradient(145deg,var(--surface),var(--surface2));
+    box-shadow:0 15px 45px rgba(0,0,0,.22);
 }
 
 .payment-head{
@@ -545,7 +642,7 @@ button{
     justify-content:space-between;
     align-items:flex-start;
     gap:20px;
-    padding-bottom:18px;
+    padding-bottom:17px;
     border-bottom:1px solid rgba(255,255,255,.06);
 }
 
@@ -556,7 +653,7 @@ button{
 .payment-head p{
     margin-top:5px;
     color:var(--muted);
-    font-size:.77rem;
+    font-size:.76rem;
     line-height:1.5;
 }
 
@@ -571,10 +668,12 @@ button{
 .amount-box small{
     display:block;
     color:var(--muted);
-    font-size:.62rem;
+    font-size:.6rem;
 }
 
 .amount-box strong{
+    display:block;
+    margin-top:2px;
     color:var(--gold);
     font-size:1.1rem;
 }
@@ -601,23 +700,23 @@ button{
 .qr-card p{
     margin-top:5px;
     color:var(--muted);
-    font-size:.72rem;
-    line-height:1.4;
+    font-size:.7rem;
+    line-height:1.45;
 }
 
 .qr-image{
+    display:block;
     width:225px;
     height:225px;
     max-width:100%;
     object-fit:contain;
-    background:#fff;
     padding:7px;
-    border-radius:12px;
     margin:15px auto;
-    display:block;
+    background:#fff;
+    border-radius:12px;
 }
 
-.payment-steps{
+.steps{
     display:flex;
     flex-direction:column;
     gap:10px;
@@ -637,8 +736,8 @@ button{
     height:27px;
     flex:0 0 27px;
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
     border-radius:50%;
     background:rgba(255,213,74,.1);
     color:var(--gold);
@@ -653,8 +752,44 @@ button{
 .step p{
     margin-top:4px;
     color:var(--muted);
-    font-size:.72rem;
+    font-size:.71rem;
     line-height:1.45;
+}
+
+.contact-title{
+    margin-top:4px;
+    margin-bottom:8px;
+    font-size:.78rem;
+    font-weight:900;
+}
+
+.contact-buttons{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:9px;
+}
+
+.contact-btn{
+    min-height:45px;
+    border:0;
+    border-radius:11px;
+    color:#fff;
+    font-weight:900;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.contact-btn:hover{
+    transform:translateY(-1px);
+}
+
+.whatsapp{
+    background:var(--green);
+}
+
+.contact-btn.secondary{
+    background:var(--surface3);
+    border:1px solid var(--border);
 }
 
 .payment-warning{
@@ -664,7 +799,7 @@ button{
     background:rgba(255,213,74,.05);
     border:1px solid rgba(255,213,74,.1);
     color:var(--muted);
-    font-size:.72rem;
+    font-size:.7rem;
     line-height:1.45;
 }
 
@@ -672,13 +807,13 @@ button{
     color:var(--gold);
 }
 
-.whatsapp-btn{
+.whatsapp-main{
     width:100%;
     display:flex;
     justify-content:center;
     align-items:center;
     gap:9px;
-    margin-top:19px;
+    margin-top:18px;
     padding:16px;
     border:0;
     border-radius:13px;
@@ -689,21 +824,73 @@ button{
     transition:.2s;
 }
 
-.whatsapp-btn:hover{
+.whatsapp-main:hover{
     transform:translateY(-1px);
     filter:brightness(1.05);
-}
-
-.whatsapp-arrow{
-    margin-left:auto;
-    font-size:1.1rem;
 }
 
 .payment-footer{
     margin-top:8px;
     text-align:center;
     color:var(--muted);
-    font-size:.67rem;
+    font-size:.65rem;
+}
+
+
+/* =========================
+   MOBILE ORDER BAR
+========================= */
+
+.mobile-order-bar{
+    display:none;
+    position:fixed;
+    left:10px;
+    right:10px;
+    bottom:10px;
+    z-index:50;
+    padding:10px;
+    border-radius:15px;
+    background:rgba(16,24,43,.96);
+    border:1px solid rgba(255,255,255,.1);
+    box-shadow:0 15px 40px rgba(0,0,0,.45);
+    backdrop-filter:blur(12px);
+}
+
+.mobile-order-bar.visible{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.mobile-order-info{
+    flex:1;
+    min-width:0;
+}
+
+.mobile-order-info small{
+    display:block;
+    color:var(--muted);
+    font-size:.6rem;
+}
+
+.mobile-order-info strong{
+    display:block;
+    margin-top:2px;
+    color:var(--gold);
+    font-size:.9rem;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+.mobile-order-button{
+    border:0;
+    border-radius:10px;
+    padding:11px 15px;
+    background:var(--gold);
+    color:#111;
+    font-weight:900;
+    cursor:pointer;
 }
 
 
@@ -743,22 +930,22 @@ button{
 @media(max-width:600px){
 
     .page{
-        width:calc(100% - 14px);
+        width:calc(100% - 12px);
     }
 
     .hero{
-        min-height:290px;
+        min-height:285px;
         border-radius:18px;
     }
 
     .hero-content{
-        min-height:290px;
-        padding:25px 20px;
+        min-height:285px;
+        padding:24px 20px;
     }
 
     .ml-logo{
-        width:62px;
-        height:62px;
+        width:60px;
+        height:60px;
     }
 
     .hero h1{
@@ -766,7 +953,7 @@ button{
     }
 
     .hero p{
-        font-size:.82rem;
+        font-size:.81rem;
     }
 
     .account-grid{
@@ -775,6 +962,14 @@ button{
 
     .validate-btn{
         grid-column:auto;
+    }
+
+    .order-status.visible{
+        align-items:flex-start;
+    }
+
+    .status-badge{
+        display:none;
     }
 
     .special-grid{
@@ -789,15 +984,19 @@ button{
 
     .special-card img{
         width:100%;
-        height:80px;
+        height:78px;
     }
 
     .special-name{
-        font-size:.76rem;
+        font-size:.74rem;
+    }
+
+    .special-description{
+        display:none;
     }
 
     .special-price{
-        font-size:.8rem;
+        font-size:.78rem;
     }
 
     .diamond-grid{
@@ -805,15 +1004,15 @@ button{
     }
 
     .diamond-card{
-        min-height:80px;
+        min-height:78px;
     }
 
     .diamond-count{
-        font-size:.84rem;
+        font-size:.82rem;
     }
 
     .diamond-price{
-        font-size:.75rem;
+        font-size:.73rem;
     }
 
     .summary-top{
@@ -834,6 +1033,14 @@ button{
         margin-top:12px;
     }
 
+    .contact-buttons{
+        grid-template-columns:1fr;
+    }
+
+    .mobile-order-bar{
+        display:none;
+    }
+
 }
 
 @media(max-width:370px){
@@ -850,11 +1057,6 @@ button{
 <body>
 
 <div class="page">
-
-
-<!-- =========================
-     BACK
-========================= -->
 
 <a href="index.html" class="back-home">
     ← Back to Home
@@ -886,7 +1088,7 @@ button{
             >
 
             <div class="hero-tag">
-                FAST • SECURE • INSTANT
+                MLBB TOP UP SERVICE
             </div>
 
             <h1>
@@ -895,10 +1097,10 @@ button{
             </h1>
 
             <p>
-                Recharge your Mobile Legends account quickly
-                and securely. Enter your Player ID and Server ID,
-                select your Diamonds or Special Pass, then
-                continue to payment.
+                Fast, simple and secure MLBB recharge.
+                Enter your Player ID and Server ID,
+                validate your order and choose your
+                Diamonds or Special Pass.
             </p>
 
         </div>
@@ -921,14 +1123,13 @@ button{
         </h2>
 
         <p class="section-subtitle">
-            Enter your MLBB Player ID and Server ID.
+            Enter your account details to start your order.
         </p>
 
     </div>
 
 
     <div class="account-grid">
-
 
         <div>
 
@@ -977,7 +1178,7 @@ button{
             id="validateBtn"
             class="validate-btn"
         >
-            ✓ Validate
+            ✓ Validate & Order
         </button>
 
     </div>
@@ -989,13 +1190,55 @@ button{
     ></div>
 
 
+    <div
+        id="orderStatus"
+        class="order-status"
+    >
+
+        <div class="order-status-left">
+
+            <div class="status-check">
+                ✓
+            </div>
+
+            <div class="status-text">
+
+                <strong>
+                    Order started
+                </strong>
+
+                <span>
+                    Your Player ID and Server ID have been entered successfully.
+                    Select a package below.
+                </span>
+
+            </div>
+
+        </div>
+
+        <span class="status-badge">
+            READY
+        </span>
+
+    </div>
+
+
     <p class="account-note">
-        Validate simply confirms that both account fields have
-        been entered. Your package list remains available.
+        Please double-check your Player ID and Server ID.
+        Validate confirms the required information is entered before ordering.
     </p>
 
 </section>
 
+
+<!-- =========================
+     SHOP
+========================= -->
+
+<div
+    id="shopArea"
+    class="shop-area"
+>
 
 
 <!-- =========================
@@ -1011,7 +1254,7 @@ button{
         </h2>
 
         <p class="section-subtitle">
-            Select one of the available MLBB passes.
+            Select one of the available Special Passes.
         </p>
 
     </div>
@@ -1032,10 +1275,14 @@ button{
                 alt="Weekly Pass"
             >
 
-            <span>
+            <span class="special-info">
 
                 <span class="special-name">
                     Weekly Pass
+                </span>
+
+                <span class="special-description">
+                    Weekly subscription
                 </span>
 
                 <span class="special-price">
@@ -1059,10 +1306,14 @@ button{
                 alt="Twilight Pass"
             >
 
-            <span>
+            <span class="special-info">
 
                 <span class="special-name">
                     Twilight Pass
+                </span>
+
+                <span class="special-description">
+                    Monthly special pass
                 </span>
 
                 <span class="special-price">
@@ -1086,10 +1337,14 @@ button{
                 alt="Starlight Normal"
             >
 
-            <span>
+            <span class="special-info">
 
                 <span class="special-name">
                     Starlight Normal
+                </span>
+
+                <span class="special-description">
+                    Starlight membership
                 </span>
 
                 <span class="special-price">
@@ -1113,10 +1368,14 @@ button{
                 alt="Starlight Premium"
             >
 
-            <span>
+            <span class="special-info">
 
                 <span class="special-name">
                     Starlight Premium
+                </span>
+
+                <span class="special-description">
+                    Premium membership
                 </span>
 
                 <span class="special-price">
@@ -1127,11 +1386,9 @@ button{
 
         </button>
 
-
     </div>
 
 </section>
-
 
 
 <!-- =========================
@@ -1147,7 +1404,7 @@ button{
         </h2>
 
         <p class="section-subtitle">
-            Choose your preferred Diamond amount.
+            Choose your Diamonds. All prices are displayed below.
         </p>
 
     </div>
@@ -1156,240 +1413,181 @@ button{
     <div class="diamond-grid">
 
 
-        <button type="button" class="diamond-card"
-            data-package="5 Diamonds" data-price="13">
+        <button class="diamond-card" type="button" data-package="5 Diamonds" data-price="13">
             <span class="diamond-icon">💎</span>
             <span class="diamond-count">5</span>
             <span class="diamond-price">₹13</span>
         </button>
 
-
-        <button type="button" class="diamond-card"
-            data-package="11 Diamonds" data-price="23">
+        <button class="diamond-card" type="button" data-package="11 Diamonds" data-price="23">
             <span class="diamond-icon">💎</span>
             <span class="diamond-count">11</span>
             <span class="diamond-price">₹23</span>
         </button>
 
-
-        <button type="button" class="diamond-card"
-            data-package="14 Diamonds" data-price="34">
+        <button class="diamond-card" type="button" data-package="14 Diamonds" data-price="34">
             <span class="diamond-icon">💎</span>
             <span class="diamond-count">14</span>
             <span class="diamond-price">₹34</span>
         </button>
 
-
-        <button type="button" class="diamond-card"
-            data-package="22 Diamonds" data-price="44">
+        <button class="diamond-card" type="button" data-package="22 Diamonds" data-price="44">
             <span class="diamond-icon">💎</span>
             <span class="diamond-count">22</span>
             <span class="diamond-price">₹44</span>
         </button>
 
-
-        <button type="button" class="diamond-card"
-            data-package="28 Diamonds" data-price="59">
+        <button class="diamond-card" type="button" data-package="28 Diamonds" data-price="59">
             <span class="diamond-icon">💎</span>
             <span class="diamond-count">28</span>
             <span class="diamond-price">₹59</span>
         </button>
 
-
-        <button type="button" class="diamond-card"
-            data-package="55 Diamonds" data-price="89">
+        <button class="diamond-card" type="button" data-package="55 Diamonds" data-price="89">
             <span class="diamond-icon">💎</span>
             <span class="diamond-count">55</span>
             <span class="diamond-price">₹89</span>
         </button>
 
-
-        <button type="button" class="diamond-card"
-            data-package="86 Diamonds" data-price="129">
+        <button class="diamond-card" type="button" data-package="86 Diamonds" data-price="129">
             <span class="diamond-icon">💎</span>
             <span class="diamond-count">86</span>
             <span class="diamond-price">₹129</span>
         </button>
 
-
-        <button type="button" class="diamond-card"
-            data-package="110 Diamonds" data-price="169">
+        <button class="diamond-card" type="button" data-package="110 Diamonds" data-price="169">
             <span class="diamond-icon">💎</span>
             <span class="diamond-count">110</span>
             <span class="diamond-price">₹169</span>
         </button>
 
-
-        <button type="button" class="diamond-card"
-            data-package="172 Diamonds" data-price="259">
+        <button class="diamond-card" type="button" data-package="172 Diamonds" data-price="259">
             <span class="diamond-icon">💎</span>
             <span class="diamond-count">172</span>
             <span class="diamond-price">₹259</span>
         </button>
 
-
-        <button type="button" class="diamond-card"
-            data-package="257 Diamonds" data-price="379">
+        <button class="diamond-card" type="button" data-package="257 Diamonds" data-price="379">
             <span class="diamond-icon">💎</span>
             <span class="diamond-count">257</span>
             <span class="diamond-price">₹379</span>
         </button>
 
-
-        <button type="button" class="diamond-card"
-            data-package="275 Diamonds" data-price="399">
+        <button class="diamond-card" type="button" data-package="275 Diamonds" data-price="399">
             <span class="diamond-icon">💎</span>
             <span class="diamond-count">275</span>
             <span class="diamond-price">₹399</span>
         </button>
 
-
-        <button type="button" class="diamond-card"
-            data-package="312 Diamonds" data-price="469">
+        <button class="diamond-card" type="button" data-package="312 Diamonds" data-price="469">
             <span class="diamond-icon">💎</span>
             <span class="diamond-count">312</span>
             <span class="diamond-price">₹469</span>
         </button>
 
-
-        <button type="button" class="diamond-card"
-            data-package="361 Diamonds" data-price="529">
+        <button class="diamond-card" type="button" data-package="361 Diamonds" data-price="529">
             <span class="diamond-icon">💎</span>
             <span class="diamond-count">361</span>
             <span class="diamond-price">₹529</span>
         </button>
 
-
-        <button type="button" class="diamond-card"
-            data-package="429 Diamonds" data-price="634">
+        <button class="diamond-card" type="button" data-package="429 Diamonds" data-price="634">
             <span class="diamond-icon">💎</span>
             <span class="diamond-count">429</span>
             <span class="diamond-price">₹634</span>
         </button>
 
-
-        <button type="button" class="diamond-card"
-            data-package="451 Diamonds" data-price="689">
+        <button class="diamond-card" type="button" data-package="451 Diamonds" data-price="689">
             <span class="diamond-icon">💎</span>
             <span class="diamond-count">451</span>
             <span class="diamond-price">₹689</span>
         </button>
 
-
-        <button type="button" class="diamond-card"
-            data-package="514 Diamonds" data-price="749">
+        <button class="diamond-card" type="button" data-package="514 Diamonds" data-price="749">
             <span class="diamond-icon">💎</span>
             <span class="diamond-count">514</span>
             <span class="diamond-price">₹749</span>
         </button>
 
-
-        <button type="button" class="diamond-card"
-            data-package="565 Diamonds" data-price="819">
+        <button class="diamond-card" type="button" data-package="565 Diamonds" data-price="819">
             <span class="diamond-icon">💎</span>
             <span class="diamond-count">565</span>
             <span class="diamond-price">₹819</span>
         </button>
 
-
-        <button type="button" class="diamond-card"
-            data-package="706 Diamonds" data-price="1029">
+        <button class="diamond-card" type="button" data-package="706 Diamonds" data-price="1029">
             <span class="diamond-icon">💎</span>
             <span class="diamond-count">706</span>
             <span class="diamond-price">₹1029</span>
         </button>
 
-
-        <button type="button" class="diamond-card"
-            data-package="720 Diamonds" data-price="1059">
+        <button class="diamond-card" type="button" data-package="720 Diamonds" data-price="1059">
             <span class="diamond-icon">💎</span>
             <span class="diamond-count">720</span>
             <span class="diamond-price">₹1059</span>
         </button>
 
-
-        <button type="button" class="diamond-card"
-            data-package="803 Diamonds" data-price="1179">
+        <button class="diamond-card" type="button" data-package="803 Diamonds" data-price="1179">
             <span class="diamond-icon">💎</span>
             <span class="diamond-count">803</span>
             <span class="diamond-price">₹1179</span>
         </button>
 
-
-        <button type="button" class="diamond-card"
-            data-package="900 Diamonds" data-price="1329">
+        <button class="diamond-card" type="button" data-package="900 Diamonds" data-price="1329">
             <span class="diamond-icon">💎</span>
             <span class="diamond-count">900</span>
             <span class="diamond-price">₹1329</span>
         </button>
 
-
-        <button type="button" class="diamond-card"
-            data-package="1049 Diamonds" data-price="1539">
+        <button class="diamond-card" type="button" data-package="1049 Diamonds" data-price="1539">
             <span class="diamond-icon">💎</span>
             <span class="diamond-count">1049</span>
             <span class="diamond-price">₹1539</span>
         </button>
 
-
-        <button type="button" class="diamond-card"
-            data-package="1130 Diamonds" data-price="1649">
+        <button class="diamond-card" type="button" data-package="1130 Diamonds" data-price="1649">
             <span class="diamond-icon">💎</span>
             <span class="diamond-count">1130</span>
             <span class="diamond-price">₹1649</span>
         </button>
 
-
-        <button type="button" class="diamond-card"
-            data-package="1412 Diamonds" data-price="2059">
+        <button class="diamond-card" type="button" data-package="1412 Diamonds" data-price="2059">
             <span class="diamond-icon">💎</span>
             <span class="diamond-count">1412</span>
             <span class="diamond-price">₹2059</span>
         </button>
 
-
-        <button type="button" class="diamond-card"
-            data-package="1503 Diamonds" data-price="2199">
+        <button class="diamond-card" type="button" data-package="1503 Diamonds" data-price="2199">
             <span class="diamond-icon">💎</span>
             <span class="diamond-count">1503</span>
             <span class="diamond-price">₹2199</span>
         </button>
 
-
-        <button type="button" class="diamond-card"
-            data-package="2195 Diamonds" data-price="3089">
+        <button class="diamond-card" type="button" data-package="2195 Diamonds" data-price="3089">
             <span class="diamond-icon">💎</span>
             <span class="diamond-count">2195</span>
             <span class="diamond-price">₹3089</span>
         </button>
 
-
-        <button type="button" class="diamond-card"
-            data-package="3688 Diamonds" data-price="5139">
+        <button class="diamond-card" type="button" data-package="3688 Diamonds" data-price="5139">
             <span class="diamond-icon">💎</span>
             <span class="diamond-count">3688</span>
             <span class="diamond-price">₹5139</span>
         </button>
 
-
-        <button type="button" class="diamond-card"
-            data-package="5532 Diamonds" data-price="7649">
+        <button class="diamond-card" type="button" data-package="5532 Diamonds" data-price="7649">
             <span class="diamond-icon">💎</span>
             <span class="diamond-count">5532</span>
             <span class="diamond-price">₹7649</span>
         </button>
 
-
-        <button type="button" class="diamond-card"
-            data-package="6046 Diamonds" data-price="8399">
+        <button class="diamond-card" type="button" data-package="6046 Diamonds" data-price="8399">
             <span class="diamond-icon">💎</span>
             <span class="diamond-count">6046</span>
             <span class="diamond-price">₹8399</span>
         </button>
 
-
-        <button type="button" class="diamond-card"
-            data-package="9288 Diamonds" data-price="12899">
+        <button class="diamond-card" type="button" data-package="9288 Diamonds" data-price="12899">
             <span class="diamond-icon">💎</span>
             <span class="diamond-count">9288</span>
             <span class="diamond-price">₹12899</span>
@@ -1401,9 +1599,8 @@ button{
 </section>
 
 
-
 <!-- =========================
-     ORDER SUMMARY
+     SUMMARY
 ========================= -->
 
 <section class="summary">
@@ -1417,7 +1614,7 @@ button{
             </h2>
 
             <p class="summary-desc">
-                Review your account and selected package.
+                Your selected product and player details.
             </p>
 
         </div>
@@ -1426,7 +1623,7 @@ button{
             id="statusPill"
             class="status-pill"
         >
-            No package
+            No Package
         </span>
 
     </div>
@@ -1474,7 +1671,7 @@ button{
     </div>
 
 
-    <div class="summary-row total">
+    <div class="summary-row summary-total">
 
         <span>
             Total
@@ -1491,42 +1688,43 @@ button{
         id="summaryMessage"
         class="summary-message"
     >
-        Select a package to continue.
+        Validate your Player ID and Server ID to start your order.
     </p>
 
 
     <button
         type="button"
-        id="paymentBtn"
-        class="payment-btn"
+        id="orderPayBtn"
+        class="order-pay-btn"
     >
-        Continue to Payment
+        Order & Continue to Payment
     </button>
 
 </section>
-
 
 
 <!-- =========================
      PAYMENT
 ========================= -->
 
-<section id="paymentSection">
+<section
+    id="paymentSection"
+    class="payment-section"
+>
 
     <div class="payment-box">
-
 
         <div class="payment-head">
 
             <div>
 
                 <h2>
-                    Payment
+                    Complete Your Order
                 </h2>
 
                 <p>
-                    Complete your payment using the QR code,
-                    then send the order through WhatsApp.
+                    Choose your preferred way to complete the order.
+                    Payment and WhatsApp options are available below.
                 </p>
 
             </div>
@@ -1535,7 +1733,7 @@ button{
             <div class="amount-box">
 
                 <small>
-                    PAY
+                    TOTAL TO PAY
                 </small>
 
                 <strong id="paymentAmount">
@@ -1547,9 +1745,10 @@ button{
         </div>
 
 
-
         <div class="payment-layout">
 
+
+            <!-- QR -->
 
             <div class="qr-card">
 
@@ -1558,10 +1757,8 @@ button{
                 </h3>
 
                 <p>
-                    Scan the QR code using your preferred
-                    UPI payment app.
+                    Scan the QR code using your preferred UPI app.
                 </p>
-
 
                 <img
                     src="assets/qr-payment.jpg"
@@ -1569,17 +1766,17 @@ button{
                     class="qr-image"
                 >
 
-
                 <p>
-                    After payment, tap the WhatsApp button
-                    to send your order.
+                    After payment, send the order through WhatsApp
+                    so it can be processed.
                 </p>
 
             </div>
 
 
+            <!-- ORDER OPTIONS -->
 
-            <div class="payment-steps">
+            <div class="steps">
 
 
                 <div class="step">
@@ -1591,12 +1788,13 @@ button{
                     <div>
 
                         <strong>
-                            Check your order
+                            Order details confirmed
                         </strong>
 
                         <p>
-                            Confirm your Player ID, Server ID,
-                            selected package and amount.
+                            Your Player ID, Server ID,
+                            package and price are automatically
+                            included in your order message.
                         </p>
 
                     </div>
@@ -1613,12 +1811,12 @@ button{
                     <div>
 
                         <strong>
-                            Complete payment
+                            Make your payment
                         </strong>
 
                         <p>
-                            Pay exactly the displayed amount
-                            using the payment QR code.
+                            Pay exactly the amount shown above
+                            using the displayed QR code.
                         </p>
 
                     </div>
@@ -1639,11 +1837,37 @@ button{
                         </strong>
 
                         <p>
-                            Tap the WhatsApp button and your
-                            order details will be prepared automatically.
+                            WhatsApp will open with your order
+                            information already prepared.
                         </p>
 
                     </div>
+
+                </div>
+
+
+                <div class="contact-title">
+                    Quick Contact
+                </div>
+
+
+                <div class="contact-buttons">
+
+                    <button
+                        type="button"
+                        id="quickWhatsapp"
+                        class="contact-btn whatsapp"
+                    >
+                        💬 WhatsApp
+                    </button>
+
+                    <button
+                        type="button"
+                        id="copyOrder"
+                        class="contact-btn secondary"
+                    >
+                        📋 Copy Order
+                    </button>
 
                 </div>
 
@@ -1654,34 +1878,26 @@ button{
                         Important:
                     </strong>
 
-                    Please make sure your payment amount
-                    matches the selected package before
-                    sending your order.
+                    Always verify your Player ID,
+                    Server ID and payment amount before
+                    completing your order.
 
                 </div>
-
 
             </div>
 
         </div>
 
 
-
         <button
             type="button"
             id="whatsappBtn"
-            class="whatsapp-btn"
+            class="whatsapp-main"
         >
 
-            <span>
-                💬
-            </span>
-
+            💬
             Send Order via WhatsApp
-
-            <span class="whatsapp-arrow">
-                →
-            </span>
+            <span>→</span>
 
         </button>
 
@@ -1690,32 +1906,27 @@ button{
             Pantheos Global Store • Mobile Legends Top Up
         </div>
 
-
     </div>
 
 </section>
 
 
 </div>
+</div>
 
 
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
 <script>
 
 document.addEventListener("DOMContentLoaded", function(){
 
-    /* =========================
-       VARIABLES
-    ========================= */
-
     let selectedPackage = "";
     let selectedPrice = "";
-    let accountValidated = false;
+    let orderStarted = false;
 
-
-    /* =========================
-       ELEMENTS
-    ========================= */
 
     const playerId =
         document.getElementById("playerId");
@@ -1728,6 +1939,12 @@ document.addEventListener("DOMContentLoaded", function(){
 
     const validation =
         document.getElementById("validation");
+
+    const orderStatus =
+        document.getElementById("orderStatus");
+
+    const shopArea =
+        document.getElementById("shopArea");
 
     const diamondCards =
         document.querySelectorAll(".diamond-card");
@@ -1753,8 +1970,8 @@ document.addEventListener("DOMContentLoaded", function(){
     const statusPill =
         document.getElementById("statusPill");
 
-    const paymentBtn =
-        document.getElementById("paymentBtn");
+    const orderPayBtn =
+        document.getElementById("orderPayBtn");
 
     const paymentSection =
         document.getElementById("paymentSection");
@@ -1764,6 +1981,12 @@ document.addEventListener("DOMContentLoaded", function(){
 
     const whatsappBtn =
         document.getElementById("whatsappBtn");
+
+    const quickWhatsapp =
+        document.getElementById("quickWhatsapp");
+
+    const copyOrder =
+        document.getElementById("copyOrder");
 
 
     /* =========================
@@ -1781,10 +2004,10 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
     /* =========================
-       VALIDATE ACCOUNT
+       START ORDER
     ========================= */
 
-    function validateAccount(){
+    function startOrder(){
 
         const pid =
             playerId.value.trim();
@@ -1795,79 +2018,91 @@ document.addEventListener("DOMContentLoaded", function(){
 
         if(pid === ""){
 
-            accountValidated = false;
+            orderStarted = false;
 
             showValidation(
-                "Please enter your Player ID.",
+                "Please enter your Player ID before starting the order.",
                 "error"
             );
 
             playerId.focus();
 
             return;
+
         }
 
 
         if(sid === ""){
 
-            accountValidated = false;
+            orderStarted = false;
 
             showValidation(
-                "Please enter your Server ID.",
+                "Please enter your Server ID before starting the order.",
                 "error"
             );
 
             serverId.focus();
 
             return;
+
         }
 
 
-        accountValidated = true;
+        orderStarted = true;
 
 
         summaryPlayer.textContent = pid;
-
         summaryServer.textContent = sid;
 
 
         showValidation(
-            "✓ Player ID and Server ID entered successfully. You can now place your order.",
+            "✓ Player ID and Server ID accepted. Your order has started — choose a Diamond package or Special Pass below.",
             "success"
         );
 
 
-        /*
-         * IMPORTANT:
-         * Validate DOES NOT hide the price chart.
-         * The customer can already see and select
-         * every package.
-         */
+        orderStatus.classList.add("visible");
+
+        shopArea.classList.add("visible");
+
+
+        validateBtn.textContent =
+            "✓ Order Started";
+
+
+        setTimeout(function(){
+
+            shopArea.scrollIntoView({
+                behavior:"smooth",
+                block:"start"
+            });
+
+        },150);
 
     }
 
 
     validateBtn.addEventListener(
         "click",
-        validateAccount
+        startOrder
     );
 
 
     /* =========================
-       UPDATE ACCOUNT SUMMARY
+       INPUT CHANGES
     ========================= */
 
     playerId.addEventListener(
         "input",
         function(){
 
-            accountValidated = false;
-
-            summaryPlayer.textContent =
-                playerId.value.trim() || "—";
+            orderStarted = false;
 
             validation.className =
                 "validation";
+
+            validateBtn.textContent =
+                "✓ Validate & Order";
 
         }
     );
@@ -1877,13 +2112,13 @@ document.addEventListener("DOMContentLoaded", function(){
         "input",
         function(){
 
-            accountValidated = false;
-
-            summaryServer.textContent =
-                serverId.value.trim() || "—";
+            orderStarted = false;
 
             validation.className =
                 "validation";
+
+            validateBtn.textContent =
+                "✓ Validate & Order";
 
         }
     );
@@ -1917,7 +2152,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
                 event.preventDefault();
 
-                validateAccount();
+                startOrder();
 
             }
 
@@ -1929,7 +2164,7 @@ document.addEventListener("DOMContentLoaded", function(){
        CLEAR PACKAGE SELECTION
     ========================= */
 
-    function clearSelections(){
+    function clearSelection(){
 
         diamondCards.forEach(function(card){
 
@@ -1951,9 +2186,29 @@ document.addEventListener("DOMContentLoaded", function(){
        SELECT PACKAGE
     ========================= */
 
-    function selectPackage(card){
+    function choosePackage(card){
 
-        clearSelections();
+        if(!orderStarted){
+
+            showValidation(
+                "Please tap Validate & Order first.",
+                "error"
+            );
+
+            document
+                .querySelector(".account-box")
+                .scrollIntoView({
+                    behavior:"smooth",
+                    block:"center"
+                });
+
+            return;
+
+        }
+
+
+        clearSelection();
+
 
         card.classList.add("active");
 
@@ -1982,16 +2237,26 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
         summaryMessage.textContent =
-            "Package selected. Continue to payment.";
+            "Package selected. Tap Order & Continue to Payment.";
 
         summaryMessage.classList.remove("error");
 
+
+        /* Automatically bring summary into view */
+
+        setTimeout(function(){
+
+            document
+                .querySelector(".summary")
+                .scrollIntoView({
+                    behavior:"smooth",
+                    block:"center"
+                });
+
+        },120);
+
     }
 
-
-    /* =========================
-       DIAMOND CLICK
-    ========================= */
 
     diamondCards.forEach(function(card){
 
@@ -1999,17 +2264,13 @@ document.addEventListener("DOMContentLoaded", function(){
             "click",
             function(){
 
-                selectPackage(card);
+                choosePackage(card);
 
             }
         );
 
     });
 
-
-    /* =========================
-       SPECIAL PASS CLICK
-    ========================= */
 
     specialCards.forEach(function(card){
 
@@ -2017,7 +2278,7 @@ document.addEventListener("DOMContentLoaded", function(){
             "click",
             function(){
 
-                selectPackage(card);
+                choosePackage(card);
 
             }
         );
@@ -2026,152 +2287,190 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
     /* =========================
-       CONTINUE TO PAYMENT
+       ORDER MESSAGE
     ========================= */
 
-    paymentBtn.addEventListener(
-        "click",
-        function(){
+    function getOrderMessage(){
 
-            const pid =
-                playerId.value.trim();
+        const pid =
+            playerId.value.trim();
 
-            const sid =
-                serverId.value.trim();
+        const sid =
+            serverId.value.trim();
 
 
-            /*
-             * If fields were changed after validation,
-             * require validation again.
-             */
+        return `🎮 PANTHEOS GLOBAL STORE
 
-            if(pid === ""){
+━━━━━━━━━━━━━━━━━━
+🎯 Game: Mobile Legends
 
-                showValidation(
-                    "Please enter your Player ID.",
-                    "error"
-                );
+👤 Player ID: ${pid}
+🌐 Server ID: ${sid}
 
-                playerId.focus();
+📦 Package: ${selectedPackage}
+💰 Amount: ₹${selectedPrice}
 
-                return;
-            }
+💳 Payment: QR / UPI
 
+Please verify my order and process my MLBB top up.
 
-            if(sid === ""){
+Thank you!`;
 
-                showValidation(
-                    "Please enter your Server ID.",
-                    "error"
-                );
-
-                serverId.focus();
-
-                return;
-            }
+    }
 
 
-            if(!accountValidated){
+    /* =========================
+       OPEN PAYMENT
+    ========================= */
 
-                showValidation(
-                    "Please tap Validate to confirm your Player ID and Server ID.",
-                    "error"
-                );
+    function openPayment(){
 
-                document
-                    .querySelector(".account-box")
-                    .scrollIntoView({
-                        behavior:"smooth",
-                        block:"center"
-                    });
+        if(!orderStarted){
 
-                return;
-            }
+            showValidation(
+                "Please enter your Player ID and Server ID and tap Validate & Order first.",
+                "error"
+            );
 
+            document
+                .querySelector(".account-box")
+                .scrollIntoView({
+                    behavior:"smooth",
+                    block:"center"
+                });
 
-            if(selectedPackage === ""){
+            return;
 
-                summaryMessage.textContent =
-                    "Please select a Diamond package or Special Pass.";
-
-                summaryMessage.classList.add("error");
-
-                return;
-            }
+        }
 
 
-            /*
-             * Payment appears immediately.
-             */
+        if(selectedPackage === ""){
 
-            paymentAmount.textContent =
-                "₹" + selectedPrice;
+            summaryMessage.textContent =
+                "Please select a Diamond package or Special Pass first.";
 
-            paymentSection.classList.add("visible");
+            summaryMessage.classList.add("error");
 
-
-            setTimeout(function(){
-
-                paymentSection.scrollIntoView({
+            document
+                .querySelector(".section")
+                .scrollIntoView({
                     behavior:"smooth",
                     block:"start"
                 });
 
-            },100);
+            return;
 
         }
+
+
+        paymentAmount.textContent =
+            "₹" + selectedPrice;
+
+
+        paymentSection.classList.add("visible");
+
+
+        setTimeout(function(){
+
+            paymentSection.scrollIntoView({
+                behavior:"smooth",
+                block:"start"
+            });
+
+        },100);
+
+    }
+
+
+    orderPayBtn.addEventListener(
+        "click",
+        openPayment
     );
 
 
     /* =========================
-       WHATSAPP ORDER
+       WHATSAPP
     ========================= */
+
+    function openWhatsApp(){
+
+        if(!orderStarted){
+
+            showValidation(
+                "Please validate your Player ID and Server ID first.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        if(selectedPackage === ""){
+
+            summaryMessage.textContent =
+                "Please select a package first.";
+
+            summaryMessage.classList.add("error");
+
+            return;
+
+        }
+
+
+        const whatsappNumber =
+            "919310651934";
+
+
+        const message =
+            getOrderMessage();
+
+
+        const url =
+            "https://wa.me/" +
+            whatsappNumber +
+            "?text=" +
+            encodeURIComponent(message);
+
+
+        window.open(
+            url,
+            "_blank",
+            "noopener"
+        );
+
+    }
+
 
     whatsappBtn.addEventListener(
         "click",
-        function(){
-
-            const pid =
-                playerId.value.trim();
-
-            const sid =
-                serverId.value.trim();
+        openWhatsApp
+    );
 
 
-            if(pid === ""){
-
-                showValidation(
-                    "Please enter your Player ID.",
-                    "error"
-                );
-
-                playerId.focus();
-
-                return;
-            }
+    quickWhatsapp.addEventListener(
+        "click",
+        openWhatsApp
+    );
 
 
-            if(sid === ""){
+    /* =========================
+       COPY ORDER
+    ========================= */
+
+    copyOrder.addEventListener(
+        "click",
+        async function(){
+
+            if(!orderStarted){
 
                 showValidation(
-                    "Please enter your Server ID.",
-                    "error"
-                );
-
-                serverId.focus();
-
-                return;
-            }
-
-
-            if(!accountValidated){
-
-                showValidation(
-                    "Please tap Validate before sending your order.",
+                    "Please validate your Player ID and Server ID first.",
                     "error"
                 );
 
                 return;
+
             }
 
 
@@ -2183,51 +2482,43 @@ document.addEventListener("DOMContentLoaded", function(){
                 summaryMessage.classList.add("error");
 
                 return;
+
             }
 
 
             const message =
-`🎮 PANTHEOS GLOBAL STORE
-
-━━━━━━━━━━━━━━━━━━
-🎯 Game: Mobile Legends
-
-👤 Player ID: ${pid}
-🌐 Server ID: ${sid}
-
-📦 Package: ${selectedPackage}
-💰 Amount: ₹${selectedPrice}
-
-💳 Payment: Completed via QR
-
-Please verify my payment and process my order.
-
-Thank you!`;
+                getOrderMessage();
 
 
-            /*
-             * Pantheos Global Store WhatsApp
-             */
+            try{
 
-            const whatsappNumber =
-                "919310651934";
-
-
-            const whatsappURL =
-                "https://wa.me/" +
-                whatsappNumber +
-                "?text=" +
-                encodeURIComponent(message);
+                await navigator.clipboard.writeText(
+                    message
+                );
 
 
-            window.open(
-                whatsappURL,
-                "_blank"
-            );
+                copyOrder.textContent =
+                    "✓ Copied!";
+
+
+                setTimeout(function(){
+
+                    copyOrder.textContent =
+                        "📋 Copy Order";
+
+                },1800);
+
+            }
+            catch(error){
+
+                alert(
+                    "Copy is not available on this browser. Please use WhatsApp."
+                );
+
+            }
 
         }
     );
-
 
 });
 
