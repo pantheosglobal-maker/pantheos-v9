@@ -1335,57 +1335,41 @@
 
 <script>
 
-document.addEventListener(
-    "DOMContentLoaded",
-    () => {
+document.addEventListener("DOMContentLoaded", () => {
 
-        const playerId =
-            document.getElementById(
-                "playerId"
-            );
+let selectedPackage = "";
+let selectedPrice = "";
 
-        const summaryPlayer =
-            document.getElementById(
-                "summaryPlayer"
-            );
+const packageInputs = document.querySelectorAll('input[name="package"]');
 
-        const selectionMessage =
-            document.getElementById(
-                "selectionMessage"
-            );
+const playerId = document.getElementById("playerId");
+const summaryPackage = document.getElementById("summaryPackage");
+const summaryPrice = document.getElementById("summaryPrice");
+const summaryPlayer = document.getElementById("summaryPlayer");
 
-        const orderButton =
-            document.getElementById(
-                "orderButton"
-            );
+packageInputs.forEach(input => {
 
+input.addEventListener("change", () => {
 
-        playerId.addEventListener(
-            "input",
-            () => {
+selectedPackage = input.value;
+selectedPrice = input.dataset.price;
 
-                summaryPlayer.textContent =
-                    playerId.value.trim() ||
-                    "—";
+summaryPackage.textContent = selectedPackage;
+summaryPrice.textContent = "₹" + selectedPrice;
 
-            }
-        );
+});
 
+});
 
-        orderButton.addEventListener(
-            "click",
-            () => {
+playerId.addEventListener("input", () => {
 
-                selectionMessage.textContent =
-                    "CODM CP pricing is not added yet. We'll add your exact price list before launch.";
+summaryPlayer.textContent =
+playerId.value.trim() || "—";
 
-            }
-        );
+});
 
-    }
-);
+});
 
 </script>
-
 </body>
 </html>
