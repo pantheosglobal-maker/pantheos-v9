@@ -187,31 +187,9 @@
             font-size: 10px;
         }
 
-        .empty-packages {
-            padding: 25px 20px;
-            border: 1px dashed rgba(255,255,255,0.13);
-            border-radius: 14px;
-            text-align: center;
-            background: rgba(255,255,255,0.02);
-        }
-
-        .empty-packages .empty-icon {
-            margin-bottom: 8px;
-            font-size: 25px;
-        }
-
-        .empty-packages strong {
-            display: block;
-            margin-bottom: 5px;
-            color: white;
-            font-size: 13px;
-        }
-
-        .empty-packages p {
-            color: var(--text-muted);
-            font-size: 10px;
-            line-height: 1.7;
-        }
+        /* =====================================================
+           PACKAGE CARDS
+        ===================================================== */
 
         .package-grid {
             display: grid;
@@ -231,7 +209,8 @@
         }
 
         .package-card {
-            min-height: 88px;
+            position: relative;
+            min-height: 100px;
             padding: 14px;
             display: flex;
             flex-direction: column;
@@ -242,7 +221,8 @@
             transition:
                 border var(--transition),
                 background var(--transition),
-                transform var(--transition);
+                transform var(--transition),
+                box-shadow var(--transition);
         }
 
         .package-card:hover {
@@ -255,7 +235,24 @@
             border-color: #3b82f6;
             background: rgba(59,130,246,0.10);
             box-shadow:
-                0 0 0 2px rgba(59,130,246,0.08);
+                0 0 0 2px rgba(59,130,246,0.08),
+                0 10px 30px rgba(59,130,246,0.08);
+        }
+
+        .package-option input:checked + .package-card::after {
+            content: "✓";
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 20px;
+            height: 20px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: #3b82f6;
+            color: white;
+            font-size: 11px;
+            font-weight: 900;
         }
 
         .package-amount {
@@ -264,12 +261,35 @@
             font-weight: 900;
         }
 
+        .package-bonus {
+            margin-top: 3px;
+            color: #8b95a8;
+            font-size: 9px;
+        }
+
         .package-price {
-            margin-top: 7px;
+            margin-top: 8px;
             color: #60a5fa;
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 900;
         }
+
+        .popular-badge {
+            position: absolute;
+            top: -8px;
+            left: 10px;
+            padding: 3px 7px;
+            border-radius: 5px;
+            background: #3b82f6;
+            color: white;
+            font-size: 7px;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+        }
+
+        /* =====================================================
+           FORM
+        ===================================================== */
 
         .field-group {
             margin-bottom: 15px;
@@ -333,6 +353,10 @@
             color: #fca5a5;
             font-size: 10px;
         }
+
+        /* =====================================================
+           SUMMARY
+        ===================================================== */
 
         .order-summary {
             position: sticky;
@@ -516,17 +540,11 @@
      NAVIGATION
 ===================================================== -->
 
-<header
-    class="site-header"
-    id="siteHeader"
->
+<header class="site-header" id="siteHeader">
 
     <div class="container nav-container">
 
-        <a
-            href="index.html"
-            class="brand"
-        >
+        <a href="index.html" class="brand">
 
             <img
                 src="assets/pantheos-logo.PNG"
@@ -548,53 +566,33 @@
 
         </a>
 
-
         <nav class="desktop-nav">
 
-            <a
-                href="index.html#home"
-                class="nav-link"
-            >
+            <a href="index.html#home" class="nav-link">
                 Home
             </a>
 
-            <a
-                href="index.html#games"
-                class="nav-link active"
-            >
+            <a href="index.html#games" class="nav-link active">
                 Games
             </a>
 
-            <a
-                href="index.html#services"
-                class="nav-link"
-            >
+            <a href="index.html#services" class="nav-link">
                 Services
             </a>
 
-            <a
-                href="index.html#giftcards"
-                class="nav-link"
-            >
+            <a href="index.html#giftcards" class="nav-link">
                 Gift Cards
             </a>
 
-            <a
-                href="index.html#community"
-                class="nav-link"
-            >
+            <a href="index.html#community" class="nav-link">
                 Community
             </a>
 
-            <a
-                href="index.html#support"
-                class="nav-link"
-            >
+            <a href="index.html#support" class="nav-link">
                 Support
             </a>
 
         </nav>
-
 
         <div class="nav-actions">
 
@@ -606,7 +604,6 @@
             >
                 WhatsApp
             </a>
-
 
             <button
                 class="menu-toggle"
@@ -625,10 +622,7 @@
     </div>
 
 
-    <div
-        class="mobile-nav"
-        id="mobileNav"
-    >
+    <div class="mobile-nav" id="mobileNav">
 
         <a href="index.html">
             Home
@@ -786,21 +780,210 @@
                     </div>
 
 
-                    <div class="empty-packages">
+                    <div class="package-grid">
 
-                        <div class="empty-icon">
-                            💎
-                        </div>
+                        <!-- 60 -->
 
-                        <strong>
-                            Genesis Crystal Packages
-                        </strong>
+                        <label class="package-option">
 
-                        <p>
-                            Your exact V9 Genesis Crystal
-                            packages and prices will be added
-                            here before the store launches.
-                        </p>
+                            <input
+                                type="radio"
+                                name="package"
+                                value="60 Genesis Crystals"
+                                data-price="89"
+                            >
+
+                            <div class="package-card">
+
+                                <div>
+
+                                    <div class="package-amount">
+                                        💎 60
+                                    </div>
+
+                                    <div class="package-bonus">
+                                        Genesis Crystals
+                                    </div>
+
+                                </div>
+
+                                <div class="package-price">
+                                    ₹89
+                                </div>
+
+                            </div>
+
+                        </label>
+
+
+                        <!-- 300 + 30 -->
+
+                        <label class="package-option">
+
+                            <input
+                                type="radio"
+                                name="package"
+                                value="300 + 30 Genesis Crystals"
+                                data-price="449"
+                            >
+
+                            <div class="package-card">
+
+                                <div>
+
+                                    <div class="package-amount">
+                                        💎 300 + 30
+                                    </div>
+
+                                    <div class="package-bonus">
+                                        330 Total Crystals
+                                    </div>
+
+                                </div>
+
+                                <div class="package-price">
+                                    ₹449
+                                </div>
+
+                            </div>
+
+                        </label>
+
+
+                        <!-- 980 + 110 -->
+
+                        <label class="package-option">
+
+                            <input
+                                type="radio"
+                                name="package"
+                                value="980 + 110 Genesis Crystals"
+                                data-price="1349"
+                            >
+
+                            <div class="package-card">
+
+                                <div>
+
+                                    <div class="package-amount">
+                                        💎 980 + 110
+                                    </div>
+
+                                    <div class="package-bonus">
+                                        1,090 Total Crystals
+                                    </div>
+
+                                </div>
+
+                                <div class="package-price">
+                                    ₹1,349
+                                </div>
+
+                            </div>
+
+                        </label>
+
+
+                        <!-- 1980 + 260 -->
+
+                        <label class="package-option">
+
+                            <input
+                                type="radio"
+                                name="package"
+                                value="1,980 + 260 Genesis Crystals"
+                                data-price="2699"
+                            >
+
+                            <div class="package-card">
+
+                                <div>
+
+                                    <div class="package-amount">
+                                        💎 1,980 + 260
+                                    </div>
+
+                                    <div class="package-bonus">
+                                        2,240 Total Crystals
+                                    </div>
+
+                                </div>
+
+                                <div class="package-price">
+                                    ₹2,699
+                                </div>
+
+                            </div>
+
+                        </label>
+
+
+                        <!-- 3280 + 600 -->
+
+                        <label class="package-option">
+
+                            <input
+                                type="radio"
+                                name="package"
+                                value="3,280 + 600 Genesis Crystals"
+                                data-price="4499"
+                            >
+
+                            <div class="package-card">
+
+                                <div>
+
+                                    <div class="package-amount">
+                                        💎 3,280 + 600
+                                    </div>
+
+                                    <div class="package-bonus">
+                                        3,880 Total Crystals
+                                    </div>
+
+                                </div>
+
+                                <div class="package-price">
+                                    ₹4,499
+                                </div>
+
+                            </div>
+
+                        </label>
+
+
+                        <!-- 6480 + 1600 -->
+
+                        <label class="package-option">
+
+                            <input
+                                type="radio"
+                                name="package"
+                                value="6,480 + 1,600 Genesis Crystals"
+                                data-price="8799"
+                            >
+
+                            <div class="package-card">
+
+                                <div>
+
+                                    <div class="package-amount">
+                                        💎 6,480 + 1,600
+                                    </div>
+
+                                    <div class="package-bonus">
+                                        8,080 Total Crystals
+                                    </div>
+
+                                </div>
+
+                                <div class="package-price">
+                                    ₹8,799
+                                </div>
+
+                            </div>
+
+                        </label>
 
                     </div>
 
@@ -832,21 +1015,38 @@
                     </div>
 
 
-                    <div class="empty-packages">
+                    <div class="package-grid">
 
-                        <div class="empty-icon">
-                            ⭐
-                        </div>
+                        <label class="package-option">
 
-                        <strong>
-                            Welkin Moon
-                        </strong>
+                            <input
+                                type="radio"
+                                name="package"
+                                value="Blessing of the Welkin Moon"
+                                data-price="449"
+                            >
 
-                        <p>
-                            Welkin pricing will be added
-                            once you provide the exact
-                            V9 package details.
-                        </p>
+                            <div class="package-card">
+
+                                <div>
+
+                                    <div class="package-amount">
+                                        ⭐ Welkin Moon
+                                    </div>
+
+                                    <div class="package-bonus">
+                                        30 Days
+                                    </div>
+
+                                </div>
+
+                                <div class="package-price">
+                                    ₹449
+                                </div>
+
+                            </div>
+
+                        </label>
 
                     </div>
 
@@ -999,7 +1199,7 @@
                         Package
                     </span>
 
-                    <strong>
+                    <strong id="summaryPackage">
                         Not selected
                     </strong>
 
@@ -1038,7 +1238,7 @@
                         Total
                     </span>
 
-                    <strong>
+                    <strong id="summaryTotal">
                         ₹0
                     </strong>
 
@@ -1147,12 +1347,63 @@ document.addEventListener(
         const summaryServer =
             document.getElementById("summaryServer");
 
+        const summaryPackage =
+            document.getElementById("summaryPackage");
+
+        const summaryTotal =
+            document.getElementById("summaryTotal");
+
         const selectionMessage =
             document.getElementById("selectionMessage");
 
         const orderButton =
             document.getElementById("orderButton");
 
+        const packageInputs =
+            document.querySelectorAll(
+                'input[name="package"]'
+            );
+
+
+        /* =====================================================
+           PACKAGE SELECTION
+        ===================================================== */
+
+        packageInputs.forEach(
+            (input) => {
+
+                input.addEventListener(
+                    "change",
+                    () => {
+
+                        const packageName =
+                            input.value;
+
+                        const price =
+                            Number(
+                                input.dataset.price
+                            );
+
+                        summaryPackage.textContent =
+                            packageName;
+
+                        summaryTotal.textContent =
+                            "₹" +
+                            price.toLocaleString("en-IN");
+
+                        selectionMessage.textContent =
+                            "";
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           UID
+        ===================================================== */
 
         playerId.addEventListener(
             "input",
@@ -1165,6 +1416,10 @@ document.addEventListener(
         );
 
 
+        /* =====================================================
+           SERVER
+        ===================================================== */
+
         server.addEventListener(
             "change",
             () => {
@@ -1176,12 +1431,112 @@ document.addEventListener(
         );
 
 
+        /* =====================================================
+           ORDER BUTTON
+        ===================================================== */
+
         orderButton.addEventListener(
             "click",
             () => {
 
-                selectionMessage.textContent =
-                    "Genshin pricing is not added yet. We'll add your exact V9 price list before launch.";
+                const selectedPackage =
+                    document.querySelector(
+                        'input[name="package"]:checked'
+                    );
+
+                const uid =
+                    playerId.value.trim();
+
+                const selectedServer =
+                    server.value;
+
+
+                /* VALIDATION */
+
+                if (!selectedPackage) {
+
+                    selectionMessage.textContent =
+                        "Please select a package first.";
+
+                    return;
+
+                }
+
+
+                if (!uid) {
+
+                    selectionMessage.textContent =
+                        "Please enter your Genshin UID.";
+
+                    playerId.focus();
+
+                    return;
+
+                }
+
+
+                if (!selectedServer) {
+
+                    selectionMessage.textContent =
+                        "Please select your server.";
+
+                    server.focus();
+
+                    return;
+
+                }
+
+
+                /* ORDER DATA */
+
+                const packageName =
+                    selectedPackage.value;
+
+                const price =
+                    Number(
+                        selectedPackage.dataset.price
+                    );
+
+
+                /* WHATSAPP MESSAGE */
+
+                const message =
+`🎮 *V9 PANTHEOS STORE*
+
+╭━━━━━━━━━━━━━━━╮
+     ✦ *GENSHIN IMPACT ORDER* ✦
+╰━━━━━━━━━━━━━━━╯
+
+💎 *Package:* ${packageName}
+💰 *Price:* ₹${price.toLocaleString("en-IN")}
+
+👤 *Player UID:* ${uid}
+🌍 *Server:* ${selectedServer}
+
+━━━━━━━━━━━━━━━━
+💳 *Total: ₹${price.toLocaleString("en-IN")}*
+━━━━━━━━━━━━━━━━
+
+Please confirm my order. 🙏
+
+✨ Thank you for choosing
+*V9 Pantheos Store*`;
+
+                const whatsappNumber =
+                    "919310651934";
+
+                const whatsappURL =
+                    "https://wa.me/" +
+                    whatsappNumber +
+                    "?text=" +
+                    encodeURIComponent(message);
+
+
+                window.open(
+                    whatsappURL,
+                    "_blank",
+                    "noopener"
+                );
 
             }
         );
