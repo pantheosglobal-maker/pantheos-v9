@@ -3,13 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>MLBB Top Up | Pantheos Global Store</title>
 
-<link rel="stylesheet" href="css/style.css">
-
 <style>
-
 :root{
 --bg:#0b1020;
 --card:#141c33;
@@ -20,11 +16,7 @@
 --success:#25D366;
 }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box}
 
 body{
 background:var(--bg);
@@ -41,73 +33,44 @@ padding:20px;
 .back-btn{
 display:inline-block;
 margin-bottom:15px;
-text-decoration:none;
 color:white;
+text-decoration:none;
 font-weight:bold;
 }
 
 .hero{
-position:relative;
 border-radius:20px;
 overflow:hidden;
 margin-bottom:25px;
 }
 
-.hero-banner{
+.hero img{
 width:100%;
 display:block;
 }
 
-.hero-overlay{
-position:absolute;
-inset:0;
-background:rgba(0,0,0,.45);
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
+.hero-text{
+background:var(--card);
 padding:20px;
+text-align:center;
 }
 
-.hero-content{
-max-width:700px;
-}
-
-.hero-logo{
-width:90px;
-height:90px;
-object-fit:contain;
-background:rgba(255,255,255,.1);
-padding:8px;
-border-radius:16px;
-margin-bottom:15px;
-}
-
-.hero-content h1{
-font-size:2.5rem;
+.hero-text h1{
 margin-bottom:10px;
 }
 
-.hero-content p{
-color:#e5e5e5;
-line-height:1.6;
-}
-
-.section-title{
-font-size:1.4rem;
-margin:25px 0 15px;
-}
-
-.account-box{
+.account-box,
+.summary-box,
+.payment-section{
 background:var(--card);
 padding:20px;
 border-radius:18px;
-margin-bottom:25px;
+margin-bottom:20px;
 }
 
 .account-grid{
 display:grid;
-grid-template-columns:repeat(2,1fr);
+grid-template-columns:1fr 1fr;
 gap:15px;
 }
 
@@ -121,440 +84,63 @@ font-weight:bold;
 width:100%;
 padding:14px;
 border:none;
-outline:none;
 border-radius:12px;
 background:var(--card2);
 color:white;
 }
 
-.notice{
-margin-top:12px;
-font-size:.9rem;
-color:var(--muted);
+.section-title{
+margin:25px 0 15px;
 }
 
 .special-grid{
 display:grid;
-grid-template-columns:repeat(2,1fr);
+grid-template-columns:1fr 1fr;
 gap:12px;
 }
 
 .special-card{
 display:flex;
 align-items:center;
-gap:12px;
-background:var(--card);
-padding:10px;
-border-radius:14px;
-cursor:pointer;
-border:2px solid transparent;
-transition:.25s;
-}
-
-.special-card:hover{
-border-color:var(--accent);
-}
-
-.special-card.active{
-border-color:var(--accent);
-}
-
-.special-card img{
-width:70px;
-height:70px;
-object-fit:cover;
-border-radius:10px;
-}
-
-.special-info h4{
-margin-bottom:4px;
-font-size:.95rem;
-}
-
-.special-info p{
-color:var(--accent);
-font-weight:bold;
-}
-
-@media(max-width:768px){
-
-.account-grid{
-grid-template-columns:1fr;
-}
-
-.special-grid{
-grid-template-columns:1fr 1fr;
-}
-
-.hero-content h1{
-font-size:1.8rem;
-}
-
-.hero-logo{
-width:70px;
-height:70px;
-}
-
-}
-
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-<a href="index.html" class="back-btn">
-← Back to Home
-</a>
-
-<div class="hero">
-
-<img
-src="assets/mlbb-banner.jpg"
-alt="MLBB Banner"
-class="hero-banner"
->
-
-<div class="hero-overlay">
-
-<div class="hero-content">
-
-<img
-src="assets/mlbb-logo.png"
-alt="MLBB Logo"
-class="hero-logo"
->
-
-<h1>Mobile Legends Top Up</h1>
-
-<p>
-Fast • Safe • Instant Recharge.
-Enter your Player ID and Server ID,
-choose your package and complete your order.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="account-box">
-
-<h2 class="section-title">
-Player Information
-</h2>
-
-<div class="account-grid">
-
-<div class="input-group">
-<label>Player ID</label>
-<input
-type="text"
-id="playerId"
-placeholder="Enter Player ID"
->
-</div>
-
-<div class="input-group">
-<label>Server ID</label>
-<input
-type="text"
-id="serverId"
-placeholder="Enter Server ID"
->
-</div>
-
-</div>
-
-<p class="notice">
-Make sure your Player ID and Server ID are correct before ordering.
-</p>
-
-</div>
-
-<h2 class="section-title">
-Special Passes
-</h2>
-
-<div class="special-grid">
-<div class="special-card"
-data-package="Weekly Pass"
-data-price="149">
-
-<img
-src="assets/weekly-pass.jpg"
-alt="Weekly Pass"
->
-
-<div class="special-info">
-<h4>Weekly Pass</h4>
-<p>₹149</p>
-</div>
-
-</div>
-
-<div class="special-card"
-data-package="Twilight Pass"
-data-price="829">
-
-<img
-src="assets/twilight-pass.jpg"
-alt="Twilight Pass"
->
-
-<div class="special-info">
-<h4>Twilight Pass</h4>
-<p>₹829</p>
-</div>
-
-</div>
-
-<div class="special-card"
-data-package="Starlight Normal"
-data-price="249">
-
-<img
-src="assets/starlight-normal.jpg"
-alt="Starlight Normal"
->
-
-<div class="special-info">
-<h4>Starlight Normal</h4>
-<p>₹249</p>
-</div>
-
-</div>
-
-<div class="special-card"
-data-package="Starlight Premium"
-data-price="499">
-
-<img
-src="assets/starlight-premium.jpg"
-alt="Starlight Premium"
->
-
-<div class="special-info">
-<h4>Starlight Premium</h4>
-<p>₹499</p>
-</div>
-
-</div>
-
-</div>
-
-<h2 class="section-title">
-Diamond Packages
-</h2>
-
-<style>
-
-.diamond-grid{
-display:grid;
-grid-template-columns:
-repeat(auto-fit,minmax(120px,1fr));
 gap:10px;
-margin-top:15px;
-}
-
-.diamond-card{
+padding:8px;
 background:var(--card);
-padding:12px;
 border-radius:12px;
-text-align:center;
 cursor:pointer;
 border:2px solid transparent;
-transition:.25s;
 }
 
-.diamond-card:hover{
-border-color:var(--accent);
-}
-
+.special-card.active,
 .diamond-card.active{
 border-color:var(--accent);
 }
 
-.diamond-card h4{
-font-size:1rem;
-margin-bottom:6px;
+.special-card img{
+width:55px;
+height:55px;
+object-fit:cover;
+border-radius:8px;
 }
 
+.special-card p,
 .diamond-card p{
 color:var(--accent);
 font-weight:bold;
-font-size:.95rem;
 }
 
-</style>
+.diamond-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(95px,1fr));
+gap:10px;
+}
 
-<div class="diamond-grid" id="diamondGrid">
-
-<div class="diamond-card" data-package="💎 5" data-price="13">
-<h4>💎 5</h4>
-<p>₹13</p>
-</div>
-
-<div class="diamond-card" data-package="💎 11" data-price="23">
-<h4>💎 11</h4>
-<p>₹23</p>
-</div>
-
-<div class="diamond-card" data-package="💎 14" data-price="34">
-<h4>💎 14</h4>
-<p>₹34</p>
-</div>
-
-<div class="diamond-card" data-package="💎 22" data-price="44">
-<h4>💎 22</h4>
-<p>₹44</p>
-</div>
-
-<div class="diamond-card" data-package="💎 28" data-price="59">
-<h4>💎 28</h4>
-<p>₹59</p>
-</div>
-
-<div class="diamond-card" data-package="💎 55" data-price="89">
-<h4>💎 55</h4>
-<p>₹89</p>
-</div>
-
-<div class="diamond-card" data-package="💎 86" data-price="129">
-<h4>💎 86</h4>
-<p>₹129</p>
-</div>
-
-<div class="diamond-card" data-package="💎 110" data-price="169">
-<h4>💎 110</h4>
-<p>₹169</p>
-</div>
-
-<div class="diamond-card" data-package="💎 172" data-price="259">
-<h4>💎 172</h4>
-<p>₹259</p>
-</div>
-
-<div class="diamond-card" data-package="💎 257" data-price="379">
-<h4>💎 257</h4>
-<p>₹379</p>
-</div>
-
-<div class="diamond-card" data-package="💎 275" data-price="399">
-<h4>💎 275</h4>
-<p>₹399</p>
-</div>
-
-<div class="diamond-card" data-package="💎 312" data-price="469">
-<h4>💎 312</h4>
-<p>₹469</p>
-</div>
-<div class="diamond-card" data-package="💎 361" data-price="529">
-<h4>💎 361</h4>
-<p>₹529</p>
-</div>
-
-<div class="diamond-card" data-package="💎 429" data-price="634">
-<h4>💎 429</h4>
-<p>₹634</p>
-</div>
-
-<div class="diamond-card" data-package="💎 451" data-price="689">
-<h4>💎 451</h4>
-<p>₹689</p>
-</div>
-
-<div class="diamond-card" data-package="💎 514" data-price="749">
-<h4>💎 514</h4>
-<p>₹749</p>
-</div>
-
-<div class="diamond-card" data-package="💎 565" data-price="819">
-<h4>💎 565</h4>
-<p>₹819</p>
-</div>
-
-<div class="diamond-card" data-package="💎 706" data-price="1029">
-<h4>💎 706</h4>
-<p>₹1029</p>
-</div>
-
-<div class="diamond-card" data-package="💎 720" data-price="1059">
-<h4>💎 720</h4>
-<p>₹1059</p>
-</div>
-
-<div class="diamond-card" data-package="💎 803" data-price="1179">
-<h4>💎 803</h4>
-<p>₹1179</p>
-</div>
-
-<div class="diamond-card" data-package="💎 900" data-price="1329">
-<h4>💎 900</h4>
-<p>₹1329</p>
-</div>
-
-<div class="diamond-card" data-package="💎 1049" data-price="1539">
-<h4>💎 1049</h4>
-<p>₹1539</p>
-</div>
-
-<div class="diamond-card" data-package="💎 1130" data-price="1649">
-<h4>💎 1130</h4>
-<p>₹1649</p>
-</div>
-
-<div class="diamond-card" data-package="💎 1412" data-price="2059">
-<h4>💎 1412</h4>
-<p>₹2059</p>
-</div>
-
-<div class="diamond-card" data-package="💎 1503" data-price="2199">
-<h4>💎 1503</h4>
-<p>₹2199</p>
-</div>
-
-<div class="diamond-card" data-package="💎 2195" data-price="3089">
-<h4>💎 2195</h4>
-<p>₹3089</p>
-</div>
-
-<div class="diamond-card" data-package="💎 3688" data-price="5139">
-<h4>💎 3688</h4>
-<p>₹5139</p>
-</div>
-
-<div class="diamond-card" data-package="💎 5532" data-price="7649">
-<h4>💎 5532</h4>
-<p>₹7649</p>
-</div>
-
-<div class="diamond-card" data-package="💎 6046" data-price="8399">
-<h4>💎 6046</h4>
-<p>₹8399</p>
-</div>
-
-<div class="diamond-card" data-package="💎 9288" data-price="12899">
-<h4>💎 9288</h4>
-<p>₹12899</p>
-</div>
-
-</div>
-
-<style>
-
-.summary-box{
+.diamond-card{
 background:var(--card);
-padding:20px;
-border-radius:16px;
-margin-top:25px;
-}
-
-.summary-title{
-font-size:1.3rem;
-margin-bottom:15px;
+padding:10px;
+text-align:center;
+border-radius:12px;
+cursor:pointer;
+border:2px solid transparent;
 }
 
 .summary-row{
@@ -563,322 +149,262 @@ justify-content:space-between;
 margin:10px 0;
 }
 
-.summary-value{
-color:var(--accent);
-font-weight:bold;
-}
-
-.continue-btn{
+.btn{
 width:100%;
 padding:15px;
-margin-top:15px;
 border:none;
 border-radius:12px;
-background:var(--accent);
-color:#000;
 font-weight:bold;
 cursor:pointer;
-font-size:1rem;
+margin-top:15px;
 }
 
-.continue-btn:hover{
-opacity:.95;
+.validate-btn{
+background:var(--accent);
+color:black;
 }
 
-</style>
+.order-btn{
+background:var(--success);
+color:white;
+}
 
-<div class="summary-box">
-
-<h3 class="summary-title">
-Order Summary
-</h3>
-
-<div class="summary-row">
-<span>Selected Package</span>
-<span
-id="selectedPackage"
-class="summary-value"
->
-Not Selected
-</span>
-</div>
-
-<div class="summary-row">
-<span>Price</span>
-<span
-id="selectedPrice"
-class="summary-value"
->
-₹0
-</span>
-</div>
-
-<button
-class="continue-btn"
-id="continueBtn"
->
-Continue to Payment
-</button>
-
-</div>
-<style>
-
-.payment-section{
+#validateMessage,
+#orderSection,
+#paymentSection{
 display:none;
-background:var(--card);
-padding:20px;
-border-radius:16px;
-margin-top:25px;
 }
 
-.payment-title{
-font-size:1.3rem;
-margin-bottom:15px;
+#validateMessage{
+margin-top:15px;
+padding:12px;
+border-radius:10px;
+background:#1d3b2a;
 }
 
-.payment-note{
-color:var(--muted);
-margin-bottom:15px;
-line-height:1.5;
-}
-
-.qr-wrapper{
+.qr{
 text-align:center;
 margin:20px 0;
 }
 
-.qr-wrapper img{
+.qr img{
 width:260px;
 max-width:100%;
-border-radius:14px;
-}
-
-.upload-input{
-width:100%;
-padding:12px;
-background:var(--card2);
-border:none;
-border-radius:10px;
-color:white;
-margin-top:15px;
-}
-
-.order-btn{
-width:100%;
-padding:15px;
-margin-top:20px;
-border:none;
 border-radius:12px;
-background:var(--success);
-color:white;
-font-size:1rem;
-font-weight:bold;
-cursor:pointer;
 }
 
-.order-btn:hover{
-opacity:.95;
+@media(max-width:768px){
+.account-grid{
+grid-template-columns:1fr;
 }
-
+}
 </style>
+</head>
 
-<div
-class="payment-section"
-id="paymentSection"
->
+<body>
 
-<h3 class="payment-title">
-Payment
-</h3>
+<div class="container">
 
-<p class="payment-note">
-Complete payment using the QR code below.
-After payment, upload your screenshot and continue to WhatsApp.
-</p>
+<a href="index.html" class="back-btn">← Back to Home</a>
 
-<div class="qr-wrapper">
+<div class="hero">
+<img src="assets/mlbb-banner.jpg" alt="MLBB Banner">
+<div class="hero-text">
+<h1>Mobile Legends Top Up</h1>
+<p>Fast • Safe • Instant Recharge</p>
+</div>
+</div>
 
-<img
-src="assets/qr-payment.jpg"
-alt="Payment QR"
->
+<div class="account-box">
+<h2>Player Information</h2>
+
+<div class="account-grid">
+
+<div class="input-group">
+<label>Player ID</label>
+<input type="text" id="playerId" placeholder="Enter Player ID">
+</div>
+
+<div class="input-group">
+<label>Server ID</label>
+<input type="text" id="serverId" placeholder="Enter Server ID">
+</div>
 
 </div>
 
-<input
-type="file"
-id="paymentProof"
-accept="image/*"
-class="upload-input"
->
+<button class="btn validate-btn" id="validateBtn">
+Validate Account
+</button>
 
-<button
-class="order-btn"
-id="orderBtn"
->
+<div id="validateMessage">
+✓ Account Information Ready
+</div>
+
+</div>
+
+<div id="orderSection">
+
+<h2 class="section-title">Special Passes</h2>
+
+<div class="special-grid">
+
+<div class="special-card" data-package="Weekly Pass" data-price="149">
+<img src="assets/weekly-pass.jpg">
+<div><h4>Weekly Pass</h4><p>₹149</p></div>
+</div>
+
+<div class="special-card" data-package="Twilight Pass" data-price="829">
+<img src="assets/twilight-pass.jpg">
+<div><h4>Twilight Pass</h4><p>₹829</p></div>
+</div>
+
+<div class="special-card" data-package="Starlight Normal" data-price="249">
+<img src="assets/starlight-normal.jpg">
+<div><h4>Starlight Normal</h4><p>₹249</p></div>
+</div>
+
+<div class="special-card" data-package="Starlight Premium" data-price="499">
+<img src="assets/starlight-premium.jpg">
+<div><h4>Starlight Premium</h4><p>₹499</p></div>
+</div>
+
+</div>
+
+<h2 class="section-title">Diamond Packages</h2>
+
+<div class="diamond-grid" id="diamondGrid">
+
+<div class="diamond-card" data-package="💎 5" data-price="13"><h4>💎5</h4><p>₹13</p></div>
+<div class="diamond-card" data-package="💎 11" data-price="23"><h4>💎11</h4><p>₹23</p></div>
+<div class="diamond-card" data-package="💎 14" data-price="34"><h4>💎14</h4><p>₹34</p></div>
+<div class="diamond-card" data-package="💎 22" data-price="44"><h4>💎22</h4><p>₹44</p></div>
+<div class="diamond-card" data-package="💎 28" data-price="59"><h4>💎28</h4><p>₹59</p></div>
+<div class="diamond-card" data-package="💎 55" data-price="89"><h4>💎55</h4><p>₹89</p></div>
+<div class="diamond-card" data-package="💎 86" data-price="129"><h4>💎86</h4><p>₹129</p></div>
+<div class="diamond-card" data-package="💎 110" data-price="169"><h4>💎110</h4><p>₹169</p></div>
+<div class="diamond-card" data-package="💎 172" data-price="259"><h4>💎172</h4><p>₹259</p></div>
+<div class="diamond-card" data-package="💎 257" data-price="379"><h4>💎257</h4><p>₹379</p></div>
+<div class="diamond-card" data-package="💎 275" data-price="399"><h4>💎275</h4><p>₹399</p></div>
+<div class="diamond-card" data-package="💎 312" data-price="469"><h4>💎312</h4><p>₹469</p></div>
+<div class="diamond-card" data-package="💎 361" data-price="529"><h4>💎361</h4><p>₹529</p></div>
+<div class="diamond-card" data-package="💎 429" data-price="634"><h4>💎429</h4><p>₹634</p></div>
+<div class="diamond-card" data-package="💎 451" data-price="689"><h4>💎451</h4><p>₹689</p></div>
+<div class="diamond-card" data-package="💎 514" data-price="749"><h4>💎514</h4><p>₹749</p></div>
+<div class="diamond-card" data-package="💎 565" data-price="819"><h4>💎565</h4><p>₹819</p></div>
+<div class="diamond-card" data-package="💎 706" data-price="1029"><h4>💎706</h4><p>₹1029</p></div>
+<div class="diamond-card" data-package="💎 720" data-price="1059"><h4>💎720</h4><p>₹1059</p></div>
+<div class="diamond-card" data-package="💎 803" data-price="1179"><h4>💎803</h4><p>₹1179</p></div>
+<div class="diamond-card" data-package="💎 900" data-price="1329"><h4>💎900</h4><p>₹1329</p></div>
+<div class="diamond-card" data-package="💎 1049" data-price="1539"><h4>💎1049</h4><p>₹1539</p></div>
+<div class="diamond-card" data-package="💎 1130" data-price="1649"><h4>💎1130</h4><p>₹1649</p></div>
+<div class="diamond-card" data-package="💎 1412" data-price="2059"><h4>💎1412</h4><p>₹2059</p></div>
+<div class="diamond-card" data-package="💎 1503" data-price="2199"><h4>💎1503</h4><p>₹2199</p></div>
+<div class="diamond-card" data-package="💎 2195" data-price="3089"><h4>💎2195</h4><p>₹3089</p></div>
+<div class="diamond-card" data-package="💎 3688" data-price="5139"><h4>💎3688</h4><p>₹5139</p></div>
+<div class="diamond-card" data-package="💎 5532" data-price="7649"><h4>💎5532</h4><p>₹7649</p></div>
+<div class="diamond-card" data-package="💎 6046" data-price="8399"><h4>💎6046</h4><p>₹8399</p></div>
+<div class="diamond-card" data-package="💎 9288" data-price="12899"><h4>💎9288</h4><p>₹12899</p></div>
+
+</div>
+
+<div class="summary-box">
+<h3>Order Summary</h3>
+
+<div class="summary-row">
+<span>Package</span>
+<span id="selectedPackage">Not Selected</span>
+</div>
+
+<div class="summary-row">
+<span>Price</span>
+<span id="selectedPrice">₹0</span>
+</div>
+
+<button class="btn validate-btn" id="continueBtn">
+Continue to Payment
+</button>
+</div>
+
+<div class="payment-section" id="paymentSection">
+
+<h3>Payment</h3>
+
+<div class="qr">
+<img src="assets/qr-payment.jpg" alt="QR Payment">
+</div>
+
+<input type="file" id="paymentProof">
+
+<button class="btn order-btn" id="orderBtn">
 Place Order via WhatsApp
 </button>
 
 </div>
 
+</div>
+
 <script>
+let selectedPackage="";
+let selectedPrice="";
 
-let selectedPackage = "";
-let selectedPrice = "";
+document.getElementById("validateBtn").onclick=()=>{
+const pid=document.getElementById("playerId").value.trim();
+const sid=document.getElementById("serverId").value.trim();
 
-const diamondCards =
-document.querySelectorAll(".diamond-card");
+if(!pid){alert("Enter Player ID");return;}
+if(!sid){alert("Enter Server ID");return;}
 
-const specialCards =
-document.querySelectorAll(".special-card");
+document.getElementById("validateMessage").style.display="block";
+document.getElementById("orderSection").style.display="block";
+};
 
-const packageText =
-document.getElementById("selectedPackage");
+function selectItem(el){
+document.querySelectorAll(".diamond-card,.special-card")
+.forEach(x=>x.classList.remove("active"));
 
-const priceText =
-document.getElementById("selectedPrice");
+el.classList.add("active");
 
-function clearSelection(){
+selectedPackage=el.dataset.package;
+selectedPrice=el.dataset.price;
 
-diamondCards.forEach(card=>{
-card.classList.remove("active");
-});
-
-specialCards.forEach(card=>{
-card.classList.remove("active");
-});
-
+document.getElementById("selectedPackage").textContent=selectedPackage;
+document.getElementById("selectedPrice").textContent="₹"+selectedPrice;
 }
 
-diamondCards.forEach(card=>{
-
-card.addEventListener("click",()=>{
-
-clearSelection();
-
-card.classList.add("active");
-
-selectedPackage =
-card.dataset.package;
-
-selectedPrice =
-card.dataset.price;
-
-packageText.textContent =
-selectedPackage;
-
-priceText.textContent =
-"₹" + selectedPrice;
-
+document.querySelectorAll(".diamond-card,.special-card")
+.forEach(el=>{
+el.addEventListener("click",()=>selectItem(el));
 });
 
-});
-
-specialCards.forEach(card=>{
-
-card.addEventListener("click",()=>{
-
-clearSelection();
-
-card.classList.add("active");
-
-selectedPackage =
-card.dataset.package;
-
-selectedPrice =
-card.dataset.price;
-
-packageText.textContent =
-selectedPackage;
-
-priceText.textContent =
-"₹" + selectedPrice;
-
-});
-
-});
-
-document
-.getElementById("continueBtn")
-.addEventListener("click",()=>{
-
-const playerId =
-document.getElementById("playerId")
-.value.trim();
-
-const serverId =
-document.getElementById("serverId")
-.value.trim();
-
-if(!playerId){
-alert("Enter Player ID");
-return;
-}
-
-if(!serverId){
-alert("Enter Server ID");
-return;
-}
-
+document.getElementById("continueBtn").onclick=()=>{
 if(!selectedPackage){
 alert("Select a package");
 return;
 }
+document.getElementById("paymentSection").style.display="block";
+};
 
-document
-.getElementById("paymentSection")
-.style.display = "block";
+document.getElementById("orderBtn").onclick=()=>{
+const pid=document.getElementById("playerId").value.trim();
+const sid=document.getElementById("serverId").value.trim();
 
-document
-.getElementById("paymentSection")
-.scrollIntoView({
-behavior:"smooth"
-});
-
-});
-
-document
-.getElementById("orderBtn")
-.addEventListener("click",()=>{
-
-const playerId =
-document.getElementById("playerId")
-.value.trim();
-
-const serverId =
-document.getElementById("serverId")
-.value.trim();
-
-const message =
-`🎮 Pantheos Global Store Order
+const msg=`🎮 Pantheos Global Store Order
 
 Game: Mobile Legends
-
-Player ID: ${playerId}
-Server ID: ${serverId}
+Player ID: ${pid}
+Server ID: ${sid}
 
 Package: ${selectedPackage}
 Price: ₹${selectedPrice}
 
-Payment: QR Completed
-
-Please verify and process my order.`;
-
-const whatsappURL =
-`https://wa.me/919310651934?text=${encodeURIComponent(message)}`;
+Payment Completed`;
 
 window.open(
-whatsappURL,
+`https://wa.me/919310651934?text=${encodeURIComponent(msg)}`,
 "_blank"
 );
-
-});
-
+};
 </script>
-
-<script src="js/app.js"></script>
-
-</div>
 
 </body>
 </html>
